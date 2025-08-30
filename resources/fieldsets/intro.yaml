@@ -1,0 +1,20 @@
+title: Intro
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+  -
+    handle: content
+    field:
+      type: textarea
+      display: Content
+      validate:
+        - required
+  -
+    import: buttons
+  -
+    import: block_settings

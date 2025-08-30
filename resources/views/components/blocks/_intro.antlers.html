@@ -1,0 +1,17 @@
+{{ partial:components/block }}
+    <div class="flex flex-col gap-y-6 lg:flex-row justify-between">
+        <div class="max-w-sm xl:max-w-lg w-full shrink-0">
+            {{ partial:components/text/subtitle }}
+                {{ title }}
+            {{ /partial:components/text/subtitle }}
+        </div>
+
+        <div class="flex flex-col gap-20 xl:max-w-2xl w-full">
+            <div class="max-w-2xl xl:max-w-xl">
+                <h2>{{ content }}</h2>
+            </div>
+
+            {{ partial:components/common/buttons class="space-y-6 lg:space-y-12" }}
+        </div>
+    </div>
+{{ /partial:components/block }}

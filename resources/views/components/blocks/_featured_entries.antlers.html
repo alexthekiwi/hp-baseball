@@ -1,0 +1,11 @@
+{{ partial:components/block }}
+    {{ if title }}
+        <h2 class="text-center pb-24">{{ title }}</h2>
+    {{ /if }}
+
+    {{ partial:components/common/grid }}
+        {{ entries }}
+            {{ partial:components/common/product }}
+        {{ /entries }}
+    {{ /partial:components/common/grid }}
+{{ /partial:components/block }}

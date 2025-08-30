@@ -1,0 +1,25 @@
+{{#
+	@name Form sender text
+	@desc This is the text email template that goes to the sender of the form when it has been submitted.
+#}}
+
+Hi {{ first_name or name }},
+
+Thank you for your enquiry. Here is a copy of your submission:
+
+-
+{{ fields }}
+{{ if handle !== 'consent' }}
+{{ trans :key="display" :locale="locale" }}:
+{{ if (value | is_array) }}
+{{ value }}
+{{ value }}
+{{ /value }}
+{{ else }}
+{{ value }}
+{{ /if }}
+{{ /if }}
+{{ /fields }}
+-
+Submitted {{ now | timezone | format('r') }}
+{{ config:app:name }}

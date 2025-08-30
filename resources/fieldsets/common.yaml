@@ -1,0 +1,162 @@
+title: Common
+fields:
+  -
+    handle: image
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      localizable: true
+      display: Image
+  -
+    handle: entry
+    field:
+      max_items: 1
+      type: entries
+      localizable: true
+      listable: false
+      display: Entry
+  -
+    handle: text_plain
+    field:
+      type: textarea
+      localizable: true
+      display: Textarea
+  -
+    handle: link
+    field:
+      type: link
+      display: Link
+  -
+    handle: colour
+    field:
+      options:
+        -
+          key: primary
+          value: Primary
+        -
+          key: secondary
+          value: Secondary
+        -
+          key: tertiary
+          value: Tertiary
+        -
+          key: white
+          value: White
+        -
+          key: gray
+          value: Gray
+        -
+          key: black
+          value: Black
+      default: primary
+      type: select
+      display: Colour
+  -
+    handle: background_colour
+    field:
+      options:
+        -
+          key: primary
+          value: Primary
+        -
+          key: secondary
+          value: Secondary
+        -
+          key: white
+          value: White
+        -
+          key: gray
+          value: Gray
+      default: white
+      type: select
+      display: 'Background Colour'
+  -
+    handle: button_simple
+    field:
+      type: group
+      display: 'Button (simple)'
+      fields:
+        -
+          handle: text
+          field:
+            type: text
+            display: Text
+            validate:
+              - required
+        -
+          handle: link
+          field: common.link
+          config:
+            validate:
+              - required
+  -
+    handle: group_field
+    field:
+      type: group
+      display: 'Button (styled)'
+      fields:
+        -
+          handle: text
+          field:
+            type: text
+            display: Text
+            validate:
+              - required
+        -
+          handle: link
+          field: common.link
+          config:
+            validate:
+              - required
+        -
+          handle: style
+          field:
+            options:
+              -
+                key: outline
+                value: Outline
+              -
+                key: solid
+                value: Solid
+            type: button_group
+            display: Style
+  -
+    handle: size
+    field:
+      options:
+        -
+          key: none
+          value: null
+        -
+          key: sm
+          value: null
+        -
+          key: md
+          value: null
+        -
+          key: base
+          value: null
+        -
+          key: lg
+          value: null
+        -
+          key: xl
+          value: null
+      default: base
+      type: button_group
+      display: Size
+  -
+    handle: bard
+    field:
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+        - image
+      remove_empty_nodes: false
+      type: bard
+      display: Bard

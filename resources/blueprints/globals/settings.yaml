@@ -1,0 +1,17 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: app
+            field:
+              display: App
+              type: section
+          -
+            handle: app_name
+            field:
+              display: 'Application Name'
+              type: text
+              placeholder: 'ACME Co.'

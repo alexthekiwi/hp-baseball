@@ -1,0 +1,3 @@
+<div x-data="{ value: Number({{ $slot }}) }">
+    <p class="tracking-widest font-medium {{ class }}" x-text="'$' + value.toFixed(2)"></p>
+</div>

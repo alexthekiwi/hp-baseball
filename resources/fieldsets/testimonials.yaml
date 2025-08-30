@@ -1,0 +1,16 @@
+title: Testimonials
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: testimonials
+    field:
+      collections:
+        - testimonials
+      type: entries
+      display: Testimonials
+  -
+    import: block_settings

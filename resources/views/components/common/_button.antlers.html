@@ -1,0 +1,52 @@
+{{ $button_href = button_link:permalink ?? button_link ?? link:permalink ?? link ?? url }}
+{{ $button_content = slot ?? button_text ?? text ?? content }}
+{{ $button_style = style ?? 'Outlined' }}
+{{ $button_colour = colour ?? 'white' }}
+
+{{ button_classes = 'inline-flex items-center gap-4 font-medium text-center whitespace-nowrap transition-colors rounded-outer cursor-pointer' }}
+
+{{ $size_classes = switch(
+    ($size == 'sm') => 'px-4 py-2 text-sm',
+    () => 'px-6 py-3 lg:px-8 lg:py-3 text-base lg:text-lg'
+)}}
+
+{{ style_classes = switch(
+    ($button_style == 'Outlined') => 'border bg-transparent',
+    ($button_style == 'Solid') => 'hover:brightness-110',
+    ($button_style == 'Underlined') => '!rounded-none border-b border-black !px-0 w-full uppercase font-bold tracking-wider text-sm pb-5 justify-between'
+)}}
+
+{{ if $button_style == 'Outlined' }}
+    {{ colour_classes = switch(
+        ($button_colour == 'black') => 'text-black border-black',
+        ($button_colour == 'white') => 'text-white border-white hover:bg-white hover:text-black',
+    )}}
+{{ elseif $button_style == 'Solid' }}
+    {{ colour_classes = switch(
+        ($button_colour == 'black') => 'bg-black text-white',
+        ($button_colour == 'primary') => 'bg-primary text-black',
+        ($button_colour == 'gray') => 'bg-gray text-white',
+        ($button_colour == 'white') => 'bg-white text-black',
+    )}}
+{{ /if }}
+
+<{{ as or 'a' }}
+    class="group/button {{ button_classes }} {{ style_classes }} {{ colour_classes }} {{ size_classes }}"
+    {{ slot:attributes }}
+    {{ if !no_link }}
+        href="{{ $button_href }}"
+        {{ target_blank ?= 'rel="noopener" target="_blank"' }}
+    {{ else }}
+        type="button"
+    {{ /if }}
+>
+    {{ if $button_style == 'Underlined' }}
+        {{  partial:components/text/subtitle }}
+            {{ $button_content }}
+        {{ /partial:components/text/subtitle }}
+
+        {{ partial:svg/arrow_right }}
+    {{ else }}
+        {{ $button_content }}
+    {{ /if }}
+</{{ as or 'a' }}>

@@ -1,0 +1,7 @@
+{{ if (buttons | length) > 0 }}
+    <div class="space-x-2 space-y-4 {{ class }}">
+        {{ buttons }}
+            {{ partial:components/common/button }}
+        {{ /buttons }}
+    </div>
+{{ /if }}

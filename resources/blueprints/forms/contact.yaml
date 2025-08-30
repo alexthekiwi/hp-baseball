@@ -1,0 +1,34 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: full_name
+            field:
+              type: text
+              display: 'Full name'
+              width: 50
+              validate:
+                - required
+          -
+            handle: phone_number
+            field:
+              type: text
+              display: 'Phone number'
+              width: 50
+          -
+            handle: email_address
+            field:
+              type: text
+              display: 'Email address'
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+              validate:
+                - required

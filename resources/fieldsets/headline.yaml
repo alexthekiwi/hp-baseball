@@ -1,0 +1,45 @@
+title: Headline
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: heading
+    field:
+      options:
+        -
+          key: H1
+          value: null
+        -
+          key: H2
+          value: null
+      default: H1
+      type: button_group
+      display: Heading
+      width: 33
+  -
+    handle: alignment
+    field:
+      options:
+        -
+          key: Left
+          value: null
+        -
+          key: Center
+          value: null
+      default: Center
+      type: button_group
+      display: Alignment
+      width: 33
+  -
+    handle: keyline
+    field:
+      type: toggle
+      display: Keyline
+      width: 33
+      if:
+        alignment: 'equals Left'
+  -
+    import: block_settings

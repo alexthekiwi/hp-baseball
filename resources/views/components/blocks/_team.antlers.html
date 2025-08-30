@@ -1,0 +1,58 @@
+{{ partial:components/block }}
+    {{ if title }}
+        {{ partial:components/common/title gap="true" }}
+    {{ /if }}
+
+    <div x-data="{ index: -1 }">
+        {{ partial:components/common/grid }}
+            {{ people }}
+                <button @click="index = {{ index }}" class="cursor-pointer hover:bg-gray-light rounded-outer">
+                    <div class="flex flex-col gap-6 py-4">
+                        {{ image }}
+                            {{ partial:components/common/image class="aspect-square" }}
+                        {{ /image }}
+
+                        {{ partial:components/text/subtitle class="text-center" }}
+                            {{ title }} — {{ role }}
+                        {{ /partial:components/text/subtitle }}
+                    </div>
+                </button>
+
+                <div
+                    class="fixed inset-0 bg-black/50 z-50 flex pr-4"
+                    x-show="index == {{ index }}"
+                    x-trap.inert.noscroll="index == {{ index }}"
+                >
+                    <div class="flex flex-col justify-center container py-8">
+                        <div>
+                            <div @click.outside="index = -1" class="flex flex-col w-full gap-8 lg:gap-16 bg-white rounded-outer my-auto max-h-[90vh] overflow-y-auto">
+                                <div class="grid grid-cols-3 p-12">
+                                    {{ image }}
+                                        {{ partial:components/common/image class="aspect-square" }}
+                                    {{ /image }}
+
+                                    <div class="flex flex-col gap-4 col-span-2 pl-12">
+                                        <div class="flex items-start justify-between w-full">
+                                            <div>
+                                                {{ partial:components/text/subtitle }}
+                                                    {{ role }}
+                                                {{ /partial:components/text/subtitle }}
+
+                                                <h2>{{ title }}</h2>
+                                            </div>
+
+                                            <button @click="index = -1">
+                                                {{ partial:svg/cross }}
+                                            </button>
+                                        </div>
+
+                                        <p class="">{{ bio }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{ /people }}
+        {{ /partial:components/common/grid }}
+{{ /partial:components/block }}

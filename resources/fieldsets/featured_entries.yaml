@@ -1,0 +1,16 @@
+title: 'Featured Entries'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: entries
+    field:
+      type: entries
+      display: Entries
+      validate:
+        - required
+  -
+    import: block_settings

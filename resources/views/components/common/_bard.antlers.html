@@ -1,0 +1,10 @@
+{{ if {partial:exists src="components/bard/{type}"} }}
+    {{ partial src="components/bard/{type}" }}
+{{ elseif environment === 'local' }}
+    <div class="container my-24">
+        <p class="text-red-500 text-center font-sans font-bold">
+            Missing block. Please ensure there is a file at
+            "/resources/views/components/bard/_{{type}}.antlers.html"
+        </p>
+    </div>
+{{ /if }}

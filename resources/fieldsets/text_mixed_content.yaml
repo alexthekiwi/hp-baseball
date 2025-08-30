@@ -1,0 +1,35 @@
+title: 'Text/Mixed Content'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: sidebar_type
+    field:
+      options:
+        -
+          key: None
+          value: null
+        -
+          key: Automatic
+          value: null
+        -
+          key: Manual
+          value: null
+      default: Automatic
+      type: button_group
+      display: 'Sidebar Type'
+  -
+    handle: sidebar_title
+    field:
+      type: text
+      display: 'Sidebar Title'
+      if:
+        sidebar_type: 'not None'
+  -
+    handle: bard
+    field: common.bard
+    config:
+      display: Content

@@ -1,0 +1,19 @@
+<div class="{{ class }} {{ partial:components/settings/width }} {{ partial:components/settings/horizontal_alignment }} {{ partial:components/settings/prose }}">
+    {{ content }}
+        {{ if type == 'links' }}
+            <div class="not-prose">
+                {{ partial:components/common/button_group class="" }}
+            </div>
+        {{ elseif type === 'link' }}
+            <div class="not-prose text-base [&:not(:last-child)]:mb-8">
+                {{ partial:components/common/button inline="true" }}
+            </div>
+        {{ elseif type === 'logos' }}
+            <div class="not-prose text-base [&:not(:last-child)]:mb-8">
+                {{ partial:components/common/logos inline="true" }}
+            </div>
+        {{ else }}
+            {{ text }}
+        {{ /if }}
+    {{ /content }}
+</div>

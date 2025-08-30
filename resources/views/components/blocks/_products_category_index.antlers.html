@@ -1,0 +1,19 @@
+{{ partial:components/block }}
+    <div class="grid grid-cols-3 gap-4">
+        {{ taxonomy:categories }}
+            <a href="/products{{ url }}">
+                {{ partial:components/common/title_card class="min-h-72" }}
+                    {{ slot:main }}
+                        <h2>{{ title }}</h2>
+                        <p>{{ entries_count }} result(s)</p>
+                    {{ /slot:main }}
+
+                    {{ slot:subtitle }}
+                        {{ partial:components/text/subtitle }}View Products{{ /partial:components/text/subtitle }}
+                        {{ partial:svg/arrow_right }}
+                    {{ /slot:subtitle }}
+                {{ /partial:components/common/title_card }}
+            </a>
+        {{ /taxonomy:categories }}
+    </div>
+{{ /partial:components/block }}

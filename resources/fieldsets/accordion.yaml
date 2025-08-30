@@ -1,0 +1,12 @@
+title: Accordion
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: bard
+    field: common.bard
+    config:
+      display: Content

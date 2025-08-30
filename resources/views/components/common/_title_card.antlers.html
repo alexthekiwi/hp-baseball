@@ -1,0 +1,15 @@
+<div class="flex flex-col h-full {{ class }}">
+    <div class="flex flex-col bg-gray-light gap-4 p-8 rounded-outer rounded-br-none flex-1">
+        {{ slot:main }}
+    </div>
+
+    <div class="flex h-16">
+        <div class="bg-gray-light flex-1 h-full">
+            <div class="flex items-center rounded-tr-outer gap-2 bg-white h-full px-8">
+                {{ slot:subtitle }}
+            </div>
+        </div>
+
+        <div class="bg-gray-light h-full w-24 rounded-b-outer"></div>
+    </div>
+</div>

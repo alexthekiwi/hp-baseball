@@ -1,0 +1,16 @@
+title: 'Team Members'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: people
+    field:
+      collections:
+        - person
+      type: entries
+      display: People
+  -
+    import: block_settings

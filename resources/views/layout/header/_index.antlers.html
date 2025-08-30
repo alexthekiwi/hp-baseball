@@ -1,0 +1,35 @@
+<header
+    class="w-full z-10 sticky top-0 bg-white"
+    @click.outside="handleClickAway"
+    x-data="{
+        searchOpen: false,
+        navigationMenuOpen: false,
+        navigationMenuToggle() {
+            this.navigationMenuOpen = !this.navigationMenuOpen;
+        },
+        navigationMenuClose() {
+            this.navigationMenuOpen = false;
+        },
+        handleClickAway() {
+            if (this.searchOpen) {
+                this.searchOpen = false;
+            }
+        },
+    }"
+>
+    <div class="hidden xl:block w-full h-full">
+        {{ partial:layout/header/desktop }}
+    </div>
+
+    <div class="block xl:hidden w-full h-full">
+        {{ partial:layout/header/mobile }}
+    </div>
+
+    <div x-show="searchOpen" x-trap="searchOpen" class="absolute top-24 inset-x-0">
+        <div class="container mx-auto mt-4">
+            <div class="bg-white p-8 shadow rounded-outer" @click.outside="searchOpen = false">
+                {{ partial:layout/search }}
+            </div>
+        </div>
+    </div>
+</header>

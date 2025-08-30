@@ -1,0 +1,11 @@
+{{ partial:main }}
+    {{ partial:components/blocks/hero :title="title" subtitle="Products" background_colour="primary" }}
+
+    {{ partial:components/block padding_top="sm" padding_bottom="base" }}
+        {{ partial:components/common/grid }}
+            {{ entries }}
+                {{ partial:components/common/product }}
+            {{ /entries }}
+        {{ /partial:components/common/grid }}
+    {{ /partial:components/block }}
+{{ /partial:main }}

@@ -1,0 +1,13 @@
+{{ partial:components/block }}
+    {{ partial:components/common/title }}
+
+    {{ if mode === 'Recent' }}
+        {{ articles = {collection:articles limit="5"} }}
+    {{ /if }}
+
+    {{ partial:components/common/grid class="mt-24" }}
+        {{ articles }}
+            {{ partial:components/common/article }}
+        {{ /articles }}
+    {{ /partial:components/common/grid }}
+{{ /partial:components/block }}

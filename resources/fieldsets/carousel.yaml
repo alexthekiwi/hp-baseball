@@ -1,0 +1,59 @@
+title: Carousel
+fields:
+  -
+    handle: style
+    field:
+      options:
+        -
+          key: 'Single Showing'
+          value: null
+        -
+          key: 'All Showing'
+          value: null
+      default: All
+      type: button_group
+      display: Style
+  -
+    handle: items
+    field:
+      collapse: true
+      type: replicator
+      display: Items
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            item:
+              display: Item
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: content
+                  field:
+                    type: textarea
+                    display: Content
+                -
+                  handle: buttons
+                  field:
+                    collapse: true
+                    max_sets: 1
+                    type: replicator
+                    display: Buttons
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          button:
+                            display: Button
+                            fields:
+                              -
+                                import: button_simple
+                -
+                  handle: image
+                  field: common.image
+  -
+    import: block_settings

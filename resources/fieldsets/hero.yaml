@@ -1,0 +1,78 @@
+title: Hero
+fields:
+  -
+    handle: title
+    field:
+      type: textarea
+      display: Title
+      validate:
+        - required
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: background_type
+    field:
+      options:
+        -
+          key: Image
+          value: Image
+        -
+          key: Colour
+          value: Colour
+      default: Image
+      type: button_group
+      display: 'Background Type'
+      validate:
+        - required
+  -
+    handle: background_colour
+    field:
+      options:
+        -
+          key: primary
+          value: Primary
+        -
+          key: secondary
+          value: Secondary
+        -
+          key: white
+          value: White
+      default: primary
+      type: button_group
+      display: 'Background Colour'
+      validate:
+        - sometimes
+        - required
+      if:
+        background_type: 'equals Colour'
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image
+      validate:
+        - sometimes
+        - required
+      if:
+        background_type: 'equals Image'
+  -
+    handle: buttons
+    field:
+      type: replicator
+      display: Buttons
+      collapse: true
+      max_sets: 3
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            button:
+              display: Button
+              fields:
+                -
+                  import: button_simple

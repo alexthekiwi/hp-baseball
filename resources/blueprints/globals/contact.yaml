@@ -1,0 +1,26 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: phone
+            field:
+              type: text
+              display: Phone
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+          -
+            handle: address
+            field:
+              type: textarea
+              display: Address
+          -
+            handle: postal_address
+            field:
+              type: textarea
+              display: 'Postal Address'

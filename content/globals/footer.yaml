@@ -1,0 +1,120 @@
+title: Footer
+data:
+  links:
+    -
+      id: mapzvb53
+      title: Product
+      links:
+        -
+          id: mapzvm71
+          text: Features
+        -
+          id: mapzvp3n
+          text: Pricing
+        -
+          id: mapzvst6
+          text: 'Statamic vs WordPress'
+        -
+          id: mapzvt7z
+          text: 'Statamic as a Laravel CMS'
+        -
+          id: mapzvtq9
+          text: Roadmap
+        -
+          id: mapzvuf2
+          text: 'Release Notes'
+        -
+          id: mapzw9h6
+          text: "T-Shirts 'N Stuff"
+      type: section
+      enabled: true
+    -
+      id: mapzwlil
+      title: Marketplace
+      links:
+        -
+          id: mapzwou6
+          text: "What's New"
+        -
+          id: mapzwpca
+          text: Addons
+        -
+          id: mapzwpqf
+          text: 'Starter Kits'
+        -
+          id: mapzwqha
+          text: 'Become a Creator'
+      type: section
+      enabled: true
+    -
+      id: mapzx3n0
+      title: Resources
+      links:
+        -
+          id: mapzx6jq
+          text: Blog
+        -
+          id: mapzx6zx
+          text: Documentation
+        -
+          id: mapzx7bt
+          text: 'Support Center'
+        -
+          id: mapzxfk3
+          text: Showcase
+        -
+          id: mapzxfza
+          text: GitHub
+        -
+          id: mapzxk53
+          text: 'Brand Kit'
+      type: section
+      enabled: true
+    -
+      id: mapzxps0
+      title: Community
+      links:
+        -
+          id: mapzxvyc
+          text: Events
+        -
+          id: mapzxwmo
+          text: 'Community Links'
+        -
+          id: mapzxwzt
+          text: 'Customer Stories'
+        -
+          id: mapzxxcx
+          text: Partners
+        -
+          id: mapzxybx
+          text: Twitter
+        -
+          id: mapzxyo9
+          text: Mastodon
+        -
+          id: mapzxz0x
+          text: Discord
+        -
+          id: mapzxzkb
+          text: 'GitHub Discussions'
+      type: section
+      enabled: true
+    -
+      id: mapzyh51
+      title: Company
+      links:
+        -
+          id: mapzyk0b
+          text: 'About Us'
+        -
+          id: mapzykgd
+          text: 'License Agreement'
+        -
+          id: mapzyksv
+          text: Terms
+        -
+          id: mapzylkf
+          text: Privacy
+      type: section
+      enabled: true

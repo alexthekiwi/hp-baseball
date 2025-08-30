@@ -1,0 +1,42 @@
+title: 'Featured Articles'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+  -
+    handle: mode
+    field:
+      options:
+        -
+          key: Manual
+          value: null
+        -
+          key: Recent
+          value: null
+      default: Recent
+      type: button_group
+      display: Mode
+  -
+    handle: articles
+    field:
+      max_items: 5
+      collections:
+        - articles
+      type: entries
+      display: Articles
+      if:
+        mode: 'equals Manual'
+  -
+    handle: limit
+    field:
+      default: '5'
+      type: integer
+      display: Limit
+      if:
+        mode: 'equals Recent'
+  -
+    import: block_settings

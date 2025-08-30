@@ -1,0 +1,26 @@
+<main id="content" class="flex flex-col min-h-screen">
+    {{ partial:layout/header/index }}
+
+    <div class="flex flex-col gap-8 container py-24 px-72">
+        <h1 class="text-center">{{ title | nl2br | widont() }}</h1>
+        <div class="text-center">
+            {{ partial:components/text/subtitle }}
+                {{ author:name }} – {{ date }}
+            {{ /partial:components/text/subtitle }}
+        </div>
+    </div>
+
+    <div class="flex flex-col flex-grow">
+        <div class="container px-32">
+            {{ thumbnail }}
+                {{ partial:components/common/image }}
+            {{ /thumbnail }}
+        </div>
+
+        <div class="bard container px-72 py-24 text-lg">
+            {{ bard }}
+        </div>
+    </div>
+
+    {{ partial:layout/footer/index }}
+</main>

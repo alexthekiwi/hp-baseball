@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+    max-width: 1280px;
+}
+
+@theme {
+    --color-primary: #D3FF4C;
+    --color-primary-light: #FAF8F7;
+    --color-secondary: #FE259E;
+    --color-gray: #908F8F;
+    --color-gray-light: #E9E9E9;
+    --color-black: #191A1B;
+    --color-white: #fff;
+
+    --radius-outer: 6px;
+    --radius-inner: 4px;
+
+    --padding-none: 0;
+    --padding-sm: 2rem;
+    --padding-md: 5rem;
+    --padding-base: 10rem;
+    --padding-lg: 12rem;
+    --padding-xl: 16rem;
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --padding-none: 0;
+        --padding-sm: 1rem;
+        --padding-md: 4rem;
+        --padding-base: 5rem;
+        --padding-lg: 6rem;
+        --padding-xl: 8rem;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}

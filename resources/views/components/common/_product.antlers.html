@@ -1,0 +1,17 @@
+<div class="flex flex-col gap-8 lg:gap-12">
+    <a title="{{ title }}" href="{{ url }}">
+        {{ image }}
+            {{ partial:components/common/image class="aspect-square" preset="md-webp" }}
+        {{ /image }}
+    </a>
+
+    <div class="flex flex-col gap-4">
+        <a class="{{ url }}">
+            <strong class="max-w-[200px] text-balance">{{ title }}</strong>
+        </a>
+
+        {{ partial:components/text/money }}
+            {{ price }}
+        {{ /partial:components/text/money }}
+    </div>
+</div>

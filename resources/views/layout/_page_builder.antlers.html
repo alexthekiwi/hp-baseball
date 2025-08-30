@@ -1,0 +1,9 @@
+{{ page_builder scope="block" }}
+    {{ if {partial:exists src="components/blocks/{type}"} }}
+        {{ partial src="components/blocks/{type}" }}
+    {{ elseif environment === 'local' }}
+        <div class="container my-24">
+            <p class="text-red-500 text-center font-sans font-bold">Missing block. Please ensure there is a file at "/resources/views/components/blocks/_{{type}}.antlers.html"</p>
+        </div>
+    {{ /if }}
+{{ /page_builder }}

@@ -1,0 +1,21 @@
+{{ partial:components/block }}
+    <div class="grid grid-cols-2">
+        {{ items }}
+            {{ if type === "text" }}
+                <div class="flex flex-col {{ padding == 'None' ? 'p-0' : 'my-auto px-24' }}">
+                    <div class="flex flex-col gap-6">
+                        <h2 class="text-balance max-w-[200px]">{{ title }}</h2>
+
+                        <p class="max-w-[300px]">{{ content }}</p>
+
+                        {{ partial:components/common/buttons size="small" }}
+                    </div>
+                </div>
+            {{ elseif type === "media" }}
+                {{ asset }}
+                    {{ partial:components/common/image }}
+                {{ /asset }}
+            {{ /if }}
+        {{ /items }}
+    </div>
+{{ /partial:components/block }}

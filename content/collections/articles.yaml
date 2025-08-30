@@ -1,0 +1,16 @@
+title: Articles
+template: article
+layout: layout
+taxonomies:
+  - tags
+revisions: false
+route: '/articles/{{ slug }}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

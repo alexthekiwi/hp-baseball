@@ -1,0 +1,31 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: facebook
+            field:
+              type: text
+              display: Facebook
+          -
+            handle: instagram
+            field:
+              type: text
+              display: Instagram
+          -
+            handle: linkedin
+            field:
+              type: text
+              display: LinkedIn
+          -
+            handle: youtube
+            field:
+              type: text
+              display: YouTube
+          -
+            handle: pinterest
+            field:
+              type: text
+              display: Pinterest

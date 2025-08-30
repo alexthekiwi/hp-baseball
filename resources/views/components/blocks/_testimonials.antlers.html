@@ -1,0 +1,29 @@
+{{ partial:components/block }}
+    <div class="flex flex-col gap-8 items-center">
+        {{ partial:components/text/subtitle }}
+            Testimonials
+        {{ /partial:components/text/subtitle }}
+
+        <h2 class="mb-16">{{ title }}</h2>
+
+        {{ partial:components/common/grid }}
+            {{ testimonials }}
+                {{ partial:components/common/title_card :subtitle="author_name" }}
+                    {{ slot:main }}
+                        {{ partial:svg/quote }}
+
+                        <h3>{{ title }}</h3>
+
+                        {{ content }}
+                    {{ /slot:main }}
+
+                    {{ slot:subtitle }}
+                        {{ partial:components/text/subtitle class="whitespace-nowrap" }}
+                            {{ author_name }}
+                        {{ /partial:components/text/subtitle }}
+                    {{ /slot:subtitle }}
+                {{ /partial:components/common/title_card }}
+            {{ /testimonials }}
+        {{ /partial:components/common/grid }}
+    </div>
+{{ /partial:components/block }}

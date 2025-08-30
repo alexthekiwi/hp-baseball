@@ -1,0 +1,28 @@
+title: Banner
+fields:
+  -
+    handle: image
+    field:
+      max_files: 1
+      min_files: 1
+      container: assets
+      type: assets
+      display: Image
+      validate:
+        - required
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+  -
+    handle: content
+    field:
+      type: textarea
+      display: Content
+  -
+    import: buttons
+  -
+    import: block_settings

@@ -1,0 +1,62 @@
+/* Global Styles */
+
+h1 {
+    @apply text-5xl md:text-6xl xl:text-7xl font-bold;
+}
+
+h2 {
+    @apply text-2xl md:text-3xl xl:text-4xl font-bold leading-[125%];
+}
+
+h3 {
+    @apply text-lg font-bold;
+}
+
+.vertical-text {
+    writing-mode: sideways-lr;
+    text-orientation: mixed;
+}
+
+summary {
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::marker {
+    display: none;
+}
+
+.bard {
+    @apply flex flex-col gap-8;
+
+    h2 {
+        @apply pt-8;
+    }
+
+    strong {
+        @apply font-bold;
+    }
+
+    code {
+        @apply font-bold
+    }
+
+    code::before {
+        content: "`";
+    }
+
+    code::after {
+        content: "`";
+    }
+
+    img {
+        @apply rounded-outer shadow-lg;
+    }
+}
+
+[x-cloak] {
+    display: none !important;
+}

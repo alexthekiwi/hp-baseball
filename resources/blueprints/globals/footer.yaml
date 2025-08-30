@@ -1,0 +1,46 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: tagline
+            field:
+              type: textarea
+              display: Tagline
+          -
+            handle: links
+            field:
+              type: replicator
+              display: Links
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    section:
+                      display: Section
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
+                          handle: links
+                          field:
+                            type: grid
+                            display: Links
+                            fields:
+                              -
+                                handle: text
+                                field:
+                                  type: text
+                                  display: Text
+                                  width: 33
+                              -
+                                handle: link
+                                field:
+                                  type: link
+                                  display: Link
+                                  width: 66

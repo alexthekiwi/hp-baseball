@@ -1,0 +1,26 @@
+title: Accordions
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+  -
+    handle: items
+    field:
+      collapse: true
+      type: replicator
+      display: Items
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            accordion:
+              display: Accordion
+              fields:
+                -
+                  import: accordion
+  -
+    import: block_settings

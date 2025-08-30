@@ -1,0 +1,9 @@
+{{ if image_link }}
+    <a aria-label="Section image link" href="{{ image_link }}" target="_blank" rel="noreferrer">
+{{ /if }}
+
+{{ partial:components/common/image }}
+
+{{ if image_link }}
+    </a>
+{{ /if }}

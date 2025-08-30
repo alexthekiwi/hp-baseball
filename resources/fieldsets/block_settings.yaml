@@ -1,0 +1,29 @@
+title: 'Block Settings'
+fields:
+  -
+    handle: block_settings
+    field:
+      type: section
+      display: 'Block Settings'
+  -
+    handle: anchor_id
+    field:
+      type: text
+      display: 'Anchor ID'
+  -
+    handle: background_colour
+    field: common.background_colour
+    config:
+      default: White
+  -
+    handle: padding_top
+    field: common.size
+    config:
+      display: 'Padding Top'
+      width: 50
+  -
+    handle: padding_bottom
+    field: common.size
+    config:
+      display: 'Padding Bottom'
+      width: 50

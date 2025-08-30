@@ -1,0 +1,123 @@
+{{ nocache }}
+    {{ if handle }}
+        <div>
+            {{ nocache }}
+                {{ form:create :in="handle" }}
+                    <div
+                        id="{{ handle }}"
+                        x-data="{
+                            wasRecentlySubmitted: Boolean('{{ success }}' || '{{ (errors | count) > 0 }}' || '{{ error:captcha }}'),
+                        }"
+                        {{# Scroll to the top of the form if it was recently submitted #}}
+                        x-init="
+                            if (wasRecentlySubmitted) {
+                                $nextTick(() => {
+                                    window.scrollTo({
+                                        top: document.getElementById('{{ handle }}').getBoundingClientRect().top + window.scrollY - 200,
+                                        behavior: 'smooth',
+                                    });
+                                });
+                            }
+                        "
+                        data-aos="fade-up"
+                        data-aos-duration="900"
+                    >
+                        {{ if success }}
+                            <div class="bg-white text-green-500 font-bold text-center border border-green-500 p-4 rounded-outer">
+                                {{ success_message ?? 'Thanks for your submission! This has been received.' }}
+                            </div>
+                        {{ else }}
+
+                            {{ if errors }}
+                                <div class="bg-red-50 p-4 mb-8 border border-red-500 text-red-500 rounded-outer">
+                                    {{ errors }}
+                                        {{ value }}<br>
+                                    {{ /errors }}
+                                </div>
+                            {{ /if }}
+
+                            <div class="flex flex-col gap-8 print:gap-4">
+                                {{ sections }}
+                                    <fieldset>
+                                        {{ if sections | count > 1 }}
+                                            <legend>{{ display }}</legend>
+                                        {{ /if }}
+                                        <div class="w-full grid sm:grid-cols-12 gap-6 print:gap-2">
+                                            {{ fields }}
+                                                <div class="{{ input_type == 'hidden' ?= 'hidden' }} flex flex-col space-y-3
+                                                    {{ width == '25' ?= 'sm:col-span-3' }}
+                                                    {{ width == '33' ?= 'sm:col-span-4' }}
+                                                    {{ width == '50' ?= 'sm:col-span-6' }}
+                                                    {{ width == '66' ?= 'sm:col-span-8' }}
+                                                    {{ width == '75' ?= 'sm:col-span-9' }}
+                                                    {{ width == '100' ?= 'sm:col-span-12' }}"
+                                                >
+                                                    {{ if type === 'checkboxes' || type === 'radio' }}
+                                                        <div class="flex flex-col gap-4">
+                                                            {{ if display && ! hide_display }}
+                                                                <div>{{ display }}</div>
+                                                            {{ /if }}
+                                                            {{ if instructions && instructions_position == "above" }}
+                                                                <span class="text-xs">{{ instructions }}</span>
+                                                            {{ /if }}
+                                                            <div class="flex gap-6 {{ inline ? 'flex-row flex-wrap items-center' : 'flex-col items-start' }}">
+                                                                {{ field }}
+                                                            </div>
+                                                            {{ if instructions && instructions_position == "below" }}
+                                                                <span class="text-xs">{{ instructions }}</span>
+                                                            {{ /if }}
+                                                            {{ if error }}
+                                                                <span class="error">{{ error }}</span>
+                                                            {{ /if }}
+                                                        </div>
+                                                    {{ else }}
+                                                        <label>
+                                                            {{ if input_type !== 'hidden' }}
+                                                                {{ if display && ! hide_display }}
+                                                                    <div>{{ display }}</div>
+                                                                {{ /if }}
+                                                            {{ /if }}
+                                                            {{ if instructions && instructions_position == "above" }}
+                                                                <span class="text-xs mb-1 print:mb-0">{{ instructions }}</span>
+                                                            {{ /if }}
+                                                            {{ field }}
+                                                            {{ if instructions && instructions_position == "below" }}
+                                                                <span class="text-xs">{{ instructions }}</span>
+                                                            {{ /if }}
+                                                            {{ if error }}
+                                                                <span class="text-red-500 text-sm">{{ error }}</span>
+                                                            {{ /if }}
+                                                        </label>
+                                                    {{ /if }}
+                                                </div>
+                                            {{ /fields }}
+                                            {{# Honeypot spam protection. #}}
+                                            <div class="hidden">
+                                                <label for="{{ honeypot }}">{{ honeypot }} <sup>*</sup></label>
+                                                <input class="w-full" id="{{ honeypot }}" type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"/>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                {{ /sections }}
+                            </div>
+
+                            <div class="flex items-start w-full flex-wrap gap-6 justify-between mt-8 print:hidden">
+                                <div class="bg-gray-light p-4 flex gap-6 rounded-outer items-center w-full justify-between">
+                                    <p class="text-xs">We do not share your information.</p>
+                                    {{ partial:components/common/button
+                                        type="submit"
+                                        as="button"
+                                        colour="black"
+                                        style="Solid"
+                                    }}
+                                </div>
+                            </div>
+                        {{ /if }}
+                    </div>
+                {{ /form:create }}
+            {{ /nocache }}
+        </div>
+    {{ else }}
+        <p class="text-red-500">No form handle specified.</p>
+    {{ /if }}
+{{ /nocache }}

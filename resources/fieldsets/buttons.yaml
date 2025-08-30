@@ -1,0 +1,23 @@
+title: Buttons
+fields:
+  -
+    handle: buttons
+    field:
+      collapse: true
+      type: replicator
+      display: Buttons
+      max_sets: 3
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            button_simple:
+              display: 'Button (simple)'
+              fields:
+                -
+                  import: button_simple
+            button_styled:
+              display: 'Button (styled)'
+              fields:
+                -
+                  import: button_styled

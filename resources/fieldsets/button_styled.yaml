@@ -1,0 +1,26 @@
+title: 'Button (styled)'
+fields:
+  -
+    import: button_simple
+  -
+    handle: style
+    field:
+      options:
+        -
+          key: Outlined
+          value: null
+        -
+          key: Solid
+          value: null
+        -
+          key: Underlined
+          value: null
+      default: Outlined
+      type: button_group
+      display: Style
+      width: 50
+  -
+    handle: colour
+    field: common.colour
+    config:
+      width: 50

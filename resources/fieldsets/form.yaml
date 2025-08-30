@@ -1,0 +1,15 @@
+title: Form
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: form
+    field:
+      max_items: 1
+      type: form
+      display: Form
+  -
+    import: block_settings

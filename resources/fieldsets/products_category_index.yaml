@@ -1,0 +1,4 @@
+title: 'Products Category Index'
+fields:
+  -
+    import: block_settings

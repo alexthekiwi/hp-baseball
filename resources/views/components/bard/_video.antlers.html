@@ -1,0 +1,9 @@
+{{ if video | is_embeddable }}
+    <iframe class="w-full aspect-video" loading="lazy" controls accesskey=""src="{{ video | embed_url | replace('youtube.com', 'youtube-nocookie.com') }}"></iframe>
+{{ else }}
+    <video
+        controls
+        src="{{ video }}"
+        loading="lazy"
+    ></video>
+{{ /if }}

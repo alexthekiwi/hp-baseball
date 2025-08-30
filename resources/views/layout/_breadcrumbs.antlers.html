@@ -1,0 +1,14 @@
+<ul class="flex gap-6 bg-primary-light p-5 rounded-outer px-8">
+    {{ nav:breadcrumbs }}
+        <li class="flex items-center gap-1 {{ if is_current }}current{{ /if }}">
+            <div class="rotate-90">
+                {{ partial:svg/chevron_up class="size-5" }}
+            </div>
+            <a href="{{ url }}">
+                {{ partial:components/text/subtitle class="text-sm" }}
+                    {{ title }}
+                {{ /partial:components/text/subtitle }}
+            </a>
+        </li>
+    {{ /nav:breadcrumbs }}
+</ul>

@@ -1,0 +1,23 @@
+{{ collection from="redirects" query_scope="path_scope" :path="current_uri" }}
+    {{ if redirect_type == 'entry' && entry }}
+        {{ redirect :to="entry:permalink" response="{response_code}" }}
+    {{ elseif redirect_type == 'url' && external_url }}
+        {{ redirect :to="external_url" response="{response_code}" }}
+    {{ /if }}
+{{ /collection }}
+
+{{ seo_title = 'Page Not Found' }}
+
+{{ partial:main }}
+    {{ partial:components/blocks/hero
+        title="Page Not Found"
+        subtitle="404 Error"
+        background_type="Colour"
+        background_colour="primary"
+        :no_breadcrumbs="1"
+    }}
+    <section class="container flex flex-col items-start gap-6 py-24">
+        <p class="text-xl">Uh oh, you've hit a route that doesn't exist.</p>
+        {{ partial:components/common/button content="Go home" url="/" colour="primary" style="Solid" }}
+    </section>
+{{ /partial:main }}

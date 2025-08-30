@@ -1,0 +1,131 @@
+{{#
+	@name Form owner HTML
+	@desc This is the html email template that goes to the owner of the site when a form has been submitted.
+#}}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style media="screen" type="text/css">
+        @media only screen and (max-width: 640px) {
+            h1 { font-size: 22px; font-weight: 700; margin: 22px 0 5px; }
+        }
+    </style>
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" bgcolor="#ffffff" style='background-color:#fff; font-family:"Open Sans", sans-serif; font-size:16px; height:100%; line-height:1.45; margin:0; padding:0; width:100%' height="100%" width="100%">
+    <table cellpadding="0" cellspacing="0" border="0" bgcolor="#F4F4F4" style="width:100%; background-color:#F4F4F4; margin:0 auto" width="100%">
+        <tr>
+            <td valign="top" align="center" style="vertical-align:top">
+                <!-- email wrapper -->
+                <table cellpadding="0" cellspacing="0" border="0" style="width:100%; margin:22px auto; max-width:616px" width="100%">
+                    <tr>
+                        <td style="vertical-align:top" valign="top">
+                            <!-- header -->
+                            <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                <tr>
+                                    <td align="center" style="vertical-align:top; color:#1A202C; padding:22px" valign="top">
+                                        <div>
+                                            <img src="{{ config:app:url + '/visuals/logo.png' }}" alt="{{ config:app:name }}" width="200px" height="auto" style="max-width:100%; margin-bottom:22px">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            {{ $url = config:app:url }}
+                            {{ $handle = form:handle }}
+
+                            <!-- /header -->
+                            <!-- main wrapper -->
+                            <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                <tr>
+                                    <td style="vertical-align:top; padding:22px" valign="top">
+                                        <!-- content wrapper -->
+                                        <table cellpadding="0" cellspacing="0" border="0" style="width:100%; background-color:#fff" width="100%" bgcolor="#ffffff">
+                                            <tr>
+                                                <td align="center" style="vertical-align:top" valign="top">
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="vertical-align:top; padding:22px; border-bottom:22px solid #F4F4F4; border-radius: 12px;" valign="top">
+                                                                    <p>Form: {{ form:title }}</p>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width:100%; text-align:left" width="100%" align="left">
+                                                        <tr>
+                                                            <td style='vertical-align:top; padding:11px; border-radius: 12px;' valign="top">
+                                                                <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                                                    {{ fields }}
+                                                                        {{ if value && handle !== 'consent' && fieldtype !== "assets" }}
+                                                                            <tr>
+                                                                                <td style='vertical-align:top; padding:11px; border-bottom:#e3e3da 1px solid; font-size:14px' valign="top">
+                                                                                    <p style="margin:0">
+                                                                                        <strong>{{ trans :key="display" :locale="site:locale" }}:</strong>
+                                                                                    </p>
+                                                                                    <p style="white-space:pre-line; font-family:inherit; margin:0">
+                                                                                        {{ if value | is_array }}
+                                                                                            {{ value | join(', ') }}
+                                                                                        {{ else }}
+                                                                                            {{ value }}
+                                                                                        {{ /if }}
+                                                                                    </p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        {{ /if }}
+
+                                                                        {{ if value && fieldtype == "assets" }}
+                                                                            <tr>
+                                                                                <td style='vertical-align:top; padding:11px; border-bottom:#e3e3da 1px solid; font-size:14px' valign="top">
+                                                                                    <strong>{{ trans :key="display" :locale="site:locale" }}:</strong><br>
+
+                                                                                    {{ if value }}
+                                                                                        <pre style="white-space:pre-line; font-family:inherit; margin:0">
+                                                                                            <a href="{{ $url }}/admin/forms/{{ $handle }}/submissions/{{ id }}">View in CMS</a>
+                                                                                        </pre>
+                                                                                    {{ else }}
+                                                                                        <pre>Nothing uploaded</pre>
+                                                                                    {{ /if }}
+                                                                                </td>
+                                                                            </tr>
+                                                                        {{ /if }}
+                                                                    {{ /fields }}
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr align="center" style="padding:0 0 22px">
+                                                            <td style='vertical-align:top; padding:11px' valign="top">
+                                                                <span style="color:#918f8d; font-size:12px">Submitted {{ now | timezone | format('r') }}.</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- /content wrapper -->
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- /main wrapper -->
+                            <!-- footer -->
+                            <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                <tr>
+                                    <td align="center" style="vertical-align:top; padding:22px; text-align:center; color:#918f8d; font-size:12px" valign="top">
+                                        <a aria-label="{{ config:app:url }}" href="{{ config:app:url }}" style="color:#918f8d; text-decoration:underline; font-size:12px">{{ config:app:name }}</a >
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- /footer -->
+                        </td>
+                    </tr>
+                </table>
+                <!-- /email wrapper -->
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

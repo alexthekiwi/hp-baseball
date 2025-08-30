@@ -1,0 +1,7 @@
+{{ switch(
+    (background_colour == 'primary') => 'bg-primary-light',
+    (background_colour == 'secondary') => 'bg-secondary-light',
+    (background_colour == 'white') => 'bg-white',
+    (background_colour == 'gray') => 'bg-gray-50',
+    () => 'bg-white',
+)}}

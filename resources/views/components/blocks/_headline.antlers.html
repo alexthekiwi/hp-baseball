@@ -1,0 +1,18 @@
+{{ if heading === 'H1' }}
+    {{ $tag = 'h1' }}
+{{ elseif heading === 'H2' }}
+    {{ $tag = 'h2' }}
+{{ /if }}
+
+{{ partial:components/block }}
+    <div class="{{ if keyline && alignment === 'Left' }} border-b border-b-2 pb-8 {{ /if }}">
+        {{ if alignment === 'Center' }}
+            <{{ $tag }} class="text-balance xl:text-center">{{ title }}</{{ $tag }}>
+        {{ /if }}
+
+        {{ if alignment === 'Left' }}
+            <{{ $tag }} class="">{{ title }}</{{ $tag }}>
+        {{ /if }}
+    </div>
+
+{{ /partial:components/block }}

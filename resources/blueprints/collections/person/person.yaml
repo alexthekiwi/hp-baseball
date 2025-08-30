@@ -1,0 +1,52 @@
+title: Person
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Name
+          -
+            handle: role
+            field:
+              type: text
+              display: Role
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+          -
+            handle: bio
+            field:
+              type: markdown
+              display: Bio
+          -
+            handle: phone
+            field:
+              type: text
+              display: Phone
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+  sidebar:
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

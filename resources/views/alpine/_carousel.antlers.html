@@ -1,0 +1,138 @@
+<script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js"></script>
+
+<div
+    x-data="{
+        active: 0,
+        skip: 3,
+        atBeginning: false,
+        atEnd: false,
+        next() {
+            this.to((current, offset) => current + (offset * this.skip))
+        },
+        prev() {
+            this.to((current, offset) => current - (offset * this.skip))
+        },
+        to(strategy) {
+            let slider = this.$refs.slider
+            let current = slider.scrollLeft
+            let offset = slider.firstElementChild.getBoundingClientRect().width
+            slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
+        },
+        handleClick(index) {
+            // scroll the active index to be in the center of the carousel
+            // the carousel has {skip} number of items total (3)
+
+            this.active = index;
+
+{{#             const modSkip = index % this.skip; #}}
+{{#             console.log(modSkip, index, this.skip) #}}
+{{#             if (modSkip === this.skip - 1) { #}}
+{{#                 this.next(); #}}
+{{#             } #}}
+        },
+        focusableWhenVisible: {
+            'x-intersect:enter'() {
+                this.$el.removeAttribute('tabindex')
+            },
+            'x-intersect:leave'() {
+                this.$el.setAttribute('tabindex', '-1')
+            },
+        },
+        disableNextAndPreviousButtons: {
+            'x-intersect:enter.threshold.05'() {
+                let slideEls = this.$el.parentElement.children
+
+                // If this is the first slide.
+                if (slideEls[0] === this.$el) {
+                    this.atBeginning = true
+                // If this is the last slide.
+                } else if (slideEls[slideEls.length-1] === this.$el) {
+                    this.atEnd = true
+                }
+            },
+            'x-intersect:leave.threshold.05'() {
+                let slideEls = this.$el.parentElement.children
+
+                // If this is the first slide.
+                if (slideEls[0] === this.$el) {
+                    this.atBeginning = false
+                // If this is the last slide.
+                } else if (slideEls[slideEls.length-1] === this.$el) {
+                    this.atEnd = false
+                }
+            },
+        },
+    }"
+    class="flex w-full flex-col"
+>
+    <div>
+        {{ supplementary_images }}
+            <div class="flex flex-col bg-black/50 rounded-outer overflow-hidden aspect-square w-full" x-show="active === {{ index }}">
+                {{ partial:components/common/image class="w-full my-auto !rounded-none bg-gray-50" }}
+            </div>
+        {{ /supplementary_images }}
+    </div>
+
+    {{ if (supplementary_images | length) > 0 }}
+        <div
+            x-on:keydown.right="next"
+            x-on:keydown.left="prev"
+            tabindex="0"
+            role="region"
+            aria-labelledby="carousel-label"
+            class="flex space-x-0 -mx-8"
+        >
+            <h2 id="carousel-label" class="sr-only" hidden>Carousel</h2>
+
+            <!-- Prev Button -->
+            <button
+                x-on:click="prev"
+                class="text-6xl"
+                :aria-disabled="atBeginning"
+                :tabindex="atEnd ? -1 : 0"
+                :class="{ 'opacity-50 cursor-not-allowed': atBeginning }"
+            >
+                <span aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-800">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </span>
+                <span class="sr-only">Skip to previous slide page</span>
+            </button>
+
+            <span id="carousel-content-label" class="sr-only" hidden>Carousel</span>
+
+            <ul
+                x-ref="slider"
+                tabindex="0"
+                role="listbox"
+                aria-labelledby="carousel-content-label"
+                class="flex w-full snap-x snap-mandatory overflow-x-hidden mt-2 mx-2 gap-2"
+            >
+                {{ supplementary_images }}
+                    <li :class="{ '!border-secondary': active === {{ index }} }" x-bind="disableNextAndPreviousButtons" class="border border-gray-300 rounded-outer flex w-[calc(33%-0.25rem)] shrink-0 snap-start flex-col items-center justify-center" role="option">
+                        <button @click="handleClick({{ index }})" x-bind="focusableWhenVisible" class="rounded-outer w-full overflow-hidden aspect-video bg-gray-200">
+                            <img class="w-full h-full object-cover" src="{{ url }}" alt="placeholder image">
+                        </button>
+                    </li>
+                {{ /supplementary_images }}
+            </ul>
+
+            <!-- Next Button -->
+            <button
+                x-on:click="next"
+                :aria-disabled="atEnd"
+                :tabindex="atEnd ? -1 : 0"
+                :class="{ 'opacity-50 cursor-not-allowed': atEnd }"
+            >
+                <span aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-800">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </span>
+                <span class="sr-only">Skip to next slide page</span>
+            </button>
+        </div>
+    {{ /if }}
+
+</div>

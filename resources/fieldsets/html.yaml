@@ -1,0 +1,9 @@
+title: HTML
+fields:
+  -
+    handle: html
+    field:
+      type: code
+      display: HTML
+  -
+    import: block_settings

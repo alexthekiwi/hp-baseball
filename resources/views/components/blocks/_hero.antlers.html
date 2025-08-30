@@ -1,0 +1,37 @@
+<section>
+    {{ if background_type === 'Image' }}
+        {{ partial:components/common/background_image }}
+            <div class="container flex flex-col gap-12 justify-center h-full text-white">
+                <h1 class="max-w-xl">
+                    {{ title | nl2br | widont() }}
+                </h1>
+
+                {{ if subtitle }}
+                    <p>{{ subtitle }}</p>
+                {{ /if }}
+
+                {{ partial:components/common/buttons colour="white" style="Solid" }}
+            </div>
+        {{ /partial:components/common/background_image }}
+    {{ else }}
+        <div class="{{ partial:components/settings/background_colour }} mb-12">
+            <div class="flex flex-col gap-8 py-24 container">
+                <h1 class="text-center">
+                    {{ title | nl2br | widont() }}
+                </h1>
+
+                {{ if subtitle }}
+                    {{ partial:components/text/subtitle class="text-center" }}
+                        {{ subtitle }}
+                    {{ /partial:components/text/subtitle }}
+                {{ /if }}
+
+                {{ partial:components/common/buttons }}
+            </div>
+        </div>
+
+        <div class="container mx-auto mb-12">
+            {{ partial:layout/breadcrumbs }}
+        </div>
+    {{ /if }}
+</section>

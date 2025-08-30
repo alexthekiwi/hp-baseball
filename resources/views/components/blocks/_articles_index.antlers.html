@@ -1,0 +1,34 @@
+{{ partial:components/block padding_bottom="base" }}
+    {{ partial:components/common/grid }}
+        <form action="" method="get" class="grid col-span-full grid-cols-subgrid mb-16">
+            <label>
+                Filter by tags
+                <select name="tag">
+                    <option value="">All</option>
+                    {{ taxonomy:tags }}
+                        <option {{ if get:tag === slug }}selected{{ /if }} value="{{ slug }}">{{ title }}</option>
+                    {{ /taxonomy:tags }}
+                </select>
+            </label>
+
+            <label>
+                Search keywords
+                <input type="text" name="keywords" value="{{ get:keywords }}" />
+            </label>
+
+            <div class="mt-auto">
+                {{ partial:components/common/button as="button" type="submit" button_text="Search" colour="primary" style="Solid" }}
+            </div>
+        </form>
+
+        {{ search_results index="articles" }}
+            {{ if no_results }}
+                No results found
+            {{ else }}
+                {{ items }}
+                    {{ partial:components/common/article }}
+                {{ /items }}
+            {{ /if }}
+        {{ /search_results }}
+    {{ /partial:components/common/grid }}
+{{ /partial:components/block }}

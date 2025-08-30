@@ -1,0 +1,42 @@
+<div class="flex flex-col gap-8 relative" x-data="{ showResults: false }" @click.outside="showResults = false" x-show="searchOpen" x-trap.inert="showResults">
+    <input
+        x-ref="search"
+        type="text"
+        placeholder="Search this site"
+        class="w-full h-16"
+        x-focus
+        wire:model.live.debounce.300ms="q"
+        name="q"
+        @focus="showResults = true"
+    />
+
+    <div class="bg-white flex flex-col gap-2 w-full z-10 overflow-y-auto">
+        {{ results }}
+            <a
+                aria-label="{{ title }}"
+                href="{{ collection == 'resources' && asset_type == 'asset' ? asset:url : url }}"
+                {{ if (collection == 'resources' && asset_type == 'asset') }}
+                    target="_blank"
+                {{ /if }}
+                class="p-6 bg-primary-light rounded-inner"
+            >
+                <span class="flex items-center gap-2">
+                    {{ partial:components/text/subtitle }}
+                        {{ collection }}
+                    {{ /partial:components/text/subtitle }}
+
+                    <span>–</span>
+
+                    <strong>{{ title }}</strong>
+                </span>
+                <p class="font-light text-black">{{ excerpt ?? description }}</p>
+            </a>
+        {{ /results }}
+
+        {{ if results | length == 0 }}
+            <div class="p-6 bg-primary-light rounded-inner">
+                No Results
+            </div>
+        {{ /if }}
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="flex flex-col gap-6">
+    <h3>
+        {{ title }}
+    </h3>
+
+    {{ partial:components/text/light }}
+        {{ excerpt | truncate(80, '...') }}
+    {{ /partial:components/text/light }}
+
+    <a href="{{ url }}">
+        {{ thumbnail }}
+            {{ partial:components/common/image class="aspect-video" }}
+        {{ /thumbnail }}
+    </a>
+
+    <a href="{{ permalink }}" class="flex items-center gap-2 text-sm">
+        {{ partial:components/text/subtitle }}
+            Read more
+        {{ /partial:components/text/subtitle }}
+
+        {{ partial:svg/arrow_right }}
+    </a>
+</div>

@@ -1,0 +1,11 @@
+{{ partial:components/block }}
+    <div class="flex flex-col gap-8">
+        {{ if title }}
+            {{ partial:components/common/title }}
+        {{ /if }}
+
+        <div class="max-w-2xl">
+            {{ partial:components/common/form :handle="form.handle" :button_text="button_text ?? 'Submit'" }}
+        </div>
+    </div>
+{{ /partial:components/block }}

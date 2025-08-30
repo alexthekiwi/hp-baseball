@@ -1,0 +1,74 @@
+title: Redirect
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              placeholder: /old-url
+              display: 'Old URL'
+              instructions: 'For example: `/my-old-url`.'
+              width: 50
+              listable: true
+              validate:
+                - required
+                - 'starts_with:/'
+          -
+            handle: response_code
+            field:
+              options:
+                301: 'Permanent (301) - Use for moved pages'
+                302: 'Temporary (302) - Use for friendly URLs'
+              searchable: false
+              default: '302'
+              type: select
+              display: 'Response Code'
+              instructions: 'The HTTP response code'
+              width: 50
+              replicator_preview: false
+          -
+            handle: redirect_type
+            field:
+              options:
+                entry: Entry
+                url: URL
+              default: entry
+              type: select
+              display: 'Redirect Type'
+              instructions: 'Where should the redirect go?'
+              width: 50
+              validate:
+                - required
+          -
+            handle: entry
+            field:
+              max_items: 1
+              create: false
+              type: entries
+              display: Entry
+              instructions: 'Link to an entry on this site'
+              width: 50
+              validate:
+                - sometimes
+                - 'required_if:redirect_type,entry'
+              if:
+                redirect_type: 'equals entry'
+              collections:
+                - pages
+          -
+            handle: external_url
+            field:
+              type: text
+              display: URL
+              instructions: 'Link to an external URL, or create a "vanity URL".'
+              width: 50
+              validate:
+                - sometimes
+                - 'required_if:redirect_type,url'
+              if:
+                redirect_type: 'equals url'

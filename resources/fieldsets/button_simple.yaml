@@ -1,0 +1,15 @@
+title: 'Button (simple)'
+fields:
+  -
+    handle: text
+    field:
+      type: text
+      display: Text
+      validate:
+        - required
+  -
+    handle: link
+    field: common.link
+    config:
+      validate:
+        - required

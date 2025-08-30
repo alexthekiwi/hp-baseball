@@ -1,0 +1,68 @@
+title: 'Content Block'
+fields:
+  -
+    handle: items
+    field:
+      collapse: true
+      type: replicator
+      display: Items
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            text:
+              display: Text
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: background_type
+                  field:
+                    options:
+                      -
+                        key: Transparent
+                        value: null
+                      -
+                        key: Solid
+                        value: null
+                    type: button_group
+                    display: 'Background Type'
+                    width: 50
+                    default: Transparent
+                -
+                  handle: padding
+                  field:
+                    options:
+                      -
+                        key: None
+                        value: null
+                      -
+                        key: Base
+                        value: null
+                    type: button_group
+                    display: Padding
+                    width: 50
+                    default: None
+                -
+                  handle: content
+                  field:
+                    type: textarea
+                    display: Content
+                -
+                  import: buttons
+            media:
+              display: Media
+              fields:
+                -
+                  handle: asset
+                  field:
+                    max_files: 1
+                    min_files: 1
+                    container: assets
+                    type: assets
+                    display: Asset
+  -
+    import: block_settings

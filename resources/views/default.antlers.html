@@ -1,0 +1,15 @@
+<main id="content" class="flex flex-col min-h-screen">
+    {{ partial:layout/header/index }}
+
+    <div class="flex flex-col flex-grow">
+        {{ page_builder }}
+            {{ if first && type !== 'hero' }}
+                {{ partial:components/blocks/hero :title="page:title" background_type="Colour" background_colour="primary" }}
+            {{ /if }}
+        {{ /page_builder }}
+
+        {{ partial:layout/page_builder }}
+    </div>
+
+    {{ partial:layout/footer/index }}
+</main>
