@@ -8,6 +8,9 @@
 
             // Calculates the flex-basis for an item based on whether it's active or not
             getItemFlexBasis(index) {
+                // On mobile, don't apply flex-basis calculations
+                if (window.innerWidth < 768) return 'auto';
+
                 if (this.itemsCount <= 0) return '0%'; // Should not happen with data
                 if (this.itemsCount === 1) return '100%'; // Single item takes full width
 
@@ -20,24 +23,29 @@
                 }
             }
         }"
-            class="flex h-[500px] md:h-[600px] w-full rounded-outer overflow-hidden bg-black divide-x divide-white"
+            class="flex flex-col md:flex-row h-auto md:h-[600px] w-full rounded-outer overflow-hidden bg-black divide-y md:divide-y-0 md:divide-x divide-white"
 {{#             @mouseleave="if (itemsCount > 0) activeIndex = 0" #}}
         >
             {{ items }}
                 <div
                     @mouseenter="activeIndex = {{ index }}" {{# Update activeIndex on hover; 'index' is 0-based from Antlers #}}
-                    class="relative h-full overflow-hidden cursor-default transition-all duration-700 ease-in-out group"
+                    @click="activeIndex = {{ index }}" {{# Also handle click for mobile #}}
+                    class="relative md:h-full w-full overflow-hidden cursor-pointer md:cursor-default transition-all duration-700 ease-in-out group"
+                    :class="{
+                        'h-[300px]': activeIndex === {{ index }},
+                        'h-[70px]': activeIndex !== {{ index }}
+                    }"
                     :style="{ flexBasis: getItemFlexBasis({{ index }}) }"
                     role="region"
                     aria-label="{{ title }}"
                 >
                     {{# Background image with brightness filter #}}
-                    <div 
+                    <div
                         class="absolute inset-0 bg-cover bg-center transition-all duration-700"
                         style="background-image: url('{{ glide :src="image" preset="xl-webp" width="1000" height="1000" fit="crop_focal" }}');"
                         :style="{ filter: activeIndex === {{ index }} ? 'brightness(1)' : 'brightness(0.7)' }"
                     ></div>
-                    
+
                     {{# Overlay #}}
                     <div
                         class="absolute inset-0 transition-opacity duration-700 ease-in-out pointer-events-none"
@@ -57,18 +65,16 @@
                     >
                         <h3 class="text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-tight">{{ title }}</h3>
                         <p class="mb-4 md:mb-6 text-sm sm:text-base lg:text-lg max-w-md leading-relaxed">{{ content }}</p>
-                        {{ if button && button.text && button.url }}
-                            <a
-                                :href="button.url"
-                                class="bg-white text-gray-900 font-semibold py-2.5 px-5 md:py-3 md:px-7 rounded-md
-                                hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75
-                                transition-all transform hover:scale-105 text-sm md:text-base"
-                            >
-                                {{ button.text }}
-                            </a>
+                        {{ if ! (buttons | is_empty) }}
+                            <div class="flex flex-col gap-4">
+                                {{ buttons }}
+                                    {{ partial:components/common/button size="sm" style="Outlined" colour="white" }}
+                                {{ /buttons }}
+                            </div>
                         {{ /if }}
                     </div>
 
+                    {{# Title for inactive items - horizontal on mobile, vertical on desktop #}}
                     <div
                         x-show="activeIndex !== {{ index }}"
                         x-transition:enter="transition ease-out duration-300 delay-200"
@@ -77,9 +83,15 @@
                         x-transition:leave="transition ease-in duration-200"
                         x-transition:leave-start="opacity-100"
                         x-transition:leave-end="opacity-0"
-                        class="absolute inset-0 flex items-start justify-start p-8 lg:p-10 z-10 pointer-events-none"
+                        class="absolute inset-0 flex items-end md:items-start justify-start p-6 md:p-8 lg:p-10 z-10 pointer-events-none"
                     >
-                        <div class="vertical-title-wrapper text-white text-sm">
+                        {{# Mobile: horizontal text at bottom #}}
+                        <div class="block md:hidden text-white">
+                            <h3 class="uppercase tracking-widest text-sm">{{ title }}</h3>
+                        </div>
+
+                        {{# Desktop: vertical text at left #}}
+                        <div class="hidden md:block vertical-title-wrapper text-white text-sm">
                             {{ partial:components/text/subtitle class="vertical-text" }}
                                 {{ title }}
                             {{ /partial:components/text/subtitle }}

@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757125969
+updated_at: 1757126587
 page_builder:
   -
     id: makdwkj7
@@ -90,6 +90,13 @@ page_builder:
         image: 495887342_1258661592933957_7844246399647103753_n.jpg
         type: item
         enabled: true
+        buttons:
+          -
+            id: mf7ni0md
+            text: 'Baseball grades'
+            link: 'entry::80119a42-e994-4f61-8bcb-ef1c92e9a867'
+            type: button
+            enabled: true
       -
         id: makkxlrc
         title: 'Quality coaching'
@@ -104,6 +111,13 @@ page_builder:
         image: 496549053_1258661559600627_8895743253013046077_n.jpg
         type: item
         enabled: true
+        buttons:
+          -
+            id: mf7nsoox
+            text: 'Club History'
+            link: 'entry::e907a61c-78ca-4060-95df-c9cb0847fb14'
+            type: button
+            enabled: true
       -
         id: makkycsv
         title: 'Friendly community'
