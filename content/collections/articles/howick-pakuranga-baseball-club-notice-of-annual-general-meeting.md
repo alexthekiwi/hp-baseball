@@ -1,0 +1,257 @@
+---
+id: 49d3d357-5d5b-47b0-afb0-d2ff52ec613d
+blueprint: article
+title: 'Howick Pakuranga Baseball Club notice of annual general meeting'
+author: f727c14d-33d9-4ccd-9de0-fdbe1661319b
+bard:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Dear Members,'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Notice is hereby given that the Annual General Meeting (AGM) of the Howick-Pakuranga Baseball Club will be held as follows:'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Date:'
+      -
+        type: text
+        text: ' 29'
+      -
+        type: text
+        marks:
+          -
+            type: superscript
+        text: th
+      -
+        type: text
+        text: ' June 2025'
+      -
+        type: hardBreak
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Time:'
+      -
+        type: text
+        text: ' 1:00 pm'
+      -
+        type: hardBreak
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Venue:'
+      -
+        type: text
+        text: ' Pakuranga Rugby Club. 78 Bells Road, Pakuranga'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: AGENDA
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Recording of Attendees and those Absent'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Quorum convened'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '1. Opening of the meeting & welcome'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '2. Acknowledgement of Life Members'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '3. Review the minutes of the previous AGM & Matters arising'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '4. Presidents report & Matters arising'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '5. Treasurers report & Matters arising'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '6. Vote on the New Constitution'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '7. Election of the Committee'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '8. General Business'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '9. Closure of meeting'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "\_"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Link to AGM agenda\_"
+      -
+        type: text
+        marks:
+          -
+            type: link
+            attrs:
+              href: 'https://www.sporty.co.nz/asset/downloadasset?id=0fcdb9d5-101f-4b76-aadd-77e06a86c718'
+              rel: null
+              target: null
+              title: null
+          -
+            type: underline
+        text: 'https://www.sporty.co.nz/asset/downloadasset?id=0fcdb9d5-101f-4b76-aadd-77e06a86c718'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Link to new Constitution\_"
+      -
+        type: text
+        marks:
+          -
+            type: link
+            attrs:
+              href: 'https://www.sporty.co.nz/asset/downloadasset?id=48555af1-c1ca-4da9-a17f-9ee9a8b27628'
+              rel: null
+              target: null
+              title: null
+          -
+            type: underline
+        text: 'https://www.sporty.co.nz/asset/downloadasset?id=48555af1-c1ca-4da9-a17f-9ee9a8b27628'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Link to Financial statements are attached.\_"
+      -
+        type: text
+        marks:
+          -
+            type: link
+            attrs:
+              href: 'https://www.sporty.co.nz/asset/downloadasset?id=323fd9da-f7a7-44f9-8dd9-632e5dd409af'
+              rel: null
+              target: null
+              title: null
+          -
+            type: underline
+        text: 'https://www.sporty.co.nz/asset/downloadasset?id=323fd9da-f7a7-44f9-8dd9-632e5dd409af'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'All members are encouraged to attend and participate in the meeting. If you wish to propose any general business items or nominate a person for a committee position, please submit these in writing to the Secretary no later than 22'
+      -
+        type: text
+        marks:
+          -
+            type: superscript
+        text: nd
+      -
+        type: text
+        text: ' of June 2025'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'For further information or queries, please contact:'
+      -
+        type: hardBreak
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Email:'
+      -
+        type: text
+        text: ' secretary@hpbaseball.co.nz'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'We look forward to your attendance and contribution to the future of our club.'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Kind regards,'
+      -
+        type: hardBreak
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Howick-Pakuranga Baseball Executive Committee'
+date: '2025-06-08'
+tags:
+  - announcement
+updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
+updated_at: 1757128775
+---

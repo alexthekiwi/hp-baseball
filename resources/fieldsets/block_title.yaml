@@ -45,6 +45,7 @@ fields:
     handle: block_title_colour
     field: block_settings.text_colour
     config:
+      default: primary
       display: 'Title Colour'
       width: 25
       always_save: true
@@ -57,9 +58,9 @@ fields:
       display: 'Title Center'
       width: 25
       default: true
+      always_save: true
       if:
         show_block_title_options: 'equals true'
-      always_save: true
   -
     handle: block_title_keyline
     field:
@@ -69,5 +70,6 @@ fields:
       if:
         show_block_title_options: 'equals true'
       always_save: true
+      default: true
   -
     import: buttons

@@ -1,10 +1,11 @@
 title: Articles
 template: article
 layout: layout
+mount: f9736c8a-07d3-427f-bf9a-e6b03d4b80ed
 taxonomies:
   - tags
 revisions: false
-route: '/articles/{{ slug }}'
+route: '/news/{{ slug }}'
 sort_dir: asc
 date_behavior:
   past: public

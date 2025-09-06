@@ -1,0 +1,231 @@
+---
+id: e430123c-2c5b-4c5d-b9de-bc7a120426e7
+blueprint: article
+title: 'Frequently asked questions for 2024-2025 Registrations'
+author: f727c14d-33d9-4ccd-9de0-fdbe1661319b
+bard:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Are registrations open?'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Yes. Registrations are open for all age groups. Players from last season should have been sent a personalised registraiton email with their details filled in. However if you havent received this, you can register via our website. Link '
+      -
+        type: text
+        marks:
+          -
+            type: link
+            attrs:
+              href: 'https://www.sporty.co.nz/viewform/302695'
+              rel: null
+              target: null
+              title: null
+          -
+            type: underline
+        text: Here
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'When will registrations close?'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'We dont have a set date to close registrations, however we would like to form teams by the end of September so please make an effort to register by then. Registrations received after this may be subject to team numbers.'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Players will receive a training shirt this season and the cut off for ordering and printing of these is the end of September. Players not registered before the end of September may not receive a training shirt.'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'When will trainings start, what day/time will trainings be?'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Team trainings will start after teams are formed at the end of September.'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "As the coaches are volunteers and often need to work training around their work schedules, the training\_days and times are set by the coach."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "That being said, Tuesday and Thursday have historically been the most common training\_days. Even if you can only make\_it to 1 training\_a week this is OK and quite common"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'When will the season start/finish?'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "The first weekend of the season will be 2-3/11. This is the weekend after Labour Weekend. We are aiming to have a round of pre-season games the weekend before Labour Weekend for those available.\_The season will end Mid March with the exact date depending on your age group. There will be a Christmas break with the last game before Christmas the weekend of 14-15/12 and the first game back will be 18-19/1/25 depending on your age group."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'What time are games played?'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '5-8 year olds. Kiwi Ball and Sluggers - 8:30-10:00am Saturdays'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Junior Baseball (Little League)'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: '10U Minor League – 9:30am Saturdays'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: '12U Major League – 2:00pm Saturdays'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: '13U Intermediate League – 9:30am Saturdays'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: '14U Junior League – 2:00pm Saturdays'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: '16U Senior League – 9:30am Saturdays'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Senior Baseball'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: '19U – 2:00pm Saturdays'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: 'Divisional (1&2) – 9:00am, 12:00pm, or 3:00pm Sundays'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: 'Reserves – 9:30am or 2:00pm Sundays'
+      -
+        type: hardBreak
+      -
+        type: text
+        text: 'Premier – 9:30am or 2:00pm Sundays'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Can you play "up a grade" as well to get more baseball?'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "Yes, you can as long as there\_is positions available in the higher grade."
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "You should register in your natural age grade as you are guaranteed\_a position\_in that grade. If you would like to also play in the grade above there is a box to check on the registration form. When forming the teams we can then see numbers naturally eligible for the grade + those looking to also play up and form teams accordingly.\_"
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Note: There will be an expectation to be available to train with both teams when the schedules dont clash'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: bold
+        text: 'Do you need to pay as soon as you register?'
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: "No.\_Payment is not required immediately when registering. There are Bank account details included for future payment. However if you would like to pay as you register, there is credit card payment option available. If you would like to set up a payment plan, you can contact the club treasurer "
+      -
+        type: text
+        marks:
+          -
+            type: link
+            attrs:
+              href: 'mailto:treasurer@hpbaseball.co.nz'
+              rel: null
+              target: null
+              title: null
+          -
+            type: underline
+        text: treasurer@hpbaseball.co.nz
+date: '2024-09-08'
+tags:
+  - announcement
+updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
+updated_at: 1757128836
+---

@@ -13,13 +13,6 @@ tabs:
               validate:
                 - required
           -
-            handle: thumbnail
-            field:
-              max_files: 1
-              container: assets
-              type: assets
-              display: Thumbnail
-          -
             handle: author
             field:
               type: users

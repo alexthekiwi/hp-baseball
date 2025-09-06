@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757128489
+updated_at: 1757128687
 page_builder:
   -
     id: makdwkj7
@@ -217,5 +217,29 @@ page_builder:
         type: button_simple
         enabled: true
     show_block_title_options: false
+  -
+    id: mf7oz5s8
+    title: 'Latest news'
+    mode: Recent
+    limit: 5
+    background_colour: White
+    text_colour: default
+    padding_top: base
+    padding_bottom: base
+    type: featured_articles
+    enabled: true
+    block_title: 'Latest news'
+    show_block_title_options: true
+    block_title_tag: h2
+    block_title_colour: primary
+    block_title_center: true
+    block_title_keyline: true
+    buttons:
+      -
+        id: mf7p04n0
+        text: 'View all news'
+        link: 'entry::f9736c8a-07d3-427f-bf9a-e6b03d4b80ed'
+        type: button_simple
+        enabled: true
 hide_breadcrumbs: true
 ---

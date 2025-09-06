@@ -1,12 +1,7 @@
 title: 'Featured Articles'
 fields:
   -
-    handle: title
-    field:
-      type: text
-      display: Title
-      validate:
-        - required
+    import: block_title
   -
     handle: mode
     field:
