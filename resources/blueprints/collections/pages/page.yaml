@@ -1,27 +1,55 @@
-sections:
+title: Page
+tabs:
   main:
     display: Main
-    fields:
+    sections:
       -
-        handle: title
-        field:
-          type: text
-          required: true
-          validate:
-            - required
-      -
-        import: page_builder
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              width: 50
+          -
+            handle: nav_title
+            field:
+              type: text
+              display: 'Nav Title'
+              width: 50
+          -
+            import: page_builder
   sidebar:
     display: Sidebar
-    fields:
+    sections:
       -
-        handle: slug
-        field:
-          type: slug
-          localizable: true
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+          -
+            handle: hide_breadcrumbs
+            field:
+              type: toggle
+              display: 'Hide Breadcrumbs'
   seo:
     display: SEO
-    fields:
+    sections:
       -
-        import: seo
-title: Page
+        fields:
+          -
+            import: seo

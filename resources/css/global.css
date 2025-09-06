@@ -1,5 +1,9 @@
 /* Global Styles */
 
+body {
+    @apply text-gray;
+}
+
 h1 {
     @apply text-5xl md:text-6xl xl:text-7xl font-bold;
 }
@@ -30,7 +34,7 @@ summary::marker {
 }
 
 .bard {
-    @apply flex flex-col gap-8;
+    @apply flex flex-col gap-4;
 
     h2 {
         @apply pt-8;

@@ -1,3 +1,52 @@
 <footer class="bg-black text-white rounded-t-block-mobile desktop:rounded-t-outer">
-    {{ partial:layout/footer/desktop }}
+    <div class="container mx-auto h-full">
+        <div class="flex flex-col h-full">
+            <div class="flex flex-col gap-16 items-start border-b py-32">
+                <a title="Home" href="/">
+                    <img src="/logo-white.svg" class="h-16" />
+                </a>
+
+                <div class="flex flex-col md:flex-wrap md:flex-row md:justify-between w-full gap-y-8 gap-x-8">
+                    {{ footer:blocks }}
+                        <div class="flex-[200px] flex-grow flex flex-col gap-6">
+                            {{ if title_link }}
+                                <a href="{{ title_link }}" class="font-bold border-b border-current pb-6 hover:underline">{{ title }}</a>
+                            {{ else }}
+                                <p class="font-bold border-b border-current pb-6">{{ title }}</p>
+                            {{ /if }}
+                            {{ if navigation }}
+                                <ul class="flex flex-col gap-6">
+                                    {{ nav :handle="navigation.handle" }}
+                                        <li class="flex flex-col gap-2">
+                                            <a class="hover:underline" href="{{ url }}">
+                                                {{ nav_title ?? title }}
+                                            </a>
+                                            {{ if children }}
+                                                <ul class="flex flex-col gap-3 border-current pl-4">
+                                                    {{ children }}
+                                                        <li>
+                                                            <a class="hover:underline" href="{{ url }}">
+                                                                {{ nav_title ?? title }}
+                                                            </a>
+                                                        </li>
+                                                    {{ /children }}
+                                                </ul>
+                                            {{ /if }}
+                                        </li>
+                                    {{ /nav }}
+                                </ul>
+                            {{ /if }}
+                        </div>
+                    {{ /footer:blocks }}
+                </div>
+            </div>
+
+            <div class="flex justify-between pt-8 pb-24">
+                <div class="flex items-center flex-wrap gap-6">
+                    <p>© Howick Pakuranga Baseball {{ date | format('Y') }}</p>
+                    <a class="hover:underline" href="/site-map">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>

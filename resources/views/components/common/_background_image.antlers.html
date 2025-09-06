@@ -3,7 +3,33 @@
         :src="image"
         preset="2xl-webp"
     }}');"
-    class="w-full h-[500px] lg:h-[700px] bg-cover bg-center bg-no-repeat {{ class }}"
+    class="flex items-center relative w-full bg-cover bg-center bg-no-repeat {{ class }} {{ switch(
+        (height ?? 0 == 1) => 'py-16 h-auto',
+        (height ?? 0 == 2) => 'py-24 min-h-[300px] lg:min-h-[450px]',
+        (height ?? 0 == 3) => 'py-24 min-h-[400px] lg:min-h-[500px]',
+        (height ?? 0 == 4) => 'py-24 min-h-[500px] lg:min-h-[700px]',
+        (height ?? 0 == 5) => 'py-24 min-h-[100vh] h-[700px] lg:h-[900px]',
+        () => 'py-24 min-h-[500px] lg:min-h-[700px]'
+    ) }}"
 >
-    {{ slot }}
+    <div class="relative w-full h-full z-[2]">
+        {{# Spacer element for the sticky header with hero images #}}
+        {{ if is_hero }}
+            <div class="block h-[20px] lg:h-[60px] w-full"></div>
+        {{ /if }}
+
+        {{ slot }}
+    </div>
+
+    {{ if show_overlay }}
+        <div style="opacity: {{ (overlay_opacity ?? 3) / 10 }}" class="{{ switch(
+            (overlay_colour == 'primary') => 'bg-primary',
+            (overlay_colour == 'secondary') => 'bg-secondary',
+            (overlay_colour == 'white') => 'bg-white',
+            (overlay_colour == 'gray') => 'bg-gray',
+            (overlay_colour == 'black') => 'bg-black',
+            () => 'bg-black',
+        )}} absolute inset-0 z-[1]">
+        </div>
+    {{ /if }}
 </div>

@@ -1,17 +1,17 @@
 title: Hero
 fields:
   -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
     handle: title
     field:
       type: textarea
       display: Title
       validate:
         - required
-  -
-    handle: subtitle
-    field:
-      type: text
-      display: Subtitle
   -
     handle: background_type
     field:
@@ -27,6 +27,20 @@ fields:
       display: 'Background Type'
       validate:
         - required
+      width: 50
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image
+      validate:
+        - sometimes
+        - required
+      if:
+        background_type: 'equals Image'
+      width: 50
   -
     handle: background_colour
     field:
@@ -40,26 +54,97 @@ fields:
         -
           key: white
           value: White
+        -
+          key: black
+          value: Black
+        -
+          key: gray
+          value: Gray
       default: primary
       type: button_group
       display: 'Background Colour'
       validate:
         - sometimes
         - required
+      width: 50
       if:
         background_type: 'equals Colour'
   -
-    handle: image
+    handle: show_overlay
     field:
-      max_files: 1
-      container: assets
-      type: assets
-      display: Image
+      default: true
+      type: toggle
+      display: 'Show Overlay'
+      width: 33
+      if:
+        background_type: 'equals Image'
+  -
+    handle: overlay_colour
+    field:
+      options:
+        -
+          key: black
+          value: Black
+        -
+          key: primary
+          value: Primary
+        -
+          key: secondary
+          value: Secondary
+        -
+          key: white
+          value: White
+        -
+          key: gray
+          value: Gray
+      default: black
+      type: button_group
+      display: 'Overlay Colour'
       validate:
         - sometimes
         - required
+      width: 33
       if:
+        show_overlay: 'equals true'
         background_type: 'equals Image'
+  -
+    handle: overlay_opacity
+    field:
+      max: 9
+      default: 4
+      type: range
+      display: 'Overlay Opacity'
+      width: 33
+      if:
+        show_overlay: 'equals true'
+        background_type: 'equals Image'
+  -
+    handle: height
+    field:
+      min: 1
+      max: 5
+      default: 3
+      type: range
+      display: Height
+      width: 50
+  -
+    handle: align
+    field:
+      options:
+        -
+          key: start
+          value: Start
+        -
+          key: middle
+          value: Middle
+        -
+          key: end
+          value: End
+      clearable: true
+      default: start
+      type: select
+      display: 'Content Alignment'
+      width: 50
   -
     handle: buttons
     field:

@@ -1,5 +1,10 @@
+{{# Some variables to make the header aware of the hero details #}}
+{{ hero_block = page_builder | where('type', 'hero') | first }}
+{{ hero_bg_type = hero_block.background_type ?? 'Colour' }}
+{{ hero_bg_colour = hero_block.background_colour ?? 'primary' }}
+
 <main id="content" class="flex flex-col min-h-screen">
-    {{ partial:layout/header/index }}
+    {{ partial:layout/header/index :hero_bg_type="hero_bg_type" :hero_bg_colour="hero_bg_colour" }}
 
     <div class="flex flex-col flex-grow">
         {{ slot }}

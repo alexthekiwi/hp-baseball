@@ -1,7 +1,11 @@
 {{ switch(
-    (background_colour == 'primary') => 'bg-primary-light',
-    (background_colour == 'secondary') => 'bg-secondary-light',
+    (background_colour == 'primary') => 'bg-primary',
+    (background_colour == 'primary-light') => 'bg-primary-light',
+    (background_colour == 'secondary') => 'bg-secondary',
+    (background_colour == 'secondary-light') => 'bg-secondary-light',
     (background_colour == 'white') => 'bg-white',
-    (background_colour == 'gray') => 'bg-gray-50',
+    (background_colour == 'gray') => 'bg-gray',
+    (background_colour == 'gray-light') => 'bg-gray-light',
+    (background_colour == 'black') => 'bg-black',
     () => 'bg-white',
 )}}

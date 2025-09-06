@@ -7,17 +7,21 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 1
-updated_at: 1747869698
+updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
+updated_at: 1756611597
 page_builder:
   -
     id: mayjquz6
     title: 'Contact Us'
-    subtitle: 'Reach out to Statamic'
+    subtitle: 'Reach out to the Howick Pakuranga Baseball Club'
     background_type: Colour
     background_colour: primary
     type: hero
     enabled: true
+    overlay_colour: black
+    overlay_opacity: 4
+    height: 3
+    align: start
   -
     id: mayjrj8t
     title: 'Get in Touch'
@@ -27,5 +31,6 @@ page_builder:
     type: form
     enabled: true
     form: contact
-parent: dbd70a65-fb0a-48e6-aaaa-abc8e0054e11
+    text_colour: default
+hide_breadcrumbs: false
 ---

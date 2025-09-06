@@ -74,7 +74,7 @@
                                                         <label>
                                                             {{ if input_type !== 'hidden' }}
                                                                 {{ if display && ! hide_display }}
-                                                                    <div>{{ display }}</div>
+                                                                    <div>{{ display }} {{ if validate|contains:required }}<sup>*</sup>{{ /if }}</div>
                                                                 {{ /if }}
                                                             {{ /if }}
                                                             {{ if instructions && instructions_position == "above" }}

@@ -1,14 +1,20 @@
-<ul class="flex gap-6 bg-primary-light p-5 rounded-outer px-8">
-    {{ nav:breadcrumbs }}
-        <li class="flex items-center gap-1 {{ if is_current }}current{{ /if }}">
-            <div class="rotate-90">
-                {{ partial:svg/chevron_up class="size-5" }}
-            </div>
-            <a href="{{ url }}">
-                {{ partial:components/text/subtitle class="text-sm" }}
-                    {{ title }}
-                {{ /partial:components/text/subtitle }}
-            </a>
-        </li>
-    {{ /nav:breadcrumbs }}
-</ul>
+<nav class="container mx-auto w-full mt-12 mb-12">
+    <ul class="flex gap-4 bg-gray-light p-5 rounded-outer px-8">
+        {{ nav:breadcrumbs }}
+            <li class="flex items-center gap-4 {{ if is_current }} text-primary font-bold {{ /if }}">
+                {{ if not first }}
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </div>
+                {{ /if }}
+                <a href="{{ url }}">
+                    {{ partial:components/text/subtitle class="text-sm" }}
+                        {{ nav_title ?? title }}
+                    {{ /partial:components/text/subtitle }}
+                </a>
+            </li>
+        {{ /nav:breadcrumbs }}
+    </ul>
+</nav>

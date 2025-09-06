@@ -36,12 +36,6 @@ fields:
               fields:
                 -
                   import: carousel
-            featured_entries:
-              display: 'Featured Entries'
-              icon: addon-boxes-stack
-              fields:
-                -
-                  import: featured_entries
             content_block:
               display: 'Content Block'
               icon: text-formatting-wrap-image-left

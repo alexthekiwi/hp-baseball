@@ -5,8 +5,6 @@ fields:
     field:
       type: text
       display: Title
-      validate:
-        - required
   -
     handle: items
     field:

@@ -1,15 +1,25 @@
+{{ partial:main }}
+    {{# Add default hero if page builder is empty #}}
+    {{ if page_builder | is_empty }}
+        {{ partial:components/blocks/hero :title="page:title" background_type="Colour" background_colour="primary" }}
+    {{ /if }}
+
+    {{ page_builder }}
+        {{# Add default hero if page builder doesn't have one #}}
+        {{ if first && type !== 'hero' }}
+            {{ partial:components/blocks/hero :title="page:title" background_type="Colour" background_colour="primary" }}
+        {{ /if }}
+    {{ /page_builder }}
+
+    {{ partial:layout/page_builder }}
+{{ /partial:main }}
+{{#
 <main id="content" class="flex flex-col min-h-screen">
-    {{ partial:layout/header/index }}
+    {{ partial:layout/header/index :hero_bg_type="hero_bg_type" :hero_bg_colour="hero_bg_colour" }}
 
     <div class="flex flex-col flex-grow">
-        {{ page_builder }}
-            {{ if first && type !== 'hero' }}
-                {{ partial:components/blocks/hero :title="page:title" background_type="Colour" background_colour="primary" }}
-            {{ /if }}
-        {{ /page_builder }}
 
-        {{ partial:layout/page_builder }}
     </div>
 
     {{ partial:layout/footer/index }}
-</main>
+</main> #}}

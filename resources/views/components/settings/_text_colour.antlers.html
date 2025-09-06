@@ -1,0 +1,12 @@
+{{ switch(
+    (text_colour == 'primary') => 'text-primary',
+    (text_colour == 'primary-light') => 'text-primary-light',
+    (text_colour == 'secondary') => 'text-secondary',
+    (text_colour == 'secondary-light') => 'text-secondary-light',
+    (text_colour == 'white') => 'text-white',
+    (text_colour == 'gray') => 'text-gray',
+    (text_colour == 'gray-light') => 'text-gray-light',
+    (text_colour == 'black') => 'text-black',
+    (text_colour == 'default') => 'text-current',
+    () => 'text-current',
+)}}

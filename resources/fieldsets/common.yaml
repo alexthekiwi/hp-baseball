@@ -60,14 +60,26 @@ fields:
           key: primary
           value: Primary
         -
+          key: primary-light
+          value: 'Primary Light'
+        -
           key: secondary
           value: Secondary
+        -
+          key: secondary-light
+          value: 'Secondary Light'
+        -
+          key: gray
+          value: Gray
+        -
+          key: gray-light
+          value: 'Gray Light'
         -
           key: white
           value: White
         -
-          key: gray
-          value: Gray
+          key: black
+          value: Black
       default: white
       type: select
       display: 'Background Colour'
@@ -150,8 +162,13 @@ fields:
     handle: bard
     field:
       buttons:
+        - h2
+        - h3
+        - h4
         - bold
         - italic
+        - underline
+        - small
         - unorderedlist
         - orderedlist
         - removeformat

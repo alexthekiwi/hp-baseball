@@ -7,16 +7,15 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 1
-updated_at: 1747612673
+updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
+updated_at: 1757120675
 page_builder:
   -
     id: makdwkj7
-    title: 'The answer to your frustrating CMS problems.'
+    title: 'Howick Pakuranga Baseball Club'
     background_type: Image
     type: hero
     enabled: true
-    image: 927-1920x1080.jpg
     buttons:
       -
         id: make8sou
@@ -30,6 +29,13 @@ page_builder:
         link: 'entry::201d1fb0-a9e7-4ef3-8bcc-8c00477d194b'
         type: button
         enabled: true
+    overlay_opacity: 4
+    overlay_colour: black
+    subtitle: 'Home of the Hawks'
+    align: start
+    image: placeholder.jpg
+    show_overlay: true
+    height: 5
   -
     id: makfsa7h
     title: 'Ready to take Statamic for a spin?'
@@ -56,6 +62,7 @@ page_builder:
         colour: black
         type: button_styled
         enabled: true
+    text_colour: white
   -
     id: maki6jh5
     title: 'Designed to adapt to you.'
@@ -64,6 +71,9 @@ page_builder:
     padding_bottom: base
     type: headline
     enabled: true
+    heading: H1
+    alignment: Center
+    text_colour: white
   -
     id: makkkb1x
     background_colour: White
@@ -101,18 +111,7 @@ page_builder:
         type: item
         enabled: true
     style: 'All Showing'
-  -
-    id: maluslun
-    title: 'Our best sellers'
-    entries:
-      - 440a4220-2a70-4e4d-acd9-a273e78b9039
-      - ee042429-c470-4ec7-9232-c7951df86a0b
-      - 40f78bf9-0f49-445e-9c91-a3735ad98390
-    background_colour: primary
-    padding_top: base
-    padding_bottom: base
-    type: featured_entries
-    enabled: true
+    text_colour: default
   -
     id: malx3ve0
     items:
@@ -143,6 +142,7 @@ page_builder:
     padding_bottom: base
     type: content_block
     enabled: true
+    text_colour: default
   -
     id: maly4bws
     background_colour: White
@@ -180,6 +180,7 @@ page_builder:
         type: item
         enabled: true
     style: 'Single Showing'
+    text_colour: default
   -
     id: malzdrw3
     image: 927-1920x1080.jpg
@@ -207,18 +208,18 @@ page_builder:
     padding_bottom: none
     type: banner
     enabled: true
+    text_colour: default
   -
     id: maomhfq1
     title: 'What our happy customers say'
     testimonials:
-      - 86a3fbfd-1268-451e-b4d8-a984f17138ac
-      - 35bc2974-238c-41a0-8527-444d2abdb624
-      - 12fdb9b4-6d12-4bf0-8455-6aa586e53045
+      - e94fdadb-a822-445b-a37d-f710a1cb1f4c
     background_colour: White
     padding_top: base
     padding_bottom: base
     type: testimonials
     enabled: true
+    text_colour: default
   -
     id: maomhzjm
     title: FAQ
@@ -259,19 +260,11 @@ page_builder:
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget egestas lacus. Nam egestas faucibus lacus, ac euismod ipsum placerat non. Ut viverra ac quam sed imperdiet. Ut nibh ex, cursus at tortor at, commodo tristique sapien. Sed iaculis est quis fermentum aliquam. Suspendisse venenatis sapien vehicula, egestas lectus id, placerat augue. Ut efficitur iaculis est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tincidunt diam ut nisi porttitor aliquet. Integer placerat eu sem sed faucibus. Vivamus tincidunt mauris ac interdum molestie. Duis facilisis sem non risus finibus posuere.'
         type: accordion
         enabled: true
-    background_colour: primary
+    background_colour: primary-light
     padding_top: base
     padding_bottom: base
     type: accordions
     enabled: true
-  -
-    id: maomilg7
-    title: 'Statamic News'
-    mode: Recent
-    limit: 5
-    background_colour: White
-    padding_top: base
-    padding_bottom: base
-    type: featured_articles
-    enabled: true
+    text_colour: default
+hide_breadcrumbs: true
 ---

@@ -15,6 +15,37 @@ fields:
     field: common.background_colour
     config:
       default: White
+      width: 50
+  -
+    handle: text_colour
+    field: common.colour
+    config:
+      options:
+        -
+          key: primary
+          value: Primary
+        -
+          key: secondary
+          value: Secondary
+        -
+          key: tertiary
+          value: Tertiary
+        -
+          key: white
+          value: White
+        -
+          key: gray
+          value: Gray
+        -
+          key: black
+          value: Black
+        -
+          key: default
+          value: Default
+      default: default
+      display: 'Text Colour'
+      width: 50
+      clearable: true
   -
     handle: padding_top
     field: common.size

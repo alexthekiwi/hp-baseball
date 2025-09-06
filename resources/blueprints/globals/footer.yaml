@@ -10,6 +10,36 @@ tabs:
               type: textarea
               display: Tagline
           -
+            handle: blocks
+            field:
+              type: replicator
+              display: Blocks
+              sets:
+                block:
+                  display: Block
+                  sets:
+                    block:
+                      display: Block
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                            width: 50
+                        -
+                          handle: title_link
+                          field:
+                            type: link
+                            display: 'Title Link'
+                            width: 50
+                        -
+                          handle: navigation
+                          field:
+                            max_items: 1
+                            type: navs
+                            display: Navigation
+          -
             handle: links
             field:
               type: replicator

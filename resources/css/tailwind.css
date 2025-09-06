@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@custom-variant scrolled (&.scrolled);
+@custom-variant header-scrolled (&:where(header.scrolled *));
+
 @utility container {
     margin-inline: auto;
     padding-inline: 2rem;
@@ -7,17 +10,25 @@
 }
 
 @theme {
-    --color-primary: #D3FF4C;
-    --color-primary-light: #FAF8F7;
-    --color-secondary: #FE259E;
-    --color-gray: #908F8F;
-    --color-gray-light: #E9E9E9;
+    /* Colours */
+    --color-primary: #ce0e2d;
+    --color-primary-light: #fee7e4;
+    --color-primary-contrast: #fff;
+
+    --color-secondary: #f8df8d;
+    --color-secondary-light: #fdf2d3;
+    --color-secondary-contrast: #000;
+
+    --color-gray: #58595b;
+    --color-gray-light: #F8F8F8;
     --color-black: #191A1B;
     --color-white: #fff;
 
+    /* Radius */
     --radius-outer: 6px;
     --radius-inner: 4px;
 
+    /* Padding */
     --padding-none: 0;
     --padding-sm: 2rem;
     --padding-md: 5rem;
