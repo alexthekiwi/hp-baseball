@@ -1,6 +1,8 @@
 title: Carousel
 fields:
   -
+    import: block_title
+  -
     handle: style
     field:
       options:

@@ -24,60 +24,61 @@
 {{#             @mouseleave="if (itemsCount > 0) activeIndex = 0" #}}
         >
             {{ items }}
-            <div
-                @mouseenter="activeIndex = {{ index }}" {{# Update activeIndex on hover; 'index' is 0-based from Antlers #}}
-                class="relative h-full bg-cover bg-center overflow-hidden cursor-default transition-all duration-700 ease-in-out group"
-                style="background-image: url('{{ glide :src="image" preset="lg-webp" }}');"
-                :style="{ flexBasis: getItemFlexBasis({{ index }}), filter: activeIndex === {{ index }} ? 'brightness(1)' : 'brightness(1)' }"
-                role="region"
-                aria-label="{{ title }}"
-            >
                 <div
-                    class="absolute inset-0 bg-black/80 transition-opacity duration-700 ease-in-out pointer-events-none"
-                    :class="activeIndex === {{ index }} ? 'bg-black/80' : 'bg-gray'"
-                ></div>
-
-                <div
-                    x-show="activeIndex === {{ index }}"
-                    x-transition:enter="transition ease-out duration-500 delay-500"
-                    x-transition:enter-start="opacity-0 transform translate-y-6"
-                    x-transition:enter-end="opacity-100 transform translate-y-0"
-                    x-transition:leave="transition ease-in duration-50"
-                    x-transition:leave-start="opacity-100 transform translate-y-0"
-                    x-transition:leave-end="opacity-0 transform translate-y-6"
-                    class="absolute inset-0 p-6 md:p-8 lg:p-10 text-white flex flex-col justify-end items-start z-10"
-                    :aria-hidden="activeIndex !== {{ index }}"
+                    @mouseenter="activeIndex = {{ index }}" {{# Update activeIndex on hover; 'index' is 0-based from Antlers #}}
+                    class="relative h-full bg-cover bg-center overflow-hidden cursor-default transition-all duration-700 ease-in-out group"
+                    style="background-image: url('{{ glide :src="image" preset="xl-webp" width="1000" height="1000" fit="crop_focal" }}');"
+                    :style="{ flexBasis: getItemFlexBasis({{ index }}), filter: activeIndex === {{ index }} ? 'brightness(1)' : 'brightness(0.7)' }"
+                    role="region"
+                    aria-label="{{ title }}"
                 >
-                    <p class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight">{{ title }}</p>
-                    <p class="mb-4 md:mb-6 text-sm sm:text-base lg:text-lg max-w-md leading-relaxed">{{ content }}</p>
-                    {{ if button && button.text && button.url }}
-                        <a
-                            :href="button.url"
-                            class="bg-white text-gray-900 font-semibold py-2.5 px-5 md:py-3 md:px-7 rounded-md
-                              hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75
-                              transition-all transform hover:scale-105 text-sm md:text-base"
-                        >
-                            {{ button.text }}
-                        </a>
-                    {{ /if }}
-                </div>
+                    <div
+                        class="absolute inset-0 transition-opacity duration-700 ease-in-out pointer-events-none"
+                        :class="activeIndex === {{ index }} ? 'bg-black/40' : 'bg-black/60'"
+                    ></div>
 
-                <div
-                    x-transition:enter="transition ease-out duration-300 delay-200"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition ease-in duration-200"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
-                    class="absolute inset-0 flex items-start justify-start p-8 lg:p-10 z-10 pointer-events-none"
-                >
-                    <div class="vertical-title-wrapper" :class="{ 'text-primary': activeIndex === {{ index }}, 'text-white': activeIndex !== {{ index }} }">
-                        {{ partial:components/text/subtitle class="vertical-text" }}
-                            {{ title }}
-                        {{ /partial:components/text/subtitle }}
+                    <div
+                        x-show="activeIndex === {{ index }}"
+                        x-transition:enter="transition ease-out duration-500 delay-500"
+                        x-transition:enter-start="opacity-0 transform translate-y-6"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-50"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform translate-y-6"
+                        class="absolute inset-0 p-6 md:p-8 lg:p-10 text-white flex flex-col justify-end items-start z-10"
+                        :aria-hidden="activeIndex !== {{ index }}"
+                    >
+                        <h3 class="text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-tight">{{ title }}</h3>
+                        <p class="mb-4 md:mb-6 text-sm sm:text-base lg:text-lg max-w-md leading-relaxed">{{ content }}</p>
+                        {{ if button && button.text && button.url }}
+                            <a
+                                :href="button.url"
+                                class="bg-white text-gray-900 font-semibold py-2.5 px-5 md:py-3 md:px-7 rounded-md
+                                hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75
+                                transition-all transform hover:scale-105 text-sm md:text-base"
+                            >
+                                {{ button.text }}
+                            </a>
+                        {{ /if }}
+                    </div>
+
+                    <div
+                        x-show="activeIndex !== {{ index }}"
+                        x-transition:enter="transition ease-out duration-300 delay-200"
+                        x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0"
+                        class="absolute inset-0 flex items-start justify-start p-8 lg:p-10 z-10 pointer-events-none"
+                    >
+                        <div class="vertical-title-wrapper text-white text-sm">
+                            {{ partial:components/text/subtitle class="vertical-text" }}
+                                {{ title }}
+                            {{ /partial:components/text/subtitle }}
+                        </div>
                     </div>
                 </div>
-            </div>
             {{ /items }}
         </div>
     {{ else }}
@@ -108,9 +109,9 @@
                         </div>
 
                         <div class="flex flex-col gap-8 mt-auto pr-16">
-                            {{ partial:components/text/subtitle }}
+                            <h3 class="text-lg">
                                 {{ title }}
-                            {{ /partial:components/text/subtitle }}
+                            </h3>
 
                             <p class="font-bold text-3xl">
                                 {{ content }}

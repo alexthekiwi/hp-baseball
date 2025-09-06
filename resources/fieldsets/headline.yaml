@@ -15,6 +15,9 @@ fields:
         -
           key: H2
           value: null
+        -
+          key: P
+          value: null
       default: H1
       type: button_group
       display: Heading

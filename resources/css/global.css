@@ -4,18 +4,6 @@ body {
     @apply text-gray;
 }
 
-h1 {
-    @apply text-5xl md:text-6xl xl:text-7xl font-bold;
-}
-
-h2 {
-    @apply text-2xl md:text-3xl xl:text-4xl font-bold leading-[125%];
-}
-
-h3 {
-    @apply text-lg font-bold;
-}
-
 .vertical-text {
     writing-mode: sideways-lr;
     text-orientation: mixed;

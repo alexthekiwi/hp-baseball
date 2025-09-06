@@ -1,0 +1,42 @@
+title: 'Block Title'
+fields:
+  -
+    handle: block_title
+    field:
+      type: textarea
+      display: Title
+      width: 50
+  -
+    handle: block_title_tag
+    field:
+      options:
+        -
+          key: h1
+          value: H1
+        -
+          key: h2
+          value: H2
+        -
+          key: h3
+          value: H3
+        -
+          key: p
+          value: P
+      clearable: true
+      default: h2
+      type: select
+      display: 'Title Tag'
+      width: 25
+  -
+    handle: block_title_colour
+    field: block_settings.text_colour
+    config:
+      display: 'Title Colour'
+      width: 25
+  -
+    handle: block_title_center
+    field:
+      type: toggle
+      display: 'Title Center'
+      width: 25
+      default: true

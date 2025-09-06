@@ -7,6 +7,21 @@ fields:
       display: Title
       validate:
         - required
+      width: 75
+  -
+    handle: title_tag
+    field:
+      options:
+        -
+          key: H2
+          value: null
+        -
+          key: P
+          value: null
+      default: H2
+      type: button_group
+      display: 'Title Tag'
+      width: 25
   -
     handle: content
     field:
