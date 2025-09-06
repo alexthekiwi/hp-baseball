@@ -2,7 +2,7 @@
     {{ partial:layout/header/index }}
 
     <div class="flex flex-col gap-8 container pt-24">
-        <h1 class="text-primary mt-24 text-4xl lg:text-5xl font-bold max-w-4xl mx-auto text-pretty text-center">
+        <h1 class="mx-auto text-primary mt-24 text-4xl lg:text-5xl font-bold w-full max-w-4xl text-pretty text-center">
             {{ title | nl2br }}
         </h1>
         <div class="text-center">
@@ -19,20 +19,26 @@
             {{ /thumbnail }}
         </div>
 
-        <div class="prose max-w-4xl container py-24">
-            {{ bard }}
+        <div class="container">
+            <div class="prose max-w-4xl mx-auto w-full py-24">
+                {{ bard }}
+            </div>
         </div>
 
         {{# Article Navigation #}}
-        <nav class="container py-12 border-t border-gray-200">
-            <div class="max-w-4xl mx-auto">
-                <div class="flex flex-wrap justify-between items-center gap-6">
+        <nav class="container mb-24">
+            <div class="border-t border-gray-200 w-full pt-12 max-w-4xl mx-auto">
+                <div class="grid sm:grid-cols-3 gap-8">
                     {{# Previous Article (older) #}}
-                    {{ collection:previous in="articles" sort="date:desc" limit="1"  }}
-                        <a href="{{ url }}" class="group flex flex-col gap-1 hover:text-primary transition-colors">
-                            <span class="text-sm text-gray-500 uppercase tracking-wider">← Previous</span>
-                            <span class="font-semibold group-hover:underline">{{ title }}</span>
-                        </a>
+                    {{ collection:previous in="articles" sort="date:desc" current="{{ id }}" limit="1" }}
+                        {{ if no_results }}
+                            <div></div>
+                        {{ else }}
+                            <a href="{{ url }}" class="group flex flex-col gap-1 hover:text-primary transition-colors">
+                                <span class="text-sm text-gray-500 uppercase tracking-wider">← Previous</span>
+                                <span class="font-semibold group-hover:underline">{{ title }}</span>
+                            </a>
+                        {{ /if }}
                     {{ /collection:previous }}
 
                     {{# Back to Articles #}}
@@ -42,11 +48,15 @@
                     </a>
 
                     {{# Next Article (newer) #}}
-                    {{ collection:next in="articles" sort="date:desc" limit="1" }}
-                        <a href="{{ url }}" class="group flex flex-col gap-1 hover:text-primary transition-colors text-right">
-                            <span class="text-sm text-gray-500 uppercase tracking-wider">Next →</span>
-                            <span class="font-semibold group-hover:underline">{{ title }}</span>
-                        </a>
+                    {{ collection:next in="articles" sort="date:desc" current="{{ id }}" limit="1" }}
+                        {{ if no_results }}
+                            <div></div>
+                        {{ else }}
+                            <a href="{{ url }}" class="group flex flex-col gap-1 hover:text-primary transition-colors text-right">
+                                <span class="text-sm text-gray-500 uppercase tracking-wider">Next →</span>
+                                <span class="font-semibold group-hover:underline">{{ title }}</span>
+                            </a>
+                        {{ /if }}
                     {{ /collection:next }}
                 </div>
             </div>

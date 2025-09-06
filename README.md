@@ -1,37 +1,5 @@
-# Statamic Starter Kit
-A base starter for Statamic with our preferred config and boilerplate.
-
-## Using this starter kit
-Starting a new project (with the [Statamic CLI](https://github.com/statamic/cli)):
-```
-statamic new my-app the-caretakers/statamic-starter-kit
-```
-
-Or install into an existing project:
-```
-php please starter-kit:install the-caretakers/statamic-starter-kit
-```
-
-## Getting started
-Install frontend dependencies:
-```
-npm install
-```
-
-Compile assets:
-```
-npm run dev
-```
-
-## Exporting
-To export this starter kit for use:
-```
-php please starter-kit:export .
-```
-
----
-
-# Project README
+# Howick Pakuranga Baseball
+The website for HP Hawks.
 
 ## Installation
 Create an environment file:
