@@ -1,0 +1,26 @@
+<div class="
+    flex flex-col gap-10
+    {{ partial:components/settings/text_colour :text_colour="block_title_colour" }}
+    {{ block_title_center ? 'items-center' : '' }}
+">
+    <{{ block_title_tag ?? 'h2' }}
+        class="
+            text-4xl md:text-5xl font-bold text-balance max-w-3xl
+            {{ block_title_center ? 'text-center mx-auto' : 'text-left' }}
+        "
+    >
+        {{ block_title | nl2br }}
+    </{{ block_title_tag ?? 'h2' }}>
+
+    {{ if block_title_keyline }}
+        <hr class="border-current w-full" />
+    {{ /if }}
+
+    {{ if ! (buttons | is_empty) }}
+        <div class="flex flex-wrap gap-6 text-current">
+            {{ buttons }}
+                {{ partial:components/common/button size="sm" }}
+            {{ /buttons }}
+        </div>
+    {{ /if  }}
+</div>

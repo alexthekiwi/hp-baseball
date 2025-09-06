@@ -1,6 +1,44 @@
 title: Banner
 fields:
   -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate:
+        - required
+      width: 75
+  -
+    handle: title_colour
+    field: block_settings.text_colour
+    config:
+      display: 'Title Colour'
+      width: 25
+  -
+    handle: content
+    field:
+      type: textarea
+      display: Content
+  -
+    handle: content_align
+    field:
+      options:
+        -
+          key: left
+          value: Left
+        -
+          key: center
+          value: Center
+        -
+          key: right
+          value: Right
+      default: left
+      type: select
+      display: 'Content Alignment'
+      width: 25
+  -
+    import: buttons
+  -
     handle: image
     field:
       max_files: 1
@@ -10,19 +48,5 @@ fields:
       display: Image
       validate:
         - required
-  -
-    handle: title
-    field:
-      type: text
-      display: Title
-      validate:
-        - required
-  -
-    handle: content
-    field:
-      type: textarea
-      display: Content
-  -
-    import: buttons
   -
     import: block_settings

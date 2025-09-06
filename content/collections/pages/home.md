@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757126587
+updated_at: 1757128489
 page_builder:
   -
     id: makdwkj7
@@ -101,7 +101,7 @@ page_builder:
         id: makkxlrc
         title: 'Quality coaching'
         content: 'Our passionate and knowledgeable coaches are dedicated to helping every player build their skills, confidence, and love for the game.'
-        image: 496803509_1258661649600618_1496955645492388248_n.jpg
+        image: 496554607_1258661532933963_4550606040072191680_n.jpg
         type: item
         enabled: true
       -
@@ -134,76 +134,30 @@ page_builder:
     block_title_tag: h2
     block_title_colour: primary
     block_title_center: true
-  -
-    id: malx3ve0
-    items:
-      -
-        id: malx3xow
-        title: 'Starter Kit Marketplace'
-        background_type: Transparent
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet lacus sit amet molestie aliquam.'
-        buttons:
-          -
-            id: malx48x3
-            text: 'Explore the Starter Kits'
-            link: 'https://statamic.com/marketplace'
-            style: Solid
-            colour: black
-            type: button_styled
-            enabled: true
-        type: text
-        enabled: true
-        padding: Base
-      -
-        id: malx4ux0
-        asset: 496803509_1258661649600618_1496955645492388248_n.jpg
-        type: media
-        enabled: true
-    background_colour: White
-    padding_top: base
-    padding_bottom: base
-    type: content_block
-    enabled: true
-    text_colour: default
+    block_title_keyline: false
+    show_block_title_options: false
   -
     id: malzdrw3
-    image: 496554607_1258661532933963_4550606040072191680_n.jpg
-    title: 'The answer to your frustrating CMS problems.'
-    content: 'Statamic supports your entire team with an award-winning user experience, a kind-hearted community, and all the power of Laravel at your fingertips.'
+    image: 496803509_1258661649600618_1496955645492388248_n.jpg
+    title: 'Ready to play ball?'
+    content: "Registrations for the upcoming baseball season are now open. You can find all the information on club fees and season dates right here. We can't wait to welcome you to the club"
     buttons:
       -
         id: malzqyn7
-        text: 'Get Pro Now'
-        link: 'https://statamic.com/pricing'
+        text: 'Registration info'
+        link: 'entry::c68ea1d3-2ef0-45d2-8af7-d40ee356c0af'
         style: Solid
-        colour: black
-        type: button_styled
-        enabled: true
-      -
-        id: malzrdc7
-        text: 'Try the Demo'
-        link: 'https://demo.statamic.com/cp'
-        style: Outlined
-        colour: black
+        colour: primary
         type: button_styled
         enabled: true
     background_colour: White
     padding_top: none
-    padding_bottom: none
+    padding_bottom: base
     type: banner
     enabled: true
     text_colour: default
-  -
-    id: maomhfq1
-    title: 'What our happy customers say'
-    testimonials:
-      - e94fdadb-a822-445b-a37d-f710a1cb1f4c
-    background_colour: White
-    padding_top: base
-    padding_bottom: base
-    type: testimonials
-    enabled: true
-    text_colour: default
+    title_colour: default
+    content_align: left
   -
     id: maomhzjm
     title: 'Frequently asked questions'
@@ -244,11 +198,24 @@ page_builder:
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget egestas lacus. Nam egestas faucibus lacus, ac euismod ipsum placerat non. Ut viverra ac quam sed imperdiet. Ut nibh ex, cursus at tortor at, commodo tristique sapien. Sed iaculis est quis fermentum aliquam. Suspendisse venenatis sapien vehicula, egestas lectus id, placerat augue. Ut efficitur iaculis est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tincidunt diam ut nisi porttitor aliquet. Integer placerat eu sem sed faucibus. Vivamus tincidunt mauris ac interdum molestie. Duis facilisis sem non risus finibus posuere.'
         type: accordion
         enabled: true
-    background_colour: primary-light
+    background_colour: gray-light
     padding_top: base
     padding_bottom: base
     type: accordions
     enabled: true
     text_colour: default
+    block_title: 'Frequently asked questions'
+    block_title_tag: h2
+    block_title_colour: primary
+    block_title_center: true
+    block_title_keyline: true
+    buttons:
+      -
+        id: mf7o7wip
+        text: 'View all FAQs'
+        link: 'entry::635dc857-71a2-447c-9172-5aa4bd1a466d'
+        type: button_simple
+        enabled: true
+    show_block_title_options: false
 hide_breadcrumbs: true
 ---

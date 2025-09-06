@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Baseball player hitting ball with bat'
 size: 510063
 last_modified: 1757124973
 width: 2048

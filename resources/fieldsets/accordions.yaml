@@ -1,10 +1,12 @@
 title: Accordions
 fields:
   -
-    handle: title
+    import: block_title
+  -
+    handle: accordion_items_section
     field:
-      type: text
-      display: Title
+      type: section
+      display: 'Accordion Items'
   -
     handle: items
     field:

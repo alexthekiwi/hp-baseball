@@ -1,11 +1,22 @@
 title: 'Block Title'
 fields:
   -
+    handle: block_title_section
+    field:
+      type: section
+      display: 'Block Title'
+  -
     handle: block_title
     field:
       type: textarea
       display: Title
-      width: 50
+      width: 75
+  -
+    handle: show_block_title_options
+    field:
+      type: toggle
+      display: 'Show Options'
+      width: 25
   -
     handle: block_title_tag
     field:
@@ -27,12 +38,18 @@ fields:
       type: select
       display: 'Title Tag'
       width: 25
+      if:
+        show_block_title_options: 'equals true'
+      always_save: true
   -
     handle: block_title_colour
     field: block_settings.text_colour
     config:
       display: 'Title Colour'
       width: 25
+      always_save: true
+      if:
+        show_block_title_options: 'equals true'
   -
     handle: block_title_center
     field:
@@ -40,3 +57,17 @@ fields:
       display: 'Title Center'
       width: 25
       default: true
+      if:
+        show_block_title_options: 'equals true'
+      always_save: true
+  -
+    handle: block_title_keyline
+    field:
+      type: toggle
+      display: Keyline
+      width: 25
+      if:
+        show_block_title_options: 'equals true'
+      always_save: true
+  -
+    import: buttons

@@ -1,12 +1,15 @@
 {{ partial:components/block }}
-    {{ partial:components/common/background_image class="rounded-outer lg:!h-[550px]" }}
-        <div class="max-w-xl w-full h-full p-8">
-            <div class="bg-white h-full p-12 rounded-inner">
-                <div class="flex flex-col h-full justify-end gap-8">
-                    <h2 class="text-4xl md:text-5xl font-bold text-balance">{{ title }}</h2>
-
+    {{ partial:components/common/background_image class="rounded-outer lg:!min-h-[550px]" }}
+        <div class="max-w-xl flex items-center w-full h-full p-8 {{ switch(
+            (content_align == 'left') => 'mr-auto',
+            (content_align == 'center') => 'mx-auto',
+            (content_align == 'right') => 'ml-auto',
+            () => 'mr-auto',
+        ) }}">
+            <div class="bg-white p-12 rounded-inner">
+                <div class="flex flex-col h-full justify-center gap-8">
+                    <h2 class="text-4xl md:text-5xl font-bold text-balance {{ partial:components/settings/text_colour :text_colour="title_colour" }}">{{ title }}</h2>
                     <p>{{ content }}</p>
-
                     {{ partial:components/common/buttons }}
                 </div>
             </div>

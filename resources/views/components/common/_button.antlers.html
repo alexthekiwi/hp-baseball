@@ -1,7 +1,7 @@
 {{ $button_href = button_link:permalink ?? button_link ?? link:permalink ?? link ?? url }}
 {{ $button_content = slot ?? button_text ?? text ?? content }}
 {{ $button_style = style ?? 'Outlined' }}
-{{ $button_colour = colour ?? 'white' }}
+{{ $button_colour = colour ?? 'default' }}
 
 {{ button_classes = 'inline-flex items-center gap-4 font-medium text-center whitespace-nowrap transition-colors rounded-outer cursor-pointer' }}
 
@@ -20,6 +20,7 @@
     {{ colour_classes = switch(
         ($button_colour == 'black') => 'text-black border-black',
         ($button_colour == 'white') => 'text-white border-white hover:bg-white hover:text-black',
+        () => 'text-current border-current',
     )}}
 {{ elseif $button_style == 'Solid' }}
     {{ colour_classes = switch(
@@ -27,6 +28,7 @@
         ($button_colour == 'primary') => 'bg-primary text-white',
         ($button_colour == 'gray') => 'bg-gray text-white',
         ($button_colour == 'white') => 'bg-white text-black',
+        () => '',
     )}}
 {{ /if }}
 

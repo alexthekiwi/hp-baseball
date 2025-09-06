@@ -1,11 +1,8 @@
 <section class="{{ {partial:components/settings/padding} | trim }} {{ {partial:components/settings/background_colour} | trim }} {{ {partial:components/settings/text_colour} | trim }}">
     <div {{ if !no_container }} class="flex flex-col gap-12 lg:gap-16 container" {{ /if }}>
         {{ if block_title }}
-            <{{ block_title_tag ?? 'h2' }} class="text-4xl md:text-5xl font-bold text-balance max-w-xl {{ block_title_center ? 'text-center mx-auto' : 'text-left' }} {{ partial:components/settings/text_colour :text_colour="block_title_colour" }}">
-                {{ block_title | nl2br }}
-            </{{ block_title_tag ?? 'h2' }}>
+            {{ partial:components/block_title }}
         {{ /if }}
-
         {{ slot }}
     </div>
 </section>
