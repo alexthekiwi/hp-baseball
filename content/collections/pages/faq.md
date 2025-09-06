@@ -8,19 +8,18 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1756609683
+updated_at: 1757131110
 page_builder:
   -
     id: mez3qauy
-    title: 'Frequently asked questions'
+    title: 'Frequently Asked Questions'
     background_type: Colour
     background_colour: primary
-    overlay_colour: black
-    overlay_opacity: 4
-    height: 3
     align: start
     type: hero
     enabled: true
+    overlay_opacity: 0
+    height: 0
   -
     id: mez3p5hq
     background_colour: White
@@ -263,5 +262,10 @@ page_builder:
                 text: treasurer@hpbaseball.co.nz
         type: accordion
         enabled: true
+    show_block_title_options: false
+    block_title_tag: h2
+    block_title_colour: primary
+    block_title_center: true
+    block_title_keyline: true
 hide_breadcrumbs: false
 ---

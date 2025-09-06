@@ -127,6 +127,8 @@ fields:
       type: range
       display: Height
       width: 50
+      if:
+        background_type: 'equals Image'
   -
     handle: align
     field:
@@ -146,18 +148,4 @@ fields:
       display: 'Content Alignment'
       width: 50
   -
-    handle: buttons
-    field:
-      type: replicator
-      display: Buttons
-      collapse: true
-      max_sets: 3
-      sets:
-        new_set_group:
-          display: 'New Set Group'
-          sets:
-            button:
-              display: Button
-              fields:
-                -
-                  import: button_simple
+    import: buttons

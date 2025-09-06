@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757128687
+updated_at: 1757132475
 page_builder:
   -
     id: makdwkj7
@@ -18,16 +18,20 @@ page_builder:
     enabled: true
     buttons:
       -
-        id: mf7ldg0x
+        id: mf7qoyah
         text: 'Registration and Club Fees'
         link: 'entry::c68ea1d3-2ef0-45d2-8af7-d40ee356c0af'
-        type: button
+        style: Solid
+        colour: primary
+        type: button_styled
         enabled: true
       -
-        id: mf7ldna6
-        text: 'Baseball Grade Info'
+        id: mf7qp749
+        text: 'Baseball Grades'
         link: 'entry::80119a42-e994-4f61-8bcb-ef1c92e9a867'
-        type: button
+        style: Outlined
+        colour: white
+        type: button_styled
         enabled: true
     overlay_opacity: 4
     overlay_colour: black
@@ -67,8 +71,16 @@ page_builder:
         enabled: true
       -
         id: mf7lp6t4
-        text: 'Senior Baseball'
+        text: 'Premier & Reserves'
         link: 'entry::2b6ace8c-982f-4776-b4fa-f698ccbf57ae'
+        style: Underlined
+        colour: white
+        type: button_styled
+        enabled: true
+      -
+        id: mf7qubpw
+        text: 'Adult Social Baseball'
+        link: 'entry::15ed56f1-d349-4c7b-9298-f1a67121c67c'
         style: Underlined
         colour: white
         type: button_styled
@@ -150,6 +162,14 @@ page_builder:
         colour: primary
         type: button_styled
         enabled: true
+      -
+        id: mf7qlo5a
+        text: 'View FAQs'
+        link: 'entry::635dc857-71a2-447c-9172-5aa4bd1a466d'
+        style: Outlined
+        colour: gray
+        type: button_styled
+        enabled: true
     background_colour: White
     padding_top: none
     padding_bottom: base
@@ -159,76 +179,17 @@ page_builder:
     title_colour: default
     content_align: left
   -
-    id: maomhzjm
-    title: 'Frequently asked questions'
-    items:
-      -
-        id: maomi3no
-        title: 'I am a FAQ question and I need an answer'
-        bard:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget egestas lacus. Nam egestas faucibus lacus, ac euismod ipsum placerat non. Ut viverra ac quam sed imperdiet. Ut nibh ex, cursus at tortor at, commodo tristique sapien. Sed iaculis est quis fermentum aliquam. Suspendisse venenatis sapien vehicula, egestas lectus id, placerat augue. Ut efficitur iaculis est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tincidunt diam ut nisi porttitor aliquet. Integer placerat eu sem sed faucibus. Vivamus tincidunt mauris ac interdum molestie. Duis facilisis sem non risus finibus posuere.'
-        type: accordion
-        enabled: true
-      -
-        id: maomical
-        title: 'I am a FAQ question and I need an answer'
-        bard:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget egestas lacus. Nam egestas faucibus lacus, ac euismod ipsum placerat non. Ut viverra ac quam sed imperdiet. Ut nibh ex, cursus at tortor at, commodo tristique sapien. Sed iaculis est quis fermentum aliquam. Suspendisse venenatis sapien vehicula, egestas lectus id, placerat augue. Ut efficitur iaculis est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tincidunt diam ut nisi porttitor aliquet. Integer placerat eu sem sed faucibus. Vivamus tincidunt mauris ac interdum molestie. Duis facilisis sem non risus finibus posuere.'
-        type: accordion
-        enabled: true
-      -
-        id: maomie3e
-        title: 'I am a FAQ question and I need an answer'
-        bard:
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget egestas lacus. Nam egestas faucibus lacus, ac euismod ipsum placerat non. Ut viverra ac quam sed imperdiet. Ut nibh ex, cursus at tortor at, commodo tristique sapien. Sed iaculis est quis fermentum aliquam. Suspendisse venenatis sapien vehicula, egestas lectus id, placerat augue. Ut efficitur iaculis est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tincidunt diam ut nisi porttitor aliquet. Integer placerat eu sem sed faucibus. Vivamus tincidunt mauris ac interdum molestie. Duis facilisis sem non risus finibus posuere.'
-        type: accordion
-        enabled: true
-    background_colour: gray-light
-    padding_top: base
-    padding_bottom: base
-    type: accordions
-    enabled: true
-    text_colour: default
-    block_title: 'Frequently asked questions'
-    block_title_tag: h2
-    block_title_colour: primary
-    block_title_center: true
-    block_title_keyline: true
-    buttons:
-      -
-        id: mf7o7wip
-        text: 'View all FAQs'
-        link: 'entry::635dc857-71a2-447c-9172-5aa4bd1a466d'
-        type: button_simple
-        enabled: true
-    show_block_title_options: false
-  -
     id: mf7oz5s8
     title: 'Latest news'
     mode: Recent
-    limit: 5
-    background_colour: White
+    limit: 3
+    background_colour: primary-light
     text_colour: default
     padding_top: base
     padding_bottom: base
     type: featured_articles
     enabled: true
-    block_title: 'Latest news'
+    block_title: 'Latest news from the ballpark'
     show_block_title_options: true
     block_title_tag: h2
     block_title_colour: primary
@@ -241,5 +202,20 @@ page_builder:
         link: 'entry::f9736c8a-07d3-427f-bf9a-e6b03d4b80ed'
         type: button_simple
         enabled: true
+  -
+    id: mf7prba9
+    type: sponsors
+    enabled: true
+    block_title: 'Cheers to our amazing sponsors'
+    show_block_title_options: false
+    block_title_tag: h2
+    block_title_colour: primary
+    block_title_center: true
+    block_title_keyline: true
+    mode: auto
+    background_colour: white
+    text_colour: default
+    padding_top: base
+    padding_bottom: base
 hide_breadcrumbs: true
 ---

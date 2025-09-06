@@ -1,0 +1,40 @@
+title: Sponsor
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: logo
+            field:
+              max_files: 1
+              container: assets
+              folder: sponsors
+              type: assets
+              display: Logo
+          -
+            handle: website
+            field:
+              input_type: url
+              type: text
+              display: Website
+              width: 50
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

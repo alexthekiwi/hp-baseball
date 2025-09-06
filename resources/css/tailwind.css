@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant scrolled (&.scrolled);
 @custom-variant header-scrolled (&:where(header.scrolled *));
@@ -12,7 +13,8 @@
 @theme {
     /* Colours */
     --color-primary: #ce0e2d;
-    --color-primary-light: #fee7e4;
+    --color-primary-dark: #a00b24;
+    --color-primary-light: #fef3f2;
     --color-primary-contrast: #fff;
 
     --color-secondary: #f8df8d;
@@ -23,6 +25,9 @@
     --color-gray-light: #F8F8F8;
     --color-black: #191A1B;
     --color-white: #fff;
+
+    /* Fonts */
+    --font-sans: 'Poppins', 'Helvetica', sans-serif;
 
     /* Radius */
     --radius-outer: 6px;
@@ -35,6 +40,10 @@
     --padding-base: 10rem;
     --padding-lg: 12rem;
     --padding-xl: 16rem;
+
+    /* Tailwind Typograpgy */
+    --tw-prose-headings: #58595b;
+    --tw-prose-body: #58595b;
 }
 
 @media (max-width: 1024px) {

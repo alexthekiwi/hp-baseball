@@ -1,2 +1,29 @@
 title: Sponsors
-fields: {  }
+fields:
+  -
+    import: block_title
+  -
+    handle: mode
+    field:
+      options:
+        -
+          key: auto
+          value: Auto
+        -
+          key: manual
+          value: Manual
+      default: auto
+      type: button_group
+      display: Mode
+      instructions: 'Do you want the sponsors to automatically be selected, or will you manually upload here?'
+  -
+    handle: sponsors
+    field:
+      collections:
+        - sponsors
+      type: entries
+      display: Sponsors
+      if:
+        mode: 'equals manual'
+  -
+    import: block_settings

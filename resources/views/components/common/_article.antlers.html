@@ -1,15 +1,16 @@
 <div class="flex flex-col gap-6">
-    <a href="{{ permalink }}">
-        <h3 class="text-lg lg:text-xl font-bold">
+    <p class="text-sm font-bold">{{ date | format('d M y') }}</p>
+    <a href="{{ permalink }}" class="hover:text-primary transition-colors duration-300 ease-in-out">
+        <h3 class="min-h-[73px] text-lg lg:text-xl font-bold border-b border-current pb-4 {{ partial:components/settings/text_colour :text_colour="block_title_colour" }}">
             {{ title }}
         </h3>
     </a>
 
-    {{ partial:components/text/light }}
-        {{ (excerpt ?? content) | truncate(80, '...') }}
-    {{ /partial:components/text/light }}
+    <div class="text-sm flex-grow">
+        {{ excerpt ?? (bard | strip_tags | truncate(120, '...')) }}
+    </div>
 
-    <a href="{{ permalink }}" class="flex items-center gap-2 text-sm">
+    <a href="{{ permalink }}" class="mt-auto flex items-center gap-2 text-sm hover:text-primary transition-colors duration-300 ease-in-out">
         {{ partial:components/text/subtitle }}
             Read article
         {{ /partial:components/text/subtitle }}

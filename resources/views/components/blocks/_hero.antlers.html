@@ -17,48 +17,44 @@
                     {{ if subtitle }}
                         <p class="text-xl">{{ subtitle }}</p>
                     {{ /if }}
-                    <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold max-w-2xl text-pretty">
+                    <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold max-w-4xl text-pretty">
                         {{ title | nl2br }}
                     </h1>
                 </div>
 
-                {{ partial:components/common/buttons colour="primary" style="Solid" }}
+                {{ partial:components/common/buttons colour="white" style="Solid" }}
             </div>
         {{ /partial:components/common/background_image }}
     {{ else }}
-        <div class="mb-12 flex items-center {{ switch(
-                (background_colour == 'primary') => 'bg-primary text-white',
-                (background_colour == 'secondary') => 'bg-secondary text-white',
+        <div class="mb-12 {{ switch(
+                (background_colour == 'primary') => 'bg-primary text-primary-contrast',
+                (background_colour == 'primary-light') => 'bg-primary-light',
+                (background_colour == 'secondary') => 'bg-secondary text-secondary-contrast',
+                (background_colour == 'secondary-light') => 'bg-secondary-light',
                 (background_colour == 'white') => 'bg-white',
                 (background_colour == 'gray') => 'bg-gray text-white',
                 (background_colour == 'black') => 'bg-black text-white',
                 () => 'bg-white',
-            )}} {{ switch(
-                (height ?? 0 == 1) => 'py-16 h-auto',
-                (height ?? 0 == 2) => 'py-24 min-h-[300px] lg:min-h-[450px]',
-                (height ?? 0 == 3) => 'py-24 min-h-[400px] lg:min-h-[500px]',
-                (height ?? 0 == 4) => 'py-24 min-h-[500px] lg:min-h-[700px]',
-                (height ?? 0 == 5) => 'py-24 min-h-[100vh] h-[700px] lg:h-[900px]',
-                () => 'py-24 min-h-[500px] lg:min-h-[700px]'
-            ) }}
+            )}}
         ">
-            <div class="container flex flex-col gap-12 justify-center h-full {{ switch(
+            <div class="flex flex-col gap-8 py-24 container {{ switch(
                 (align == 'start') => 'items-start text-left',
                 (align == 'middle') => 'items-center text-center',
                 (align == 'end') => 'items-end text-right',
                 () => 'items-start',
             ) }}">
                 {{# Spacer element for the sticky header with hero images #}}
-                <div class="block h-[20px] lg:h-[60px] w-full"></div>
+                <div class="block h-[20px] lg:h-[40px] w-full"></div>
 
-                <div class="flex flex-col gap-6">
-                    {{ if subtitle }}
-                        <p class="text-xl">{{ subtitle }}</p>
-                    {{ /if }}
-                    <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold max-w-2xl text-pretty">
-                        {{ title | nl2br }}
-                    </h1>
-                </div>
+                 <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold max-w-4xl text-pretty">
+                    {{ title | nl2br }}
+                </h1>
+
+                {{ if subtitle }}
+                    {{ partial:components/text/subtitle class="text-center" }}
+                        {{ subtitle }}
+                    {{ /partial:components/text/subtitle }}
+                {{ /if }}
 
                 {{ partial:components/common/buttons }}
             </div>

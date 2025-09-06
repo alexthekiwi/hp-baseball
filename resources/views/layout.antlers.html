@@ -10,6 +10,7 @@
     {{ if config:captcha:enabled }} {{ captcha:head }} {{ /if }}
     {{ partial:components/common/seo }}
     {{ vite src="resources/js/app.js" }}
+    {{ partial:components/typography/fonts }}
 
     {{ livewire:styles }}
 </head>

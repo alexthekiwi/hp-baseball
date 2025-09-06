@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1756611597
+updated_at: 1757131097
 page_builder:
   -
     id: mayjquz6
@@ -18,10 +18,9 @@ page_builder:
     background_colour: primary
     type: hero
     enabled: true
-    overlay_colour: black
-    overlay_opacity: 4
-    height: 3
     align: start
+    overlay_opacity: 0
+    height: 0
   -
     id: mayjrj8t
     title: 'Get in Touch'

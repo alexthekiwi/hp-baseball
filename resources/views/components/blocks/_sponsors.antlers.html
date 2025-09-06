@@ -1,0 +1,27 @@
+{{ partial:components/block }}
+    {{ if mode === 'auto' }}
+        {{ sponsors = {collection:sponsors} }}
+    {{ /if }}
+
+    <ul class="flex gap-8 md:gap-12 flex-wrap justify-center items-center">
+        {{ sponsors }}
+            <li class="w-[150px] h-[100px] md:w-[200px] md:h-[120px] flex items-center justify-center">
+                {{ if website }}
+                    <a href="{{ website }}" target="_blank" rel="noopener noreferrer" class="w-full h-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                        <img
+                            src="{{ glide :src="logo" preset="lg-webp" }}" alt="{{ title }}"
+                            class="max-w-full max-h-full object-contain"
+                        >
+                    </a>
+                {{ else }}
+                    <div class="w-full h-full flex items-center justify-center">
+                        <img
+                            src="{{ glide :src="logo" preset="lg-webp" }}" alt="{{ title }}"
+                            class="max-w-full max-h-full object-contain"
+                        >
+                    </div>
+                {{ /if }}
+            </li>
+        {{ /sponsors }}
+    </ul>
+{{ /partial:components/block }}

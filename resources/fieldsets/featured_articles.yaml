@@ -28,7 +28,7 @@ fields:
   -
     handle: limit
     field:
-      default: '5'
+      default: '3'
       type: integer
       display: Limit
       if:

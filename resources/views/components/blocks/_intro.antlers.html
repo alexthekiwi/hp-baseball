@@ -18,10 +18,10 @@
 
         <div class="flex flex-col gap-20 xl:max-w-2xl w-full">
             <div class="max-w-2xl xl:max-w-xl">
-                <{{ $tag }} class="text-2xl lg:text-3xl font-bold">{{ content }}</{{ $tag }}>
+                <{{ $tag }} class="text-xl lg:text-2xl font-bold">{{ content }}</{{ $tag }}>
             </div>
 
-            {{ partial:components/common/buttons class="space-y-6 lg:space-y-10" }}
+            {{ partial:components/common/buttons class="flex flex-col gap-6" }}
         </div>
     </div>
 {{ /partial:components/block }}

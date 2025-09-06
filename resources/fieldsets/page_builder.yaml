@@ -78,6 +78,11 @@ fields:
               fields:
                 -
                   import: form
+            sponsors:
+              display: Sponsors
+              fields:
+                -
+                  import: sponsors
         advanced:
           display: Advanced
           sets:

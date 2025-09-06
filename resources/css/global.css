@@ -4,6 +4,18 @@ body {
     @apply text-gray;
 }
 
+.prose {
+    h2 {
+        @apply text-primary;
+    }
+
+    h3,
+    p,
+    strong {
+        @apply text-gray;
+    }
+}
+
 .vertical-text {
     writing-mode: sideways-lr;
     text-orientation: mixed;

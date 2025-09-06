@@ -1,8 +1,10 @@
 <main id="content" class="flex flex-col min-h-screen">
     {{ partial:layout/header/index }}
 
-    <div class="flex flex-col gap-8 container py-24 px-72">
-        <h1 class="text-center">{{ title | nl2br | widont() }}</h1>
+    <div class="flex flex-col gap-8 container pt-24">
+        <h1 class="text-primary mt-24 text-4xl lg:text-5xl font-bold max-w-4xl mx-auto text-pretty text-center">
+            {{ title | nl2br }}
+        </h1>
         <div class="text-center">
             {{ partial:components/text/subtitle }}
                 {{ author:name }} – {{ date }}
@@ -11,15 +13,44 @@
     </div>
 
     <div class="flex flex-col flex-grow">
-        <div class="container px-32">
+        <div class="container">
             {{ thumbnail }}
                 {{ partial:components/common/image }}
             {{ /thumbnail }}
         </div>
 
-        <div class="bard container px-72 py-24 text-lg">
+        <div class="prose max-w-4xl container py-24">
             {{ bard }}
         </div>
+
+        {{# Article Navigation #}}
+        <nav class="container py-12 border-t border-gray-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-wrap justify-between items-center gap-6">
+                    {{# Previous Article (older) #}}
+                    {{ collection:previous in="articles" sort="date:desc" limit="1"  }}
+                        <a href="{{ url }}" class="group flex flex-col gap-1 hover:text-primary transition-colors">
+                            <span class="text-sm text-gray-500 uppercase tracking-wider">← Previous</span>
+                            <span class="font-semibold group-hover:underline">{{ title }}</span>
+                        </a>
+                    {{ /collection:previous }}
+
+                    {{# Back to Articles #}}
+                    <a href="/news" class="inline-flex flex-col gap-1 hover:text-primary transition-colors mx-auto">
+                        <span class="text-sm text-gray-500 uppercase tracking-wider text-center">Back to</span>
+                        <span class="font-semibold hover:underline">All Articles</span>
+                    </a>
+
+                    {{# Next Article (newer) #}}
+                    {{ collection:next in="articles" sort="date:desc" limit="1" }}
+                        <a href="{{ url }}" class="group flex flex-col gap-1 hover:text-primary transition-colors text-right">
+                            <span class="text-sm text-gray-500 uppercase tracking-wider">Next →</span>
+                            <span class="font-semibold group-hover:underline">{{ title }}</span>
+                        </a>
+                    {{ /collection:next }}
+                </div>
+            </div>
+        </nav>
     </div>
 
     {{ partial:layout/footer/index }}

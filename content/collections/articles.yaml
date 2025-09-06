@@ -6,6 +6,7 @@ taxonomies:
   - tags
 revisions: false
 route: '/news/{{ slug }}'
+date: true
 sort_dir: asc
 date_behavior:
   past: public
