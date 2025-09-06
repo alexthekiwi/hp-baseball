@@ -26,12 +26,19 @@
             {{ items }}
                 <div
                     @mouseenter="activeIndex = {{ index }}" {{# Update activeIndex on hover; 'index' is 0-based from Antlers #}}
-                    class="relative h-full bg-cover bg-center overflow-hidden cursor-default transition-all duration-700 ease-in-out group"
-                    style="background-image: url('{{ glide :src="image" preset="xl-webp" width="1000" height="1000" fit="crop_focal" }}');"
-                    :style="{ flexBasis: getItemFlexBasis({{ index }}), filter: activeIndex === {{ index }} ? 'brightness(1)' : 'brightness(0.7)' }"
+                    class="relative h-full overflow-hidden cursor-default transition-all duration-700 ease-in-out group"
+                    :style="{ flexBasis: getItemFlexBasis({{ index }}) }"
                     role="region"
                     aria-label="{{ title }}"
                 >
+                    {{# Background image with brightness filter #}}
+                    <div 
+                        class="absolute inset-0 bg-cover bg-center transition-all duration-700"
+                        style="background-image: url('{{ glide :src="image" preset="xl-webp" width="1000" height="1000" fit="crop_focal" }}');"
+                        :style="{ filter: activeIndex === {{ index }} ? 'brightness(1)' : 'brightness(0.7)' }"
+                    ></div>
+                    
+                    {{# Overlay #}}
                     <div
                         class="absolute inset-0 transition-opacity duration-700 ease-in-out pointer-events-none"
                         :class="activeIndex === {{ index }} ? 'bg-black/40' : 'bg-black/60'"
