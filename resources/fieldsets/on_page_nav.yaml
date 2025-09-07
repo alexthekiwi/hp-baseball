@@ -1,0 +1,79 @@
+title: 'On Page Nav'
+fields:
+  -
+    import: block_title
+  -
+    handle: links
+    field:
+      type: replicator
+      display: Links
+      sets:
+        links:
+          display: Links
+          sets:
+            link:
+              display: Link
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: link_type
+                  field:
+                    options:
+                      -
+                        key: anchor
+                        value: Anchor
+                      -
+                        key: url
+                        value: 'Another Page'
+                    default: anchor
+                    type: button_group
+                    display: 'Link Type'
+                    width: 50
+                    validate:
+                      - required
+                -
+                  handle: page_link
+                  field:
+                    type: link
+                    display: 'Page Link'
+                    width: 50
+                    if:
+                      link_type: 'equals url'
+                -
+                  handle: anchor_link
+                  field:
+                    prepend: '#'
+                    type: text
+                    display: 'Anchor Link'
+                    width: 50
+                    if:
+                      link_type: 'equals anchor'
+  -
+    handle: columns
+    field:
+      options:
+        -
+          key: 2
+          value: null
+        -
+          key: 3
+          value: null
+        -
+          key: 4
+          value: null
+        -
+          key: 5
+          value: null
+        -
+          key: 6
+          value: null
+      default: '4'
+      type: select
+      display: Columns
+      width: 33
+  -
+    import: block_settings

@@ -138,3 +138,9 @@ fields:
               fields:
                 -
                   import: resources
+            on_page_nav:
+              display: 'On Page Nav'
+              icon: link
+              fields:
+                -
+                  import: on_page_nav

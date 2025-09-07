@@ -1,4 +1,4 @@
-<section class="{{ {partial:components/settings/padding} | trim }} {{ {partial:components/settings/background_colour} | trim }} {{ {partial:components/settings/text_colour} | trim }}">
+<section {{ if anchor_id }} id="{{ anchor_id }}" {{ /if }} class="{{ {partial:components/settings/padding} | trim }} {{ {partial:components/settings/background_colour} | trim }} {{ {partial:components/settings/text_colour} | trim }}">
     <div {{ if !no_container }} class="flex flex-col gap-12 lg:gap-16 container" {{ /if }}>
         {{ if block_title }}
             {{ partial:components/block_title }}

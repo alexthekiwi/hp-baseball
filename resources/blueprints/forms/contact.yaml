@@ -5,7 +5,7 @@ tabs:
       -
         fields:
           -
-            handle: full_name
+            handle: name
             field:
               type: text
               display: 'Full name'
@@ -13,22 +13,24 @@ tabs:
               validate:
                 - required
           -
-            handle: phone_number
+            handle: phone
             field:
               type: text
               display: 'Phone number'
               width: 50
+              input_type: tel
           -
-            handle: email_address
+            handle: email
             field:
               type: text
               display: 'Email address'
               validate:
                 - required
+              input_type: email
           -
-            handle: description
+            handle: message
             field:
               type: textarea
-              display: Description
+              display: 'Your message'
               validate:
                 - required
