@@ -112,6 +112,7 @@
                                     }}
                                 </div>
                             </div>
+                            {{ if config:captcha:enabled }} {{ captcha }} {{ /if }}
                         {{ /if }}
                     </div>
                 {{ /form:create }}

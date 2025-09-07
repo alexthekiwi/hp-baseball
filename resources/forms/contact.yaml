@@ -1,1 +1,15 @@
 title: Contact
+email:
+  -
+    id: mf9419br
+    to: '{{ email }}'
+    subject: 'Your Enquiry'
+    html: email/form_sender
+    text: email/form_sender_text
+  -
+    id: mf941qdy
+    to: hello@example.com
+    subject: 'New Online Enquiry'
+    html: email/form_owner
+    text: email/form_owner_text
+    attachments: true
