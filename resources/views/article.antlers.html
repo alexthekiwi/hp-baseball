@@ -8,11 +8,13 @@
     }}
 
     <div class="flex flex-col flex-grow">
-        <div class="container">
-            {{ thumbnail }}
-                {{ partial:components/common/image }}
-            {{ /thumbnail }}
-        </div>
+        {{ if thumbnail }}
+            <div class="container">
+                {{ thumbnail }}
+                    {{ partial:components/common/image }}
+                {{ /thumbnail }}
+            </div>
+        {{ /if }}
 
         <div class="container">
             <div class="prose max-w-4xl mx-auto w-full mb-24 mt-8">
