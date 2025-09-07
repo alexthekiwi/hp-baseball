@@ -10,7 +10,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757204385
+updated_at: 1757204944
 page_builder:
   -
     id: mf7kt9pc
@@ -159,6 +159,11 @@ page_builder:
   -
     id: mf8y2dah
     block: 7a216911-3c67-44ac-bca1-97aef3bb40e8
+    type: fixed_block
+    enabled: true
+  -
+    id: mf8yg76n
+    block: dcce952d-9ee0-4880-ba77-6e1ee1c66365
     type: fixed_block
     enabled: true
 ---

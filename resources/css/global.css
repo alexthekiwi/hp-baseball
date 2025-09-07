@@ -14,6 +14,10 @@ body {
     strong {
         @apply text-gray;
     }
+
+    h3 {
+        @apply mb-0;
+    }
 }
 
 .vertical-text {

@@ -37,7 +37,7 @@
     {{ slot:attributes }}
     {{ if !no_link }}
         href="{{ $button_href }}"
-        {{ target_blank ?= 'rel="noopener" target="_blank"' }}
+        {{ target_blank ?= 'rel="noopener noreferrer" target="_blank"' }}
     {{ else }}
         type="button"
     {{ /if }}

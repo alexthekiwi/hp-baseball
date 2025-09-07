@@ -1,10 +1,12 @@
 title: Form
 fields:
   -
-    handle: title
-    field:
-      type: text
-      display: Title
+    import: block_title
+  -
+    handle: content
+    field: common.bard
+    config:
+      display: Content
   -
     handle: form
     field:

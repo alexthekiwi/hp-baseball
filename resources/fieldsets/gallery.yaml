@@ -1,0 +1,44 @@
+title: Gallery
+fields:
+  -
+    import: block_title
+  -
+    handle: images
+    field:
+      container: assets
+      type: assets
+      display: Images
+  -
+    handle: lightbox
+    field:
+      default: true
+      type: toggle
+      display: Lightbox
+      width: 33
+  -
+    handle: columns
+    field:
+      options:
+        -
+          key: 2
+          value: null
+        -
+          key: 3
+          value: null
+        -
+          key: 4
+          value: null
+        -
+          key: 5
+          value: null
+        -
+          key: 6
+          value: null
+      default: '4'
+      type: select
+      display: Columns
+      width: 33
+      validate:
+        - required
+  -
+    import: block_settings

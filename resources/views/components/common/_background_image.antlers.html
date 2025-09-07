@@ -2,6 +2,9 @@
     style="background-image: url('{{ glide
         :src="image"
         preset="2xl-webp"
+        fit="crop_focal"
+        width="2200"
+        height="1000"
     }}');"
     class="flex items-center relative w-full bg-cover bg-center bg-no-repeat {{ class }} {{ switch(
         (height ?? 0 == 1) => 'py-16 h-auto',
