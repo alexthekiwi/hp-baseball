@@ -1,16 +1,11 @@
-<main id="content" class="flex flex-col min-h-screen">
-    {{ partial:layout/header/index }}
-
-    <div class="flex flex-col gap-8 container pt-24">
-        <h1 class="mx-auto text-primary mt-24 text-4xl lg:text-5xl font-bold w-full max-w-4xl text-pretty text-center">
-            {{ title | nl2br }}
-        </h1>
-        <div class="text-center">
-            {{ partial:components/text/subtitle }}
-                {{ author:name }} – {{ date }}
-            {{ /partial:components/text/subtitle }}
-        </div>
-    </div>
+{{ partial:main }}
+    {{ partial:components/blocks/_hero
+        :title="title"
+        :subtitle="date | format:'F j, Y'"
+        background_type="Colour"
+        background_colour="primary"
+        align="middle"
+    }}
 
     <div class="flex flex-col flex-grow">
         <div class="container">
@@ -20,7 +15,7 @@
         </div>
 
         <div class="container">
-            <div class="prose max-w-4xl mx-auto w-full py-24">
+            <div class="prose max-w-4xl mx-auto w-full mb-24 mt-8">
                 {{ bard }}
             </div>
         </div>
@@ -62,6 +57,4 @@
             </div>
         </nav>
     </div>
-
-    {{ partial:layout/footer/index }}
-</main>
+{{ /partial:main }}
