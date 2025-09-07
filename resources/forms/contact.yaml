@@ -8,7 +8,7 @@ email:
     text: email/form_sender_text
   -
     id: mf941qdy
-    to: hello@example.com
+    to: info@hpbaseball.co.nz
     subject: 'New Online Enquiry'
     html: email/form_owner
     text: email/form_owner_text
