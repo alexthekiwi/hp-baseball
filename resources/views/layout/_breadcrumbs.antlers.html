@@ -1,5 +1,6 @@
 <nav class="container mx-auto w-full mt-12 mb-12">
-    <ul class="flex gap-4 bg-gray-light p-5 rounded-outer px-8">
+    <!-- Desktop Breadcrumbs -->
+    <ul class="hidden md:flex gap-4 bg-gray-light p-5 rounded-outer px-8">
         {{ nav:breadcrumbs }}
             <li class="flex items-center gap-4 {{ if is_current }} text-primary font-bold {{ /if }}">
                 {{ if not first }}
@@ -17,4 +18,31 @@
             </li>
         {{ /nav:breadcrumbs }}
     </ul>
+
+    <!-- Mobile Select Dropdown -->
+    <div class="md:hidden bg-gray-light p-5 rounded-outer">
+        <label>
+            <span class="text-xs">Go to page</span>
+            <select id="breadcrumb-select" class="w-full p-3 rounded-lg border border-gray-300 bg-white text-sm">
+                {{ nav:breadcrumbs }}
+                    <option value="{{ url }}" {{ if is_current }}selected{{ /if }}>
+                        {{ if first }}🏠 {{ /if }}{{ nav_title ?? title }}
+                    </option>
+                {{ /nav:breadcrumbs }}
+            </select>
+        </label>
+    </div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const breadcrumbSelect = document.getElementById('breadcrumb-select');
+    if (breadcrumbSelect) {
+        breadcrumbSelect.addEventListener('change', function() {
+            if (this.value) {
+                window.location.href = this.value;
+            }
+        });
+    }
+});
+</script>

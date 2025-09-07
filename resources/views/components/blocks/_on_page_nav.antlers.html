@@ -9,7 +9,8 @@
         () => 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
     ) }}
 
-    <div class="grid gap-4 {{ $grid_classes }}">
+    <!-- Desktop Grid -->
+    <div class="hidden xl:grid items-center gap-4 {{ $grid_classes }}">
         {{ links }}
             {{ if link_type == 'anchor' }}
                 <a href="#{{ anchor_link }}" class="group block p-4 rounded-outer border border-current hover:border-primary hover:bg-primary hover:text-white transition-all duration-200 text-center">
@@ -22,4 +23,50 @@
             {{ /if }}
         {{ /links }}
     </div>
+
+    <!-- Mobile/Tablet Select -->
+    <div class="xl:hidden bg-gray-light p-5 rounded-outer text-gray">
+        <label>
+            <span class="text-xs">Go to section</span>
+            <select id="on-page-nav-select" class="w-full p-3 rounded-lg border border-gray-300 bg-white text-sm">
+                <option value="">Select section...</option>
+                {{ links }}
+                    {{ if link_type == 'anchor' }}
+                        <option value="#{{ anchor_link }}">{{ title ?? (anchor_link | title | replace:'u':'U') }}</option>
+                    {{ elseif link_type == 'url' }}
+                        <option value="{{ page_link:permalink ?? page_link }}">{{ title ?? (page_link:title ?? 'Link') }}</option>
+                    {{ /if }}
+                {{ /links }}
+            </select>
+        </label>
+    </div>
 {{ /partial:components/block }}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Use a more specific selector to avoid conflicts
+    const onPageNavSelects = document.querySelectorAll('select[id*="on-page-nav-select"]');
+    
+    onPageNavSelects.forEach(function(select) {
+        select.addEventListener('change', function(e) {
+            const value = this.value;
+            if (value) {
+                if (value.startsWith('#')) {
+                    // For anchor links, smooth scroll to the element
+                    const target = document.querySelector(value);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } else {
+                    // For URL links, navigate to the page
+                    window.location.href = value;
+                }
+                // Reset select to default option after a short delay
+                setTimeout(() => {
+                    this.value = '';
+                }, 100);
+            }
+        });
+    });
+});
+</script>
