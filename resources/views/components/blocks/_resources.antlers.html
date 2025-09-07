@@ -1,0 +1,25 @@
+{{ partial:components/block }}
+    {{ if content && ! (content | is_empty) }}
+        <div class="prose max-w-full mb-8">
+            {{ content }}
+        </div>
+    {{ /if }}
+
+    {{ if items }}
+        {{ if layout == 'grid' }}
+            {{# Grid Layout #}}
+            <div class="grid gap-6 {{ if columns == 2 }}grid-cols-1 sm:grid-cols-2{{ elseif columns == 3 }}grid-cols-1 sm:grid-cols-2 lg:grid-cols-3{{ elseif columns == 4 }}grid-cols-1 sm:grid-cols-2 lg:grid-cols-4{{ elseif columns == 5 }}grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5{{ elseif columns == 6 }}grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6{{ else }}grid-cols-1 sm:grid-cols-2 lg:grid-cols-3{{ /if }}">
+                {{ items }}
+                    {{ partial:components/common/resource_item :layout="grid" }}
+                {{ /items }}
+            </div>
+        {{ else }}
+            {{# List Layout (default) #}}
+            <div class="max-w-2xl w-full mx-auto space-y-3">
+                {{ items }}
+                    {{ partial:components/common/resource_item :layout="list" }}
+                {{ /items }}
+            </div>
+        {{ /if }}
+    {{ /if }}
+{{ /partial:components/block }}

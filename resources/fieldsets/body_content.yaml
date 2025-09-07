@@ -1,0 +1,11 @@
+title: 'Body Content'
+fields:
+  -
+    import: block_title
+  -
+    handle: content
+    field: common.bard
+    config:
+      display: Content
+  -
+    import: block_settings

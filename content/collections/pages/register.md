@@ -10,7 +10,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757204944
+updated_at: 1757211893
 page_builder:
   -
     id: mf7kt9pc
@@ -25,15 +25,23 @@ page_builder:
   -
     id: mf8x1ps9
     block_title: 'Registration fees for 2025/26 season'
-    show_block_title_options: true
+    show_block_title_options: false
     block_title_tag: h2
     block_title_colour: primary
-    block_title_center: false
+    block_title_center: true
     block_title_keyline: true
-    description: |-
-      Ages are as at 31 August in the year the season finishes.
-      Age groups and fees quoted below are subject to change at any time.
-      Fees are subject to change.
+    description:
+      -
+        type: paragraph
+        attrs:
+          textAlign: left
+        content:
+          -
+            type: text
+            text: |-
+              Ages are as at 31 August in the year the season finishes.
+              Age groups and fees quoted below are subject to change at any time.
+              Fees are subject to change.
     table:
       -
         cells:
@@ -156,6 +164,7 @@ page_builder:
     type: table
     enabled: true
     header_row: true
+    bold_first_column: false
   -
     id: mf8y2dah
     block: 7a216911-3c67-44ac-bca1-97aef3bb40e8

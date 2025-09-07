@@ -13,3 +13,9 @@ fields:
     config:
       validate:
         - required
+  -
+    handle: target_blank
+    field:
+      type: toggle
+      display: 'Open in new tab?'
+      width: 33

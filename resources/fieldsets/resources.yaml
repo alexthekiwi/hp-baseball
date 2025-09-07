@@ -1,0 +1,57 @@
+title: Resources
+fields:
+  -
+    import: block_title
+  -
+    handle: content
+    field: common.bard
+    config:
+      display: Content
+  -
+    handle: items
+    field:
+      type: replicator
+      display: Items
+      sets:
+        items:
+          display: Items
+          sets:
+            item:
+              display: Item
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: file
+                  field:
+                    max_files: 1
+                    container: assets
+                    folder: resources
+                    type: assets
+                    display: File
+  -
+    handle: layout
+    field:
+      type: button_group
+      display: Layout
+      default: list
+      options:
+        list: List
+        grid: Grid
+      width: 33
+  -
+    handle: columns
+    field:
+      type: integer
+      display: Columns
+      default: 3
+      min: 2
+      max: 6
+      if:
+        layout: 'equals grid'
+      width: 33
+  -
+    import: block_settings

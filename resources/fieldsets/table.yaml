@@ -9,8 +9,8 @@ fields:
       display: Table
   -
     handle: description
-    field:
-      type: textarea
+    field: common.bard
+    config:
       display: Description
   -
     handle: table
@@ -22,6 +22,12 @@ fields:
     field:
       type: toggle
       display: 'First row is headers?'
+      width: 33
+  -
+    handle: bold_first_column
+    field:
+      type: toggle
+      display: 'Bold first column?'
       width: 33
   -
     handle: content

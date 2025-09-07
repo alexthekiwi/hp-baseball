@@ -36,6 +36,12 @@ fields:
               fields:
                 -
                   import: carousel
+            body_content:
+              display: 'Body Content'
+              icon: form-text-field
+              fields:
+                -
+                  import: body_content
             content_block:
               display: 'Content Block'
               icon: text-formatting-wrap-image-left
@@ -126,3 +132,9 @@ fields:
               fields:
                 -
                   import: gallery
+            resources:
+              display: Resources
+              icon: file-content-list
+              fields:
+                -
+                  import: resources

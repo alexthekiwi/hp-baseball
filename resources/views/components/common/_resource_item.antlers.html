@@ -1,0 +1,76 @@
+{{ if file }}
+    <a href="{{ file }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="w-full {{ if layout == 'grid' }} group block bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-primary transition-all duration-200 {{ else }} group flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-200 hover:shadow-md hover:border-primary transition-all duration-200{{ /if }}">
+
+        {{ if layout == 'grid' }}
+            {{# Grid Layout #}}
+            <div class="flex flex-col items-center text-center">
+                {{# File icon #}}
+                <div class="mb-4 p-4 bg-gray-100 rounded-lg group-hover:bg-primary/10 transition-colors">
+                    <svg class="w-12 h-12 text-gray-600 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {{ if file:extension == 'pdf' }}
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17h6m-6-4h6m-6-4h4"></path>
+                        {{ else }}
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        {{ /if }}
+                    </svg>
+                </div>
+
+                {{# Title #}}
+                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors mb-2">
+                    {{ title }}
+                </h3>
+
+                {{# File info #}}
+                <div class="text-sm text-gray-500">
+                    <span class="uppercase">{{ file:extension }}</span>
+                    {{ if file:size }}
+                        <span class="mx-1">•</span>
+                        <span>{{ file:size }}</span>
+                    {{ /if }}
+                </div>
+            </div>
+        {{ else }}
+            {{# List Layout #}}
+            {{# File icon #}}
+            <div class="flex-shrink-0 p-3 bg-gray-100 rounded-lg group-hover:bg-primary/10 transition-colors">
+                <svg class="w-6 h-6 text-gray-600 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {{ if file:extension == 'pdf' }}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17h6m-6-4h6m-6-4h4"></path>
+                    {{ elseif file:extension == 'doc' || file:extension == 'docx' }}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    {{ elseif file:extension == 'xls' || file:extension == 'xlsx' }}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
+                    {{ else }}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    {{ /if }}
+                </svg>
+            </div>
+
+            {{# Content #}}
+            <div class="flex-grow">
+                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    {{ title }}
+                </h3>
+                <div class="text-sm text-gray-500 mt-1">
+                    <span class="uppercase font-medium">{{ file:extension }}</span>
+                    {{ if file:size }}
+                        <span class="mx-2">•</span>
+                        <span>{{ file:size }}</span>
+                    {{ /if }}
+                </div>
+            </div>
+
+            {{# Download arrow #}}
+            <div class="flex-shrink-0">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m0 0l-4-4m4 4l4-4"></path>
+                </svg>
+            </div>
+        {{ /if }}
+    </a>
+{{ /if }}

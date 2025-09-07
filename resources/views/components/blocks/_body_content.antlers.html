@@ -1,0 +1,7 @@
+{{ partial:components/block }}
+    {{ if content && ! (content | is_empty) }}
+        <div class="prose lg:max-w-4xl lg:mx-auto">
+            {{ content }}
+        </div>
+    {{ /if }}
+{{ /partial:components/block }}

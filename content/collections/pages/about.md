@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757209072
+updated_at: 1757209213
 nav_title: 'Club Info'
 hide_breadcrumbs: false
 page_builder:
@@ -24,6 +24,7 @@ page_builder:
         link: 'entry::8f8ff8bf-fb3d-42d5-9fed-51820bd57e92'
         type: button_simple
         enabled: true
+        target_blank: false
     image: 496395275_1258466869620096_6104464617911484061_n.jpg
     background_colour: White
     text_colour: default
@@ -43,6 +44,7 @@ page_builder:
         link: 'entry::e907a61c-78ca-4060-95df-c9cb0847fb14'
         type: button_simple
         enabled: true
+        target_blank: false
     image: 497478240_1258466899620093_5789906388266902879_n.jpg
     background_colour: White
     text_colour: default
@@ -62,6 +64,7 @@ page_builder:
         link: 'entry::c8cf02d5-7ea8-4afb-b110-3d14654864dd'
         type: button_simple
         enabled: true
+        target_blank: false
     image: 497474422_1258467122953404_6138369295893527680_n.jpg
     background_colour: White
     text_colour: default
@@ -81,6 +84,7 @@ page_builder:
         link: 'entry::ed0fb874-cbea-4073-99b1-03db1e38d53f'
         type: button_simple
         enabled: true
+        target_blank: false
     image: 496796269_1258659216267528_6948258984993992838_n.jpg
     background_colour: White
     text_colour: default
@@ -100,6 +104,7 @@ page_builder:
         link: 'entry::cda1a0a6-df54-4aca-a8a8-5c5d4054d363'
         type: button_simple
         enabled: true
+        target_blank: false
     image: 496753361_1258659172934199_7068264356332416102_n.jpg
     background_colour: White
     text_colour: default
@@ -119,6 +124,7 @@ page_builder:
         link: 'entry::2dd155d5-439c-47fb-8f1a-97253aad6b3d'
         type: button_simple
         enabled: true
+        target_blank: false
     image: 496710605_1258659532934163_5367785493599486534_n.jpg
     background_colour: White
     text_colour: default

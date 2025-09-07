@@ -18,9 +18,9 @@ fields:
       default: Outlined
       type: button_group
       display: Style
-      width: 50
+      width: 33
   -
     handle: colour
     field: common.colour
     config:
-      width: 50
+      width: 33
