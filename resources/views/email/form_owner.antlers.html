@@ -17,7 +17,7 @@
     </style>
 </head>
 <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" bgcolor="#ffffff" style='background-color:#fff; font-family:"Open Sans", sans-serif; font-size:16px; height:100%; line-height:1.45; margin:0; padding:0; width:100%' height="100%" width="100%">
-    <table cellpadding="0" cellspacing="0" border="0" bgcolor="#F4F4F4" style="width:100%; background-color:#F4F4F4; margin:0 auto" width="100%">
+    <table cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F8F8" style="width:100%; background-color:#F8F8F8; margin:0 auto" width="100%">
         <tr>
             <td valign="top" align="center" style="vertical-align:top">
                 <!-- email wrapper -->
@@ -29,7 +29,7 @@
                                 <tr>
                                     <td align="center" style="vertical-align:top; color:#1A202C; padding:22px" valign="top">
                                         <div>
-                                            <img src="{{ config:app:url + '/visuals/logo.png' }}" alt="{{ config:app:name }}" width="200px" height="auto" style="max-width:100%; margin-bottom:22px">
+                                            <img src="{{ config:app:url + '/logo.png' }}" alt="{{ config:app:name }}" width="200px" height="auto" style="max-width:100%;">
                                         </div>
                                     </td>
                                 </tr>
@@ -50,8 +50,9 @@
                                                     <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
                                                         <tbody>
                                                             <tr>
-                                                                <td style="vertical-align:top; padding:22px; border-bottom:22px solid #F4F4F4; border-radius: 12px;" valign="top">
-                                                                    <p>Form: {{ form:title }}</p>
+                                                                <td style="vertical-align:top; padding:22px; border-bottom:22px solid #F8F8F8; border-radius: 0px;" valign="top">
+                                                                    <p><strong>Kia ora!</strong></p>
+                                                                    <p>Below is a new online enquiry from the "{{ form:title }}" form.</p>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -67,9 +68,9 @@
                                                                                     <p style="margin:0">
                                                                                         <strong>{{ trans :key="display" :locale="site:locale" }}:</strong>
                                                                                     </p>
-                                                                                    <p style="white-space:pre-line; font-family:inherit; margin:0">
-                                                                                        {{ if value | is_array }}
-                                                                                            {{ value | join(', ') }}
+                                                                                    <p style="font-family:inherit; margin:0">
+                                                                                        {{ if {partial:exists src="email/fields/{fieldtype}"} }}
+                                                                                            {{ partial src="email/fields/{fieldtype}" }}
                                                                                         {{ else }}
                                                                                             {{ value }}
                                                                                         {{ /if }}

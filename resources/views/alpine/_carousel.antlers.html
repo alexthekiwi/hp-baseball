@@ -68,7 +68,7 @@
     <div>
         {{ supplementary_images }}
             <div class="flex flex-col bg-black/50 rounded-outer overflow-hidden aspect-square w-full" x-show="active === {{ index }}">
-                {{ partial:components/common/image class="w-full my-auto !rounded-none bg-gray-50" }}
+                <img src="{{ glide :src="url" preset="xl-webp" fit="crop_focal" }}" alt="{{ alt ?? 'Carousel image' }}" class="w-full h-full object-cover">
             </div>
         {{ /supplementary_images }}
     </div>
@@ -112,7 +112,7 @@
                 {{ supplementary_images }}
                     <li :class="{ '!border-secondary': active === {{ index }} }" x-bind="disableNextAndPreviousButtons" class="border border-gray-300 rounded-outer flex w-[calc(33%-0.25rem)] shrink-0 snap-start flex-col items-center justify-center" role="option">
                         <button @click="handleClick({{ index }})" x-bind="focusableWhenVisible" class="rounded-outer w-full overflow-hidden aspect-video bg-gray-200">
-                            <img class="w-full h-full object-cover" src="{{ url }}" alt="placeholder image">
+                            <img class="w-full h-full object-cover" src="{{ glide :src="url" preset="xl-webp" fit="crop_focal" }}" alt="{{ alt ?? 'Carousel thumbnail' }}">
                         </button>
                     </li>
                 {{ /supplementary_images }}
@@ -134,5 +134,4 @@
             </button>
         </div>
     {{ /if }}
-
 </div>

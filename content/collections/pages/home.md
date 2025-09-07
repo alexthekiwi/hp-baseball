@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757205006
+updated_at: 1757211992
 page_builder:
   -
     id: makdwkj7
@@ -25,6 +25,7 @@ page_builder:
         colour: primary
         type: button_styled
         enabled: true
+        target_blank: false
       -
         id: mf7qp749
         text: 'Baseball Grades'
@@ -33,6 +34,7 @@ page_builder:
         colour: white
         type: button_styled
         enabled: true
+        target_blank: false
     overlay_opacity: 4
     overlay_colour: black
     subtitle: 'Home of the Hawks'
@@ -69,6 +71,7 @@ page_builder:
         colour: white
         type: button_styled
         enabled: true
+        target_blank: false
       -
         id: mf7lp6t4
         text: 'Premier & Reserves'
@@ -77,6 +80,7 @@ page_builder:
         colour: white
         type: button_styled
         enabled: true
+        target_blank: false
       -
         id: mf7qubpw
         text: 'Adult Social Baseball'
@@ -85,6 +89,7 @@ page_builder:
         colour: white
         type: button_styled
         enabled: true
+        target_blank: false
     text_colour: white
     title_tag: P
   -
@@ -109,6 +114,7 @@ page_builder:
             link: 'entry::80119a42-e994-4f61-8bcb-ef1c92e9a867'
             type: button
             enabled: true
+            target_blank: false
       -
         id: makkxlrc
         title: 'Quality coaching'
@@ -116,6 +122,14 @@ page_builder:
         image: 496554607_1258661532933963_4550606040072191680_n.jpg
         type: item
         enabled: true
+        buttons:
+          -
+            id: mf92miv5
+            text: 'Baseball Grades'
+            link: 'entry::80119a42-e994-4f61-8bcb-ef1c92e9a867'
+            target_blank: false
+            type: button
+            enabled: true
       -
         id: makkxycv
         title: 'A proud history'
@@ -130,6 +144,7 @@ page_builder:
             link: 'entry::e907a61c-78ca-4060-95df-c9cb0847fb14'
             type: button
             enabled: true
+            target_blank: false
       -
         id: makkycsv
         title: 'Friendly community'
@@ -137,6 +152,14 @@ page_builder:
         image: 495865195_1258661526267297_2912152133130829841_n.jpg
         type: item
         enabled: true
+        buttons:
+          -
+            id: mf92mu7q
+            text: FAQs
+            link: 'entry::635dc857-71a2-447c-9172-5aa4bd1a466d'
+            target_blank: false
+            type: button
+            enabled: true
     style: 'All Showing'
     text_colour: default
     title: 'Why Join the HP Hawks?'
@@ -162,6 +185,7 @@ page_builder:
         colour: primary
         type: button_styled
         enabled: true
+        target_blank: false
       -
         id: mf7qlo5a
         text: 'View FAQs'
@@ -170,6 +194,7 @@ page_builder:
         colour: gray
         type: button_styled
         enabled: true
+        target_blank: false
     background_colour: White
     padding_top: none
     padding_bottom: base
@@ -202,6 +227,7 @@ page_builder:
         link: 'entry::f9736c8a-07d3-427f-bf9a-e6b03d4b80ed'
         type: button_simple
         enabled: true
+        target_blank: false
   -
     id: mf7prba9
     type: sponsors
