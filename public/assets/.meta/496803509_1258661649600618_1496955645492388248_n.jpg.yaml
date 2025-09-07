@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Baseball player holding bat'
 size: 314754
 last_modified: 1757124975
 width: 2048

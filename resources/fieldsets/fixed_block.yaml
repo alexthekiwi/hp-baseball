@@ -1,0 +1,13 @@
+title: 'Fixed Block'
+fields:
+  -
+    handle: block
+    field:
+      max_items: 1
+      create: false
+      collections:
+        - fixed_blocks
+      type: entries
+      display: Block
+      validate:
+        - required

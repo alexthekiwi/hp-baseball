@@ -110,3 +110,13 @@ fields:
               fields:
                 -
                   import: html
+            table:
+              display: Table
+              fields:
+                -
+                  import: table
+            fixed_block:
+              display: 'Fixed Block'
+              fields:
+                -
+                  import: fixed_block

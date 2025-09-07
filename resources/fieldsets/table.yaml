@@ -1,0 +1,32 @@
+title: Table
+fields:
+  -
+    import: block_title
+  -
+    handle: table_section
+    field:
+      type: section
+      display: Table
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: table
+    field:
+      type: table
+      display: Table
+  -
+    handle: header_row
+    field:
+      type: toggle
+      display: 'First row is headers?'
+      width: 33
+  -
+    handle: content
+    field: common.bard
+    config:
+      display: Content
+  -
+    import: block_settings
