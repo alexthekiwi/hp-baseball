@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-8 relative" x-data="{ showResults: false }" @click.outside="showResults = false" x-show="searchOpen" x-trap.inert="showResults">
+<div class="flex flex-col gap-8 relative" x-data="{ showResults: false }" @click.outside="showResults = false" x-show="searchOpen" x-cloak x-trap.inert="showResults">
     <input
         x-ref="search"
         type="text"
@@ -9,7 +9,7 @@
         name="q"
         @focus="showResults = true"
     />
-    <div x-cloak x-show="showResults && $wire.q && $wire.q.length > 0" class="bg-white flex flex-col gap-2 w-full z-10 overflow-y-auto">
+    <div x-show="showResults && $wire.q && $wire.q.length > 0" class="bg-white flex flex-col gap-2 w-full z-10 overflow-y-auto">
         {{ results }}
             <a
                 aria-label="{{ title }}"
