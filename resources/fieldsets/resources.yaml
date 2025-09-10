@@ -25,6 +25,22 @@ fields:
                     type: text
                     display: Title
                 -
+                  handle: resource_type
+                  field:
+                    options:
+                      -
+                        key: file
+                        value: File
+                      -
+                        key: url
+                        value: URL
+                    default: file
+                    type: button_group
+                    display: 'Resource Type'
+                    width: 50
+                    validate:
+                      - required
+                -
                   handle: file
                   field:
                     max_files: 1
@@ -32,6 +48,18 @@ fields:
                     folder: resources
                     type: assets
                     display: File
+                    width: 50
+                    if:
+                      resource_type: 'equals file'
+                -
+                  handle: url
+                  field:
+                    input_type: url
+                    type: text
+                    display: URL
+                    width: 50
+                    if:
+                      resource_type: 'equals url'
   -
     handle: layout
     field:

@@ -1,8 +1,5 @@
 tree:
   -
-    id: c69de5ba-44d4-41bf-a193-b5c3bc31dcd1
-    entry: dbd70a65-fb0a-48e6-aaaa-abc8e0054e11
-  -
     id: 2cbc603d-94bf-4618-a1d5-cdf947edfeaa
     entry: 80119a42-e994-4f61-8bcb-ef1c92e9a867
     children:
@@ -22,6 +19,9 @@ tree:
     id: a1167964-01c0-46b2-a26c-b4d19d7c1107
     entry: 29fbbed6-3cb2-45aa-aaa6-eadc610e9c24
     children:
+      -
+        id: be8b6629-df0a-43d3-bf71-8e6b64434ea8
+        entry: c74e75da-3235-4724-86a2-cec979364f69
       -
         id: 0c3e3a1b-b1c9-4ca1-b1b1-1fc4a842edc3
         entry: 8f8ff8bf-fb3d-42d5-9fed-51820bd57e92
@@ -44,90 +44,8 @@ tree:
     id: 8a8a5262-ec75-4086-b745-8f960c86450a
     entry: 635dc857-71a2-447c-9172-5aa4bd1a466d
   -
-    id: be8b6629-df0a-43d3-bf71-8e6b64434ea8
-    entry: c74e75da-3235-4724-86a2-cec979364f69
+    id: b4fd2265-493c-4e16-9722-e298f1499662
+    entry: d0d1621b-8826-4a64-acee-25edcd7db8e2
   -
     id: cf560d5c-7914-4732-9ffe-71617af4ecf6
     entry: cc2fcc8f-1273-4a14-ae0e-8a431c8f9fe9
-  -
-    id: f54bb52b-ffc6-40a5-bc53-5ceea0389f77
-    title: Draws
-    url: '#0'
-    children:
-      -
-        id: e58f94b9-ba63-4da5-b0a4-6ecfc0f56d1d
-        title: '10U Minor League'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=fc30a766-876c-454e-940e-d3583d8f890a'
-      -
-        id: 76053b91-d4e4-4c85-94fa-416eff589a6a
-        title: '12U Minor League'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=b38e5f10-b8f0-4420-a46b-2faeac4416d4'
-      -
-        id: 54e825bf-bfa7-42dd-88ec-266373ef82ec
-        title: '13U Minor League'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=df81f9db-7aba-4158-8b5d-66702f1e6d79'
-      -
-        id: 11a2403a-ace0-40e2-bbbb-727185bce48a
-        title: '14U Junior League'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=30b033b4-82da-4698-9897-b2467f3a2dff'
-      -
-        id: c91ccfac-9701-486d-a9e7-a95e1f812977
-        title: '16U Senior League'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=fac8ea96-d144-4e1e-bdfa-98701a869f9f'
-      -
-        id: 00cffae7-a4ef-4f8c-bf80-37d2deaec01a
-        title: '19U Big League'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=2a084553-8439-4dd7-807e-6764fe9b30f7'
-      -
-        id: 68c513b3-dc9f-4870-a20a-c1edd7e12677
-        title: Reserves
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=af61c7d2-b87f-415d-ab4a-f46d8bda7254'
-      -
-        id: b437b343-1d22-45b4-a523-2ca033880668
-        title: Premiers
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=7af406ee-337c-47e6-b1f9-195de0081dd0'
-      -
-        id: b95b0954-d9ac-477b-b1e7-2ed0c74934b3
-        title: 'Div 1'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=3060148c-b364-4fbe-97dc-40eba372f60f'
-      -
-        id: 93c5a067-1448-4d68-86a3-2bc9d92c04de
-        title: 'Div 2 HP Sauce'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=d18c7470-3f2b-4d77-a5ae-85fd14f5189c'
-      -
-        id: c3096316-92b7-401e-b480-a85856a3391a
-        title: 'Div 3 East Hawks'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=db750a1e-0af5-4512-b16f-0748ed955736'
-      -
-        id: e16580b0-fafc-49d1-a1f6-6c611e0994a8
-        title: 'Div 3 Red Hawks'
-        url: 'https://www.sporty.co.nz/asset/downloadasset?id=c56cdf52-cd86-4452-a37e-8b1891f5e222'
-  -
-    id: 65eb1614-fc09-4494-a4b4-0fb89f5bff9f
-    title: Scoring
-    url: '#0'
-    children:
-      -
-        id: 4cea7b01-969e-4762-ac4e-403851c40e56
-        title: '13U Intermediate League'
-        url: 'https://stats.baseballnewzealand.com/en/events/2024-auckland-baseball-13-under/home'
-      -
-        id: 13d32249-c98b-4da3-93dc-f10d15906316
-        title: '14U Junior League'
-        url: 'https://stats.baseballnewzealand.com/en/events/2024-auckland-baseball-14-under/home'
-      -
-        id: 74d13ae8-c723-4cc0-98dc-5e21034b42b7
-        title: '16U Senior League'
-        url: 'https://stats.baseballnewzealand.com/en/events/2024-auckland-baseball-16-under/home'
-      -
-        id: dd5a5b96-3492-43d2-9d59-4c7aed7eec01
-        title: '19U Big League'
-        url: 'https://stats.baseballnewzealand.com/en/events/2024-auckland-baseball-19-under/home'
-      -
-        id: 8ea18f82-188d-4864-bcaf-c48c1a19421e
-        title: Reserves
-        url: 'https://stats.baseballnewzealand.com/en/events/2024-auckland-baseball-reserves/home'
-      -
-        id: fce9f0f6-4f72-40ee-a910-14ceb50cbd44
-        title: Premier
-        url: 'https://stats.baseballnewzealand.com/en/events/2024-auckland-baseball-premier/home'

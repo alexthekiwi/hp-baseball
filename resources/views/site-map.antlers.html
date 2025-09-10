@@ -1,0 +1,66 @@
+{{ partial:main }}
+    {{ partial:components/blocks/_hero
+        :title="title"
+        background_type="Colour"
+        background_colour="primary"
+        align="start"
+    }}
+    {{ partial:components/block
+        padding_top="none"
+        padding_bottom="base"
+    }}
+        <div class="grid md:grid-cols-2 gap-8">
+            {{# Pages Collection - Tree Structure #}}
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">Pages</h2>
+                <ul class="flex flex-col gap-4 items-start">
+                    {{ nav include_home="true" }}
+                        {{ unless seo_noindex }}
+                            <li>
+                                <div class="flex items-start">
+                                    {{ if depth > 0 }}
+                                        {{ section:indent }}
+                                            {{ loop from="1" to="{{ depth }}" }}
+                                                <span class="inline-block w-6"></span>
+                                            {{ /loop }}
+                                        {{ /section:indent }}
+                                    {{ /if }}
+                                    <a href="{{ url }}" class="hover:text-primary transition-colors">
+                                        {{ title }}
+                                    </a>
+                                </div>
+                                {{ if children }}
+                                    <ul class="border-l mt-3 pl-4 border-primary flex flex-col gap-2">
+                                        {{ *recursive children* }}
+                                    </ul>
+                                {{ /if }}
+                            </li>
+                        {{ /unless }}
+                    {{ /nav }}
+            </div>
+
+            {{# Articles Collection #}}
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">Articles</h2>
+                <ul class="flex flex-col gap-4 items-start">
+                    {{ collection:articles
+                       status:is="published"
+                       seo_noindex:isnt="true"
+                       sort="date:desc"
+                    }}
+                        <li class="flex items-start">
+                            <div>
+                                <a href="{{ url }}" class="hover:text-primary transition-colors">
+                                    {{ title }}
+                                </a>
+                                <span class="text-sm text-gray-500 ml-2">
+                                    {{ date format="M j, Y" }}
+                                </span>
+                            </div>
+                        </li>
+                    {{ /collection:articles }}
+                </ul>
+            </div>
+        </div>
+    {{ /partial:components/block }}
+{{ /partial:main }}
