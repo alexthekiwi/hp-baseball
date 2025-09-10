@@ -15,84 +15,84 @@ page_builder:
       -
         id: mfd4zf5w
         title: '10U Minor League'
-        file: resources/draws/2024-2025/10u-draw-2024-25.pdf
+        file: 'resources/2024-2025-draws/10U DRAW 2024-25.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd51y1j
         title: '12U Minor League'
-        file: resources/draws/2024-2025/12u-draw-2024-25.pdf
+        file: 'resources/2024-2025-draws/12U DRAW 2024-25.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd5297d
         title: '13U Minor League'
-        file: resources/draws/2024-2025/13u-draw-2024-25.pdf
+        file: 'resources/2024-2025-draws/13U DRAW 2024-25.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd52cql
         title: '14U Junior League'
-        file: resources/draws/2024-2025/14u-draw-2024-25.pdf
+        file: 'resources/2024-2025-draws/14U DRAW 2024-25.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd52jd7
         title: '16U Senior League'
-        file: resources/draws/2024-2025/16u-draw-2024-25.pdf
+        file: 'resources/2024-2025-draws/16U DRAW 2024-25.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd52op5
         title: '19U Big League'
-        file: resources/draws/2024-2025/19u-draw-2024-25.pdf
+        file: 'resources/2024-2025-draws/19U DRAW 2024-25.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd52vk4
         title: Reserves
-        file: resources/draws/2024-2025/reserves-draw-2024-25.pdf
+        file: 'resources/2024-2025-draws/RESERVES DRAW 2024-25.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd53555
         title: Premiers
-        file: resources/draws/2024-2025/prems-draw-2024-25.pdf
+        file: 'resources/2024-2025-draws/PREMS DRAW 2024-25.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd53e7r
         title: 'Div 1'
-        file: resources/draws/2024-2025/div-1-season-24-25-draw-to-round-09.pdf
+        file: 'resources/2024-2025-draws/Div 1 - Season 24-25 - Draw to Round 09.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd53lcd
         title: 'Div 3 HP Sauce'
-        file: resources/draws/2024-2025/div3-hp-sauce-season-24-25-draw-to-round-09.pdf
+        file: 'resources/2024-2025-draws/Div3 HP Sauce - Season 24-25 - Draw to Round 09.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd548ol
         title: 'Div 3 East Hawks'
-        file: resources/draws/2024-2025/div3-east-hawks-season-24-25-draw-to-round-09.pdf
+        file: 'resources/2024-2025-draws/Div3 East Hawks - Season 24-25 - Draw to Round 09.pdf'
         type: item
         enabled: true
         resource_type: file
       -
         id: mfd54hej
         title: 'Div 3 Red Hawks'
-        file: resources/draws/2024-2025/div3-red-hawks-season-24-25-draw-to-round-09.pdf
+        file: 'resources/2024-2025-draws/Div3 Red Hawks - Season 24-25 - Draw to Round 09.pdf'
         type: item
         enabled: true
         resource_type: file
@@ -169,6 +169,6 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: a3f0818c-728d-4c08-852a-0508b4230234
-updated_at: 1757536856
+updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
+updated_at: 1757458365
 ---
