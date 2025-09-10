@@ -38,7 +38,31 @@ return [
     */
 
     'widgets' => [
-        'getting_started',
+        [
+            'type' => 'collection',
+            'collection' => 'pages',
+            'limit' => 10,
+            'width' => 33,
+        ],
+        [
+            'type' => 'collection',
+            'collection' => 'articles',
+            'limit' => 10,
+            'width' => 33,
+        ],
+        [
+            'type' => 'collection',
+            'collection' => 'sponsors',
+            'limit' => 10,
+            'width' => 33,
+        ],
+        [
+            'type' => 'form',
+            'form' => 'contact',
+            'fields' => ['date', 'name', 'email', 'phone', 'message'],
+            'limit' => 10,
+            'width' => 100,
+        ],
     ],
 
     /*

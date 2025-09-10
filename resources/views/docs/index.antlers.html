@@ -1,40 +1,466 @@
 {{ partial:main }}
     {{ partial:components/blocks/_hero
-        title="Documentation"
+        title="CMS Admin Documentation"
+        subtitle="Your guide to managing the HP Hawks website"
         background_type="Colour"
         background_colour="primary"
-        align="start"
+        align="middle"
+        hide_breadcrumbs="1"
     }}
 
-    {{ partial:components/block
-        padding_top="none"
-        padding_bottom="base"
-    }}
-        <div class="prose">
-            <h2>Pages</h2>
-            {{# TODO #}}
-        </div>
-    {{ /partial:components/block }}
+    {{# Navigation Sidebar and Main Content #}}
+    <div class="container mx-auto px-4 py-8">
+        <div class="lg:flex lg:gap-8">
+            {{# Sticky Sidebar Navigation #}}
+            <aside class="lg:w-1/4 mb-8 lg:mb-0">
+                <div class="sticky top-24 bg-gray-light rounded-lg p-6">
+                    <h2 class="text-lg font-bold text-primary mb-4">Quick Navigation</h2>
+                    <nav class="space-y-2">
+                        <a href="#getting-started" class="block text-gray-700 hover:text-primary transition">Getting Started</a>
+                        <a href="#content-types" class="block text-gray-700 hover:text-primary transition">Content Types</a>
+                        <ul class="ml-4 mt-2 space-y-1">
+                            <li><a href="#pages" class="text-sm text-gray-600 hover:text-primary">Pages</a></li>
+                            <li><a href="#articles" class="text-sm text-gray-600 hover:text-primary">Articles</a></li>
+                            <li><a href="#products" class="text-sm text-gray-600 hover:text-primary">Products</a></li>
+                            <li><a href="#sponsors" class="text-sm text-gray-600 hover:text-primary">Sponsors</a></li>
+                            <li><a href="#forms" class="text-sm text-gray-600 hover:text-primary">Forms</a></li>
+                            <li><a href="#redirects" class="text-sm text-gray-600 hover:text-primary">Redirects</a></li>
+                        </ul>
+                        <a href="#common-tasks" class="block text-gray-700 hover:text-primary transition">Common Tasks</a>
+                        <a href="#tips" class="block text-gray-700 hover:text-primary transition">Tips & Best Practices</a>
+                    </nav>
+                </div>
+            </aside>
 
-    {{ partial:components/block
-        padding_top="base"
-        padding_bottom="base"
-        background_colour="gray-light"
-    }}
-        <div class="prose">
-            <h2>Contact details</h2>
-            <p>You can change the contact details <a target="_blank" href="/admin/collections/pages/entries/c74e75da-3235-4724-86a2-cec979364f69">here</a>.</p>
-            {{ partial:docs/screenshot path="docs/contact.png" }}
-        </div>
-    {{ /partial:components/block }}
+            {{# Main Documentation Content #}}
+            <main class="lg:w-3/4">
+                {{# Getting Started Section #}}
+                <section id="getting-started" class="bg-gray-light rounded-lg p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-primary mb-6">Getting Started</h2>
 
-    {{ partial:components/block
-        padding_top="base"
-        padding_bottom="base"
-    }}
-        <div class="prose">
-            <h2>Forms</h2>
-            {{# TODO #}}
+                        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Logging Into the CMS</h3>
+                            <div class="prose max-w-none">
+                                <ol>
+                                    <li>Navigate to <code>/admin</code> (e.g., hpbaseball.co.nz/admin)</li>
+                                    <li>Enter your email and password</li>
+                                    <li>Click "Log in" to access the dashboard</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/login-screen.png" class="my-4" }}
+                                <div class="p-4 bg-blue-50 rounded">
+                                    <p class="text-sm text-blue-800"><strong>Tip:</strong> Bookmark the login page for quick access</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-xl font-semibold mb-4">Understanding the Dashboard</h3>
+                            <div class="prose max-w-none">
+                                <p>The dashboard is your control center. Key areas include:</p>
+                                <ul>
+                                    <li><strong>Collections:</strong> Where all your content lives (Articles, Pages, etc.)</li>
+                                    <li><strong>Assets:</strong> Your media library for images and files</li>
+                                    <li><strong>Navigation:</strong> Menu structure management</li>
+                                    <li><strong>Globals:</strong> Site-wide settings</li>
+                                </ul>
+                                {{ partial:docs/screenshot path="docs/dashboard-overview.png" class="my-4" }}
+                            </div>
+                        </div>
+                </section>
+
+                {{# Content Types Section #}}
+                <section id="content-types" class="bg-gray-light rounded-lg p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-primary mb-6">Content Types</h2>
+
+                        {{# Pages #}}
+                        <div id="pages" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Pages</h3>
+                            <div class="prose max-w-none">
+                                <p>Pages are the main sections of your website (About, Contact, etc.)</p>
+
+                                <h4 class="font-semibold">Creating a New Page:</h4>
+                                <ol>
+                                    <li>Go to Collections → Pages</li>
+                                    <li>Click "Create Entry"</li>
+                                    <li>Fill in the required fields:
+                                        <ul>
+                                            <li><strong>Title:</strong> Page name (shows in browser tab)</li>
+                                            <li><strong>Nav Title:</strong> Shorter name for menus (optional)</li>
+                                            <li><strong>Content:</strong> Use the page builder blocks</li>
+                                        </ul>
+                                    </li>
+                                    <li>Set the URL slug in the sidebar</li>
+                                    <li>Click "Save & Publish"</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/page-editor.png" class="my-4" }}
+
+                                <h4 class="font-semibold mt-6">Using the Block Page Builder:</h4>
+                                <p>Pages use a flexible block-based system that allows you to piece together content using predefined blocks. This gives you complete control over page layout and structure.</p>
+
+                                <h5 class="font-semibold mt-4">Available Block Types:</h5>
+                                <ul>
+                                    <li><strong>Hero:</strong> Large banner sections with images and call-to-action buttons</li>
+                                    <li><strong>Content Block:</strong> Text content with rich formatting</li>
+                                    <li><strong>Image Gallery:</strong> Display multiple images in a grid</li>
+                                    <li><strong>Testimonials:</strong> Customer reviews and quotes</li>
+                                    <li><strong>Featured Articles:</strong> Highlight recent news or articles</li>
+                                    <li><strong>Contact Forms:</strong> Add contact forms to pages</li>
+                                    <li><strong>And many more...</strong></li>
+                                </ul>
+
+                                <h5 class="font-semibold mt-4">Adding Blocks:</h5>
+                                <ol>
+                                    <li>In the page editor, scroll to the "Page Builder" section</li>
+                                    <li>Click "Add Block" to see available block types</li>
+                                    <li>Select the block type you want to add</li>
+                                    <li>Configure the block's content and settings</li>
+                                    <li>Drag blocks to reorder them as needed</li>
+                                    <li>Use the collapse/expand arrows to organize your blocks</li>
+                                </ol>
+
+                                {{ partial:docs/screenshot path="docs/page-builder-1.png" class="my-4" }}
+                                {{ partial:docs/screenshot path="docs/page-builder-2.png" class="my-4" }}
+
+                                <div class="p-4 bg-green-50 rounded mt-4">
+                                    <p class="text-sm text-green-800"><strong>Need a New Block Type?</strong> If you need a block type that doesn't exist, contact Alex Clark at <a href="mailto:hello@alexclark.co.nz" class="text-green-700 underline">hello@alexclark.co.nz</a> for custom development.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{# Articles #}}
+                        <div id="articles" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Articles (News & Updates)</h3>
+                            <div class="prose max-w-none">
+                                <p>Articles are for news, announcements, and blog posts.</p>
+
+                                <h4 class="font-semibold">Publishing an Article:</h4>
+                                <ol>
+                                    <li>Go to Collections → Articles</li>
+                                    <li>Click "Create Entry"</li>
+                                    <li>Add your content:
+                                        <ul>
+                                            <li><strong>Title:</strong> Article headline</li>
+                                            <li><strong>Author:</strong> Select from users</li>
+                                            <li><strong>Excerpt:</strong> Brief summary (shows in listings)</li>
+                                            <li><strong>Content:</strong> Full article text</li>
+                                            <li><strong>Date:</strong> Publication date</li>
+                                            <li><strong>Tags:</strong> Categories for organization</li>
+                                        </ul>
+                                    </li>
+                                    <li>Save & Publish when ready</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/article-editor.png" class="my-4" }}
+                            </div>
+                        </div>
+
+                        {{# Products #}}
+                        <div id="products" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Products (Merchandise)</h3>
+                            <div class="prose max-w-none">
+                                <p>Add club merchandise and items for sale.</p>
+
+                                <h4 class="font-semibold">Adding a Product:</h4>
+                                <ol>
+                                    <li>Go to Collections → Products</li>
+                                    <li>Click "Create Entry"</li>
+                                    <li>Add product information:
+                                        <ul>
+                                            <li><strong>Title:</strong> Product name</li>
+                                            <li><strong>Thumbnail:</strong> Main product image</li>
+                                            <li><strong>Images:</strong> Additional photos</li>
+                                            <li><strong>Content:</strong> Description and details</li>
+                                            <li><strong>Price:</strong> Cost in dollars</li>
+                                        </ul>
+                                    </li>
+                                    <li>Save & Publish</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/product-editor.png" class="my-4" }}
+                            </div>
+                        </div>
+
+                        {{# Sponsors #}}
+                        <div id="sponsors" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Sponsors</h3>
+                            <div class="prose max-w-none">
+                                <p>Manage club sponsors and partners.</p>
+
+                                <h4 class="font-semibold">Adding a Sponsor:</h4>
+                                <ol>
+                                    <li>Go to Collections → Sponsors</li>
+                                    <li>Click "Create Entry"</li>
+                                    <li>Enter sponsor details:
+                                        <ul>
+                                            <li><strong>Title:</strong> Sponsor name</li>
+                                            <li><strong>Logo:</strong> Upload sponsor logo</li>
+                                            <li><strong>Website:</strong> Link to sponsor's site</li>
+                                        </ul>
+                                    </li>
+                                    <li>Save to add to sponsor section</li>
+                                </ol>
+                                <div class="p-4 bg-yellow-50 rounded mt-4">
+                                    <p class="text-sm text-yellow-800"><strong>Note:</strong> Sponsors automatically appear on the homepage</p>
+                                </div>
+                                {{ partial:docs/screenshot path="docs/sponsor-editor.png" class="my-4" }}
+                            </div>
+                        </div>
+
+                        {{# Forms #}}
+                        <div id="forms" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Forms</h3>
+                            <div class="prose max-w-none">
+                                <p>Manage contact forms and other data collection forms. Forms allow visitors to submit information which you can receive via email and view in the admin panel.</p>
+
+                                <h4 class="font-semibold">Viewing Form Submissions:</h4>
+                                <ol>
+                                    <li>Go to {{ partial:docs/link url="/admin/forms/contact" text="Forms → Contact" }} (or your specific form)</li>
+                                    <li>View all submissions in a table format</li>
+                                    <li>Click on individual submissions to see details</li>
+                                    <li>Export submissions as CSV if needed</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/form-submissions.png" class="my-4" }}
+
+                                <h4 class="font-semibold mt-6">Configuring Form Settings:</h4>
+                                <p>To configure email notifications and other form settings:</p>
+                                <ol>
+                                    <li>Go to {{ partial:docs/link url="/admin/forms/contact" text="Forms → Contact" }}</li>
+                                    <li>Click on the form name to access settings</li>
+                                    <li>Configure email settings:
+                                        <ul>
+                                            <li><strong>Email Recipients:</strong> Add email addresses to receive notifications</li>
+                                            <li><strong>Email Subject:</strong> Set the subject line for notifications</li>
+                                            <li><strong>HTML/Text View:</strong> Always choose "form_sender" for emails going to admin and "form_owner" for emails going to the site user</li>
+                                        </ul>
+                                    </li>
+                                    <li>Save your changes</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/form-config.png" class="my-4" }}
+
+                                <h4 class="font-semibold mt-6">Editing Form Fields:</h4>
+                                <p>To modify the fields that appear on your form:</p>
+                                <ol>
+                                    <li>Go to the form settings (as above)</li>
+                                    <li>Click on "Blueprint" or "Fields" tab</li>
+                                    <li>Add, remove, or modify form fields:
+                                        <ul>
+                                            <li><strong>Text Fields:</strong> Name, email, phone number</li>
+                                            <li><strong>Textarea:</strong> For longer messages</li>
+                                            <li><strong>Select/Dropdown:</strong> Multiple choice options</li>
+                                            <li><strong>Assets:</strong> Allow file attachments</li>
+                                            <li><strong>Validation:</strong> Set required fields and validation rules</li>
+                                        </ul>
+                                    </li>
+                                    <li>Save and test your form</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/form-blueprint.png" class="my-4" }}
+
+                                <h4 class="font-semibold mt-6">Adding Forms to Pages:</h4>
+                                <p>To add a form to any page using the block editor:</p>
+                                <ol>
+                                    <li>Edit the page where you want the form</li>
+                                    <li>In the Page Builder, click "Add Block"</li>
+                                    <li>Select the "Form" block type</li>
+                                    <li>Choose which form to display (e.g., Contact Form)</li>
+                                    <li>Configure block settings like title and styling</li>
+                                    <li>Save and publish the page</li>
+                                </ol>
+
+                                <div class="p-4 bg-blue-50 rounded mt-4">
+                                    <p class="text-sm text-blue-800"><strong>Pro Tip:</strong> Test your form after making changes to ensure emails are being delivered and all fields work correctly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{# Redirects #}}
+                        <div id="redirects" class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-xl font-semibold mb-4">Redirects</h3>
+                            <div class="prose max-w-none">
+                                <p>Set up URL redirects for old or moved pages.</p>
+
+                                <h4 class="font-semibold">Creating a Redirect:</h4>
+                                <ol>
+                                    <li>Go to Collections → Redirects</li>
+                                    <li>Click "Create Entry"</li>
+                                    <li>Configure redirect:
+                                        <ul>
+                                            <li><strong>Old URL:</strong> The URL to redirect from (e.g., /old-page)</li>
+                                            <li><strong>Response Code:</strong> 301 for permanent, 302 for temporary</li>
+                                            <li><strong>Redirect Type:</strong> Choose Entry or URL</li>
+                                            <li><strong>Destination:</strong> Select page or enter URL</li>
+                                        </ul>
+                                    </li>
+                                    <li>Save to activate redirect</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/redirect-editor.png" class="my-4" }}
+                            </div>
+                        </div>
+                </section>
+
+                {{# Common Tasks Section #}}
+                <section id="common-tasks" class="bg-gray-light rounded-lg p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-primary mb-6">Common Tasks</h2>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Uploading Images</h3>
+                            <div class="prose max-w-none">
+                                <ol>
+                                    <li>Click the image field in any content editor</li>
+                                    <li>Choose "Upload" or select from existing assets</li>
+                                    <li>Drag and drop or browse for your image</li>
+                                    <li>Add alt text for accessibility</li>
+                                    <li>Click "Save" to insert</li>
+                                </ol>
+                                {{ partial:docs/screenshot path="docs/image-upload.png" class="my-4" }}
+
+                                <div class="p-4 bg-green-50 rounded">
+                                    <p class="text-sm text-green-800"><strong>Best Practice:</strong> Resize images before uploading. Aim for under 2MB per image.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Using the Content Editor (Bard)</h3>
+                            <div class="prose max-w-none">
+                                <p>The Bard editor offers rich text formatting:</p>
+                                <ul>
+                                    <li><strong>Headers:</strong> Use H2 and H3 for sections</li>
+                                    <li><strong>Bold/Italic:</strong> Highlight important text</li>
+                                    <li><strong>Lists:</strong> Create bullet or numbered lists</li>
+                                    <li><strong>Links:</strong> Add internal or external links</li>
+                                </ul>
+                                {{ partial:docs/screenshot path="docs/bard-editor.png" class="my-4" }}
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">SEO Settings</h3>
+                            <div class="prose max-w-none">
+                                <p>Both pages and articles have an SEO tab where you can optimize for search engines:</p>
+                                <ul>
+                                    <li><strong>Meta Title:</strong> Page title for search results (50-60 characters)</li>
+                                    <li><strong>Meta Description:</strong> Brief page summary (150-160 characters)</li>
+                                    <li><strong>Social Images:</strong> Image for social media sharing</li>
+                                    <li><strong>No Index:</strong> Check this to hide the page from search engine crawlers</li>
+                                    <li><strong>URL Slug:</strong> Clean, descriptive URL (found in the sidebar)</li>
+                                </ul>
+                                {{ partial:docs/screenshot path="docs/seo-settings.png" class="my-4" }}
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Publishing Options</h3>
+                            <div class="prose max-w-none">
+                                <p>Control when and how content goes live:</p>
+                                <ul>
+                                    <li><strong>Save & Publish:</strong> Use the "Published" toggle to control visibility</li>
+                                    <li><strong>Published Toggle:</strong> Turn on to make content live, turn off to hide it</li>
+                                    <li><strong>Future Articles:</strong> Articles with dates set in the future won't appear on the site until that date</li>
+                                    <li><strong>Draft Mode:</strong> Leave "Published" off to save drafts without making them live</li>
+                                </ul>
+                                <div class="p-4 bg-blue-50 rounded mt-4">
+                                    <p class="text-sm text-blue-800"><strong>Tip:</strong> Use future dates for articles to schedule automatic publishing of news and announcements.</p>
+                                </div>
+                                {{ partial:docs/screenshot path="docs/publish-options.png" class="my-4 max-w-sm" }}
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-xl font-semibold mb-4">Updating the Navigation</h3>
+                            <div class="prose max-w-none">
+                                <p>Manage the site's main navigation and footer menus:</p>
+
+                                <h4 class="font-semibold">Header Navigation:</h4>
+                                <p>Update the main site navigation menu {{ partial:docs/link url="/admin/navigation/main" text="here" }}.</p>
+
+                                <h4 class="font-semibold">Footer Navigation:</h4>
+                                <p>Manage footer links {{ partial:docs/link url="/admin/navigation" text="here" }}. The footer navigation has separate groups for each column - you can organize links into different sections like "About", "Grades", "Footer Misc.", etc.</p>
+                                <p>After creating your navigation groups, you can choose which menus to display in the footer by going to {{ partial:docs/link url="/admin/globals/footer" text="Footer Globals" }}.</p>
+
+                                <div class="p-4 bg-yellow-50 rounded mt-4">
+                                    <p class="text-sm text-yellow-800"><strong>Note:</strong> Changes to navigation will appear site-wide immediately after saving.</p>
+                                </div>
+                                {{ partial:docs/screenshot path="docs/navigation-editor.png" class="my-4" }}
+                                {{ partial:docs/screenshot path="docs/footer-global.png" class="my-4" }}
+                            </div>
+                        </div>
+                </section>
+
+                {{# Tips & Best Practices Section #}}
+                <section id="tips" class="bg-gray-light rounded-lg p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-primary mb-6">Tips & Best Practices</h2>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-xl font-semibold mb-4">Quick Tips</h3>
+
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="font-semibold">Image Guidelines</h4>
+                                    <div class="prose max-w-none">
+                                        <ul>
+                                            <li>Hero images: 1920x1080px recommended</li>
+                                            <li>Thumbnails: 800x600px minimum</li>
+                                            <li>Logos: PNG with transparent background</li>
+                                            <li>File size: Keep under 2MB when possible</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="font-semibold">Content Organization</h4>
+                                    <div class="prose max-w-none">
+                                        <ul>
+                                            <li>Use clear, descriptive titles</li>
+                                            <li>Keep URLs short and meaningful</li>
+                                            <li>Tag articles for easy filtering</li>
+                                            <li>Set parent pages for proper hierarchy</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="font-semibold">When to Use Each Content Type</h4>
+                                    <div class="prose max-w-none">
+                                        <ul>
+                                            <li><strong>Pages:</strong> Permanent content (About, Contact)</li>
+                                            <li><strong>Articles:</strong> Time-sensitive news and updates</li>
+                                            <li><strong>Fixed Blocks:</strong> Reusable content sections</li>
+                                            <li><strong>Products:</strong> Club merchandise and items for sale</li>
+                                            <li><strong>Sponsors:</strong> Partner organizations and supporters</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h4 class="font-semibold">Before Publishing</h4>
+                                    <div class="prose max-w-none">
+                                        <ul>
+                                            <li>Preview your content first</li>
+                                            <li>Check all links work correctly</li>
+                                            <li>Verify images display properly</li>
+                                            <li>Review on mobile and desktop</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+
+                {{# Help Section #}}
+                <section class="bg-white shadow rounded-lg p-6 mb-6">
+                    <div class="bg-primary-light rounded-lg p-6">
+                        <h2 class="text-xl font-bold text-primary mb-4">Need Help?</h2>
+                        <div class="prose max-w-none">
+                            <p class="">If you encounter issues or need assistance:</p>
+                            <ul class="">
+                                <li>Check this documentation first</li>
+                                <li>Try refreshing the page</li>
+                                <li>Try logging out and back in if experiencing errors</li>
+                                <li>Clear your browser cache for display issues</li>
+                                <li>Contact Alex Clark (<a href="mailto:hello@alexclark.co.nz">hello@alexclark.co.nz</a>) for technical support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
-    {{ /partial:components/block }}
+    </div>
 {{ /partial:main }}

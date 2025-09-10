@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::statamic('docs', 'docs/index', [
+Route::statamic('help', 'docs/index', [
     'title' => 'Example',
 ])->middleware(['auth']);
 
