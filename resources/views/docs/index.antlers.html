@@ -1,0 +1,40 @@
+{{ partial:main }}
+    {{ partial:components/blocks/_hero
+        title="Documentation"
+        background_type="Colour"
+        background_colour="primary"
+        align="start"
+    }}
+
+    {{ partial:components/block
+        padding_top="none"
+        padding_bottom="base"
+    }}
+        <div class="prose">
+            <h2>Pages</h2>
+            {{# TODO #}}
+        </div>
+    {{ /partial:components/block }}
+
+    {{ partial:components/block
+        padding_top="base"
+        padding_bottom="base"
+        background_colour="gray-light"
+    }}
+        <div class="prose">
+            <h2>Contact details</h2>
+            <p>You can change the contact details <a target="_blank" href="/admin/collections/pages/entries/c74e75da-3235-4724-86a2-cec979364f69">here</a>.</p>
+            {{ partial:docs/screenshot path="docs/contact.png" }}
+        </div>
+    {{ /partial:components/block }}
+
+    {{ partial:components/block
+        padding_top="base"
+        padding_bottom="base"
+    }}
+        <div class="prose">
+            <h2>Forms</h2>
+            {{# TODO #}}
+        </div>
+    {{ /partial:components/block }}
+{{ /partial:main }}
