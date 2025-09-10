@@ -44,29 +44,23 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Use a more specific selector to avoid conflicts
-    const onPageNavSelects = document.querySelectorAll('select[id*="on-page-nav-select"]');
+    const onPageNavSelect = document.getElementById('on-page-nav-select');
     
-    onPageNavSelects.forEach(function(select) {
-        select.addEventListener('change', function(e) {
+    if (onPageNavSelect) {
+        onPageNavSelect.addEventListener('change', function(e) {
             const value = this.value;
             if (value) {
                 if (value.startsWith('#')) {
-                    // For anchor links, smooth scroll to the element
-                    const target = document.querySelector(value);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
+                    // For anchor links, navigate using location.hash which updates URL and scrolls
+                    window.location.hash = value.substring(1);
                 } else {
                     // For URL links, navigate to the page
                     window.location.href = value;
                 }
-                // Reset select to default option after a short delay
-                setTimeout(() => {
-                    this.value = '';
-                }, 100);
+                // Reset select to default option after navigation
+                this.value = '';
             }
         });
-    });
+    }
 });
 </script>
