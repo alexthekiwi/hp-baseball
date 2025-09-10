@@ -39,6 +39,10 @@ return [
 
     'widgets' => [
         [
+            'type' => 'help',
+            'width' => 100,
+        ],
+        [
             'type' => 'collection',
             'collection' => 'pages',
             'limit' => 10,
