@@ -1,0 +1,19 @@
+name: 'HP Baseball Admin'
+super: true
+id: f727c14d-33d9-4ccd-9de0-fdbe1661319b
+password_hash: $2y$12$q2CDO8baY4YDhBxm2.5m9OluIpFy3MeztFhVih38FBeu7QTalNi22
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing
+  assets:
+    assets:
+      mode: grid
+  forms:
+    contact:
+      columns:
+        - datestamp
+        - name
+        - email
+        - phone
+        - message
