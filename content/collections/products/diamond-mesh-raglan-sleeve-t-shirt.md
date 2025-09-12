@@ -13,25 +13,65 @@ categories:
 product_variants:
   options:
     -
-      key: small
-      variant: Small
-      price: 3999
+      key: JS
+      variant: JS
+      price: 4000
+      sku: DMRST-JS
+    -
+      key: JM
+      variant: JM
+      price: 4000
+      sku: DMRST-JM
+    -
+      key: JL
+      variant: JL
+      price: 4000
+      sku: DMRST-JL
+    -
+      key: XS
+      variant: XS
+      price: 4000
+      sku: DMRST-XS
+    -
+      key: S
+      variant: S
+      price: 4000
       sku: DMRST-S
     -
-      key: medium
-      variant: Medium
-      price: 3999
+      key: M
+      variant: M
+      price: 4000
       sku: DMRST-M
     -
-      key: large
-      variant: Large
-      price: 3999
+      key: L
+      variant: L
+      price: 4000
       sku: DMRST-L
     -
-      key: x-large
-      variant: X-Large
-      price: 4499
+      key: XL
+      variant: XL
+      price: 4000
       sku: DMRST-XL
+    -
+      key: 2XL
+      variant: 2XL
+      price: 4000
+      sku: DMRST-2XL
+    -
+      key: 3XL
+      variant: 3XL
+      price: 4000
+      sku: DMRST-3XL
+    -
+      key: 4XL
+      variant: 4XL
+      price: 4000
+      sku: DMRST-4XL
+    -
+      key: 5XL
+      variant: 5XL
+      price: 4000
+      sku: DMRST-5XL
 ---
 This loose-cut shirt allows for complete movement and utilises our custom Diamond fabric.
 

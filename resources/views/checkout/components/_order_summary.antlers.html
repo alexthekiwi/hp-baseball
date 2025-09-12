@@ -77,7 +77,7 @@
 
         {{ if config:statamic:cargo:taxes:price_includes_tax }}
             <div class="mt-1 text-xs font-normal text-gray-500">
-                {{ trans key="Including :amount in taxes" :amount="tax_total" }}
+                {{ trans key="Including :amount in GST" :amount="tax_total" }}
             </div>
         {{ /if }}
     </div>

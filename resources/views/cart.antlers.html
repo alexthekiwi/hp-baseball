@@ -46,7 +46,7 @@
 
                                         {{ if variant }}
                                             <p class="text-sm text-gray-600 mb-2">
-                                                Size: {{ product:product_variants:options }}{{ if key == variant }}{{ variant }}{{ /if }}{{ /product:product_variants:options }}
+                                                {{ variant:name }}
                                             </p>
                                         {{ /if }}
 

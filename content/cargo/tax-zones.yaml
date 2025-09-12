@@ -1,0 +1,8 @@
+gst:
+  title: 'New Zealand'
+  type: countries
+  countries:
+    - NZL
+  rates:
+    general: 15
+    shipping: 15

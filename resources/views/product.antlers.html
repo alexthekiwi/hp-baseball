@@ -43,19 +43,10 @@
                 </div>
 
                 <div class="flex flex-col gap-6">
-                    <!-- Price Display -->
-                    <div class="text-2xl font-bold text-primary">
-                        {{ if product_variants }}
-                            <div x-show="selectedPrice" x-text="'$' + (selectedPrice / 100).toFixed(2)"></div>
-                        {{ else }}
-                            {{ price }}
-                        {{ /if }}
-                    </div>
-
                     <!-- Details -->
                     <div class="space-y-4">
                         <h3 class="font-semibold">Details</h3>
-                        <div class="bard text-base prose">
+                        <div class="text-base prose">
                             {{ content }}
                         </div>
                     </div>
@@ -68,18 +59,20 @@
                         {{ if product_variants }}
                             <div>
                                 <label class="block text-sm font-medium mb-3">Size</label>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="grid grid-cols-3 md:grid-cols-4 gap-2">
                                     {{ product_variants:options }}
                                         <label class="relative">
-                                            <input type="radio"
-                                                   name="variant"
-                                                   value="{{ key }}"
-                                                   x-model="selectedVariant"
-                                                   @change="updatePriceFromString('{{ price }}')"
-                                                   {{ if first }}checked{{ /if }}
-                                                   required
-                                                   class="sr-only peer">
-                                            <div class="px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:border-primary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white transition-all">
+                                            <input
+                                                type="radio"
+                                                name="variant"
+                                                value="{{ key }}"
+                                                x-model="selectedVariant"
+                                                @change="updatePriceFromString('{{ price }}')"
+                                                {{ if first }}checked{{ /if }}
+                                                required
+                                                class="sr-only peer"
+                                            >
+                                            <div class="text-center px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:border-primary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white transition-all">
                                                 {{ variant }}
                                             </div>
                                         </label>
@@ -88,21 +81,33 @@
                             </div>
                         {{ /if }}
 
+                        <!-- Price Display -->
+                        <div class="text-2xl font-bold text-primary">
+                            {{ if product_variants }}
+                                <div x-show="selectedPrice" x-text="'$' + (selectedPrice / 100).toFixed(2)"></div>
+                            {{ else }}
+                                {{ price }}
+                            {{ /if }}
+                        </div>
+
                         <!-- Quantity Selector -->
                         <div>
                             <label class="block text-sm font-medium mb-2">Quantity</label>
-                            <input type="number"
-                                   name="quantity"
-                                   min="1"
-                                   value="1"
-                                   required
-                                   class="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <input
+                                type="number"
+                                name="quantity"
+                                min="1"
+                                value="1"
+                                required
+                                class="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            >
                         </div>
 
                         <!-- Add to Cart Button -->
-                        <button type="submit"
-                                :disabled="isSubmitting"
-                                class="bg-primary px-8 py-3 text-white font-medium rounded-lg transition-colors hover:bg-primary-dark disabled:opacity-50">
+                        <button
+                            type="submit"
+                            :disabled="isSubmitting"
+                            class="bg-primary px-8 py-3 text-white font-medium rounded-lg transition-colors hover:bg-primary-dark disabled:opacity-50">
                             <span x-text="isSubmitting ? 'Adding...' : 'Add to Cart'"></span>
                         </button>
                     {{ /cart:add }}

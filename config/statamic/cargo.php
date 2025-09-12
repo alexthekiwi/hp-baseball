@@ -176,6 +176,8 @@ return [
 
         'price_includes_tax' => true,
 
+        'shipping_tax_behaviour' => 'tax_class',
+
     ],
 
     'shipping' => [
@@ -191,7 +193,8 @@ return [
         */
 
         'methods' => [
-            'free_shipping' => [],
+            // 'free_shipping' => [],
+            'collect_from_club' => [],
         ],
 
     ],
@@ -209,7 +212,7 @@ return [
         */
 
         'gateways' => [
-            'dummy' => [],
+            // 'dummy' => [],
 
             'stripe' => [
                 'key' => env('STRIPE_KEY'),

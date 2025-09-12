@@ -13,8 +13,15 @@ class CollectFromClub extends ShippingMethod
     {
         return collect([
             ShippingOption::make($this)
-                ->name(__('Free Shipping'))
+                ->name(__('Collect from Club'))
                 ->price(0),
         ]);
     }
+
+    // public function fieldtypeDetails(Order $order): array
+    // {
+    //     return [
+    //         __('Available from') => now()->parse('2025-10-01')->format('d M y'),
+    //     ];
+    // }
 }
