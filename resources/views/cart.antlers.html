@@ -17,124 +17,133 @@
                 {{ /partial:components/common/button }}
             </div>
         {{ else }}
-            <div class="">
-                <div class="grid grid-cols-3 gap-8">
-                    <!-- Cart Items -->
-                    <div class="col-span-2">
-                        <h2 class="text-2xl font-bold mb-6">Shopping Cart</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Cart Items -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-xl lg:text-2xl font-bold mb-4 lg:mb-6">Shopping Cart</h2>
 
-                        {{ cart:line_items }}
-                            <div class="flex gap-6 p-6 bg-white border border-gray-200 rounded-lg mb-4">
-                                <!-- Product Image -->
-                                <div class="bg-gray-light p-2 rounded-md w-24 h-24 flex-shrink-0">
-                                    {{ if product:image }}
-                                        <img
-                                            src="{{ glide :src="product:image" preset="sm-webp" }}"
-                                             alt="{{ product:title }}"
-                                             class="w-full h-full object-cover rounded-lg"
-                                        >
-                                    {{ /if }}
-                                </div>
+                    {{ cart:line_items }}
+                        <div class="bg-white border border-gray-200 rounded-lg p-4 lg:p-6 mb-4 flex flex-col lg:flex-row gap-4 lg:gap-6">
+                            <!-- Product Image -->
+                            <div class="bg-gray-light p-1 lg:p-2 rounded w-16 h-16 lg:w-24 lg:h-24 flex-shrink-0">
+                                {{ if product:image }}
+                                    <img src="{{ glide :src="product:image" preset="sm-webp" }}"
+                                         alt="{{ product:title }}"
+                                         class="w-full h-full object-cover rounded lg:rounded-lg">
+                                {{ /if }}
+                            </div>
 
-                                <!-- Product Details -->
-                                <div class="flex-grow">
-                                    <h3 class="font-semibold text-lg mb-1">
-                                        <a href="{{ product:url }}" class="hover:text-primary transition-colors">
-                                            {{ product:title }}
-                                        </a>
-                                    </h3>
+                            <!-- Product Details + Controls (Mobile) / Product Details (Desktop) -->
+                            <div class="flex-grow lg:min-w-0">
+                                <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-3 lg:gap-0">
+                                    <!-- Product Info -->
+                                    <div class="flex-grow lg:min-w-0 lg:mr-6">
+                                        <h3 class="text-base lg:text-lg font-bold mb-1">
+                                            <a href="{{ product:url }}" class="hover:text-primary transition-colors">
+                                                {{ product:title }}
+                                            </a>
+                                        </h3>
 
-                                    {{ if variant }}
-                                        <p class="text-sm text-gray-600 mb-2">
-                                            Size:
-                                            {{ product:product_variants:options }}
-                                                {{ if key == variant }}{{ variant }}{{ /if }}
-                                            {{ /product:product_variants:options }}
-                                        </p>
-                                    {{ /if }}
+                                        {{ if variant }}
+                                            <p class="text-sm text-gray-600 mb-2">
+                                                Size: {{ product:product_variants:options }}{{ if key == variant }}{{ variant }}{{ /if }}{{ /product:product_variants:options }}
+                                            </p>
+                                        {{ /if }}
 
-                                    <div class="flex items-center gap-4 mt-4">
-                                        <!-- Quantity Update Form -->
-                                        {{ cart:update_line_item :line_item="id" class="flex items-center gap-2" }}
-                                            {{ if variant }}
-                                                <input type="hidden" name="variant" value="{{ variant }}">
-                                            {{ /if }}
-                                            <label class="text-sm text-gray-600">Qty:</label>
-                                            <input type="number"
-                                                   name="quantity"
-                                                   value="{{ quantity }}"
-                                                   min="1"
-                                                   class="w-16 px-2 py-1 border border-gray-300 rounded text-center">
-                                            <button type="submit"
-                                                    class="text-sm text-primary hover:text-primary-dark transition-colors">
-                                                Update
-                                            </button>
-                                        {{ /cart:update_line_item }}
+                                        <!-- Controls on Desktop -->
+                                        <div class="hidden lg:flex items-center gap-4 mt-4">
+                                            {{ cart:update_line_item :line_item="id" class="flex items-center gap-2" }}
+                                                {{ if variant }}
+                                                    <input type="hidden" name="variant" value="{{ variant }}">
+                                                {{ /if }}
+                                                <label class="text-sm text-gray-600">Qty:</label>
+                                                <input type="number" name="quantity" value="{{ quantity }}" min="1"
+                                                       class="w-16 px-2 py-1 border border-gray-300 rounded text-center">
+                                                <button type="submit" class="text-sm text-primary hover:text-primary-dark transition-colors">
+                                                    Update
+                                                </button>
+                                            {{ /cart:update_line_item }}
 
-                                        <!-- Remove Item -->
-                                        {{ cart:remove :line_item="id" class="ml-4" }}
-                                            <button type="submit" class="text-sm text-red-600 hover:text-red-700 transition-colors">
-                                                Remove
-                                            </button>
-                                        {{ /cart:remove }}
+                                            {{ cart:remove :line_item="id" class="ml-4" }}
+                                                <button type="submit" class="text-sm text-red-600 hover:text-red-700 transition-colors">
+                                                    Remove
+                                                </button>
+                                            {{ /cart:remove }}
+                                        </div>
+                                    </div>
+
+                                    <!-- Price -->
+                                    <div class="text-left lg:text-right flex-shrink-0">
+                                        {{ partial:components/text/money class="font-semibold text-primary lg:text-lg" }}{{ total }}{{ /partial:components/text/money }}
+                                        {{ if quantity > 1 }}
+                                            <div class="text-xs lg:text-sm text-gray-600 mt-1" x-data="{
+                                                totalStr: '{{ total }}',
+                                                quantity: {{ quantity }},
+                                                get unitPrice() {
+                                                    const totalValue = parseFloat(this.totalStr.replace(/[^0-9.]/g, ''));
+                                                    return (totalValue / this.quantity).toFixed(2);
+                                                }
+                                            }">
+                                                <span class="lg:hidden" x-text="'($' + unitPrice + ' each)'"></span>
+                                                <span class="hidden lg:inline" x-text="'$' + unitPrice + ' each'"></span>
+                                            </div>
+                                        {{ /if }}
                                     </div>
                                 </div>
 
-                                <!-- Price -->
-                                <div class="text-right">
-                                    {{ partial:components/text/money class="font-semibold text-lg" }}
-                                        {{ total }}
-                                    {{ /partial:components/text/money }}
-                                    {{ if quantity > 1 }}
-                                        <div class="text-sm text-gray-600 mt-1" x-data="{
-                                            totalStr: '{{ total }}',
-                                            quantity: {{ quantity }},
-                                            get unitPrice() {
-                                                const totalValue = parseFloat(this.totalStr.replace(/[^0-9.]/g, ''));
-                                                return (totalValue / this.quantity).toFixed(2);
-                                            }
-                                        }">
-                                            <span class="text-xs" x-text="'$' + unitPrice + ' each'"></span>
-                                        </div>
-                                    {{ /if }}
+                                <!-- Controls on Mobile -->
+                                <div class="flex flex-col sm:flex-row gap-3 pt-3 mt-3 border-t border-gray-100 lg:hidden">
+                                    {{ cart:update_line_item :line_item="id" class="flex items-center gap-2" }}
+                                        {{ if variant }}
+                                            <input type="hidden" name="variant" value="{{ variant }}">
+                                        {{ /if }}
+                                        <label class="text-sm text-gray-600 whitespace-nowrap">Qty:</label>
+                                        <input type="number" name="quantity" value="{{ quantity }}" min="1"
+                                               class="w-20 px-2 py-1 border border-gray-300 rounded text-center text-sm">
+                                        <button type="submit" class="text-sm text-primary hover:text-primary-dark transition-colors">
+                                            Update
+                                        </button>
+                                    {{ /cart:update_line_item }}
+
+                                    {{ cart:remove :line_item="id" class="sm:ml-auto" }}
+                                        <button type="submit" class="text-sm text-red-600 hover:text-red-700 transition-colors">
+                                            Remove
+                                        </button>
+                                    {{ /cart:remove }}
                                 </div>
                             </div>
-                        {{ /cart:line_items }}
-                    </div>
+                        </div>
+                    {{ /cart:line_items }}
+                </div>
 
-                    <!-- Order Summary -->
-                    <div class="col-span-1">
-                        <div class="bg-gray-50 p-6 rounded-lg">
-                            <h3 class="text-xl font-bold mb-4">Order Summary</h3>
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gray-50 p-4 lg:p-6 rounded-lg">
+                        <h3 class="text-lg lg:text-xl font-bold mb-3 lg:mb-4">Order Summary</h3>
 
-                            <div class="space-y-2 mb-4">
-                                <div class="flex justify-between">
-                                    <span>Subtotal</span>
-                                    {{ partial:components/text/money class="font-semibold" }}
-                                        {{ cart:sub_total }}
-                                    {{ /partial:components/text/money }}
-                                </div>
-
-                                <!-- Add tax/shipping if needed -->
-                                <div class="flex justify-between text-sm text-gray-600">
-                                    <span>Shipping</span>
-                                    <span>Calculated at checkout</span>
-                                </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between">
+                                <span>Subtotal</span>
+                                {{ partial:components/text/money class="font-semibold" }}{{ cart:sub_total }}{{ /partial:components/text/money }}
                             </div>
-
-                            <div class="border-t pt-4 mb-6">
-                                <div class="flex justify-between text-lg font-bold">
-                                    <span>Total</span>
-                                    {{ partial:components/text/money }}
-                                        {{ cart:grand_total }}
-                                    {{ /partial:components/text/money }}
-                                </div>
+                            <div class="flex justify-between text-sm text-gray-600">
+                                <span>Shipping</span>
+                                <span>Calculated at checkout</span>
                             </div>
+                        </div>
 
-                            <div class="flex flex-col items-end gap-3">
-                                {{ partial:components/common/button link="/checkout" colour="primary" style="Solid" class="w-full text-center" }}
-                                    Proceed to Checkout
-                                {{ /partial:components/common/button }}
+                        <div class="border-t pt-3 lg:pt-4 mb-4 lg:mb-6">
+                            <div class="flex justify-between text-lg font-bold">
+                                <span>Total</span>
+                                {{ partial:components/text/money }}{{ cart:grand_total }}{{ /partial:components/text/money }}
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-3 items-center">
+                            {{ partial:components/common/button link="/checkout" colour="primary" style="Solid" class="w-full text-center" }}
+                                Proceed to Checkout
+                            {{ /partial:components/common/button }}
+                            <div class="text-center">
                                 <a href="/products" class="underline text-sm">Continue shopping</a>
                             </div>
                         </div>
