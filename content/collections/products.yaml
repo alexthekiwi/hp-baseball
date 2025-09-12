@@ -1,4 +1,5 @@
 title: Products
+icon: collections
 template: product
 layout: layout
 taxonomies:
@@ -7,10 +8,14 @@ revisions: false
 route: '/products/{{ slug }}'
 sort_dir: asc
 date_behavior:
-  past: public
-  future: private
+  past: null
+  future: null
 preview_targets:
   -
     label: Entry
     url: '{permalink}'
     refresh: true
+structure:
+  root: false
+  max_depth: 1
+  slugs: true

@@ -1,0 +1,23 @@
+{{ partial:main }}
+    {{ partial:components/blocks/_hero
+        title="Cart"
+        background_type="Colour"
+        background_colour="primary"
+        align="start"
+    }}
+    {{ partial:components/block
+        padding_top="none"
+        padding_bottom="base"
+    }}
+        {{ if {cart:is_empty} }}
+            <div class="flex flex-col items-start gap-6">
+                <p class="font-bold text-xl">Your cart is empty</p>
+                {{ partial:components/common/button link="/shop" colour="primary" style="Solid" }}
+                    Go to Shop
+                {{ /partial:components/common/button }}
+            </div>
+        {{ else }}
+            Sweet! The cart has items in it. 🎉
+        {{ /if }}
+    {{ /partial:components/block }}
+{{ /partial:main }}

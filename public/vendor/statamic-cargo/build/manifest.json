@@ -1,0 +1,65 @@
+{
+  "resources/css/cp.css": {
+    "file": "assets/cp-DablnS9m.css",
+    "src": "resources/css/cp.css",
+    "isEntry": true
+  },
+  "resources/js/cp.js": {
+    "file": "assets/cp-BNbw9lts.js",
+    "name": "cp",
+    "src": "resources/js/cp.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/svg/cargo-mark.svg",
+      "resources/svg/product-variants.svg",
+      "resources/svg/refund.svg",
+      "resources/svg/stripe.svg",
+      "resources/svg/tax-classes.svg"
+    ]
+  },
+  "resources/svg/cargo-mark.svg": {
+    "file": "assets/cargo-mark-3X20BDsV.js",
+    "name": "cargo-mark",
+    "src": "resources/svg/cargo-mark.svg",
+    "isDynamicEntry": true,
+    "assets": [
+      "assets/cargo-mark-CaQbO4Gv.svg"
+    ]
+  },
+  "resources/svg/product-variants.svg": {
+    "file": "assets/product-variants-79AQJsAN.js",
+    "name": "product-variants",
+    "src": "resources/svg/product-variants.svg",
+    "isDynamicEntry": true,
+    "assets": [
+      "assets/product-variants-BGP4hE02.svg"
+    ]
+  },
+  "resources/svg/refund.svg": {
+    "file": "assets/refund-CN_fjV-3.js",
+    "name": "refund",
+    "src": "resources/svg/refund.svg",
+    "isDynamicEntry": true,
+    "assets": [
+      "assets/refund-Cyjd2E6o.svg"
+    ]
+  },
+  "resources/svg/stripe.svg": {
+    "file": "assets/stripe-Dz4kC3f4.js",
+    "name": "stripe",
+    "src": "resources/svg/stripe.svg",
+    "isDynamicEntry": true,
+    "assets": [
+      "assets/stripe-iEIYPkFO.svg"
+    ]
+  },
+  "resources/svg/tax-classes.svg": {
+    "file": "assets/tax-classes-Dep-7QaI.js",
+    "name": "tax-classes",
+    "src": "resources/svg/tax-classes.svg",
+    "isDynamicEntry": true,
+    "assets": [
+      "assets/tax-classes-CMjJJche.svg"
+    ]
+  }
+}

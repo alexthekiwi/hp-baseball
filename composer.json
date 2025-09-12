@@ -11,15 +11,13 @@
     ],
     "require": {
         "php": "^8.2",
-        "aryehraber/statamic-captcha": "^1.12",
+        "duncanmcclean/statamic-cargo": "^1.0@alpha",
         "laravel/framework": "^12.0",
         "laravel/horizon": "^5.27",
         "laravel/tinker": "^2.10.1",
-        "marcorieser/statamic-live-search": "^3.0",
-        "marcorieser/statamic-livewire": "^4.0",
-        "pecotamic/sitemap": "^1.4",
+        "livewire/livewire": "^3.6",
         "spatie/laravel-schedule-monitor": "^3.8",
-        "statamic/cms": "^5.0"
+        "statamic/cms": "^6.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

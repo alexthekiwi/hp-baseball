@@ -22,8 +22,6 @@
                     {{ partial:components/text/money class="text-xl font-bold" }}
                         {{ price }}
                     {{ /partial:components/text/money }}
-
-                    <p>Price Disclaimer Text</p>
                 </div>
 
                 <div class="space-y-1">
@@ -32,6 +30,17 @@
                     <div class="bard text-base">
                         {{ content }}
                     </div>
+
+                    {{ cart:add class="flex flex-col items-start gap-4 mt-12" }}
+                        <input type="hidden" name="product" value="{{ page:id }}">
+                        <label>
+                            Quantity
+                            <input type="number" name="quantity" min="1" value="1" required class="">
+                        </label>
+                        <button class="bg-primary px-6 py-3 lg:px-8 lg:py-3 text-base text-white inline-flex items-center gap-4 font-medium text-center whitespace-nowrap transition-colors rounded-outer cursor-pointer">
+                            Add to cart
+                        </button>
+                    {{ /cart:add }}
                 </div>
             </div>
 

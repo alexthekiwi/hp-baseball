@@ -39,7 +39,7 @@
         href="{{ $button_href }}"
         {{ target_blank ?= 'rel="noopener noreferrer" target="_blank"' }}
     {{ else }}
-        type="button"
+        type="{{ type ?? 'button' }}"
     {{ /if }}
 >
     {{ if $button_style == 'Underlined' }}

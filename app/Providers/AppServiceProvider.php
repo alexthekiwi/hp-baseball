@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Mail\OrderConfirmation;
+use DuncanMcClean\Cargo\Events\OrderPaymentReceived;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\ServiceProvider;
 use Statamic\Statamic;
 
@@ -20,6 +24,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Event::listen(OrderPaymentReceived::class, function ($event) {
+            Mail::to($event->order->customer())
+                ->locale($event->order->site()->shortLocale())
+                ->send(new OrderConfirmation($event->order));
+        });
+
         // Statamic::vite('app', [
         //     'resources/js/cp.js',
         //     'resources/css/cp.css',
