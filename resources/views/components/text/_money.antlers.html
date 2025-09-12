@@ -1,3 +1,17 @@
-<div x-data="{ value: Number({{ $slot }}) }">
-    <p class="tracking-widest font-medium {{ class }}" x-text="'$' + value.toFixed(2)"></p>
-</div>
+<span class="tracking-widest font-medium {{ class }}" x-data="{ rawValue: '{{ $slot }}' }" x-text="formatPrice(rawValue)">
+</span>
+
+<script>
+if (!window.formatPrice) {
+    window.formatPrice = function(value) {
+        if (typeof value === 'string' && value.includes('$')) {
+            return value; // Already formatted
+        }
+        const numValue = Number(value);
+        if (isNaN(numValue)) {
+            return value; // Return as-is if can't parse
+        }
+        return '$' + (numValue / 100).toFixed(2);
+    }
+}
+</script>

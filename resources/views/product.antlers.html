@@ -1,14 +1,36 @@
-<main id="content" class="flex flex-col min-h-screen">
+{{ if product_variants }}
+<main id="content" class="flex flex-col min-h-screen"
+      x-data="productPage()"
+      data-first-variant="{{ product_variants:options limit='1' }}{{ key }}{{ /product_variants:options }}"
+      data-first-price="{{ product_variants:options limit='1' }}{{ price }}{{ /product_variants:options }}">
+{{ else }}
+<main id="content" class="flex flex-col min-h-screen"
+      x-data="productPage()"
+      data-price="{{ price ?? 0 }}">
+{{ /if }}
     {{ partial:layout/header/index }}
 
     {{ partial:components/block padding_top="md" padding_bottom="base" }}
-        <div class="flex justify-between">
+        <div class="flex items-center justify-between">
             {{ partial:layout/breadcrumbs }}
-
-            {{ partial:components/common/button link="/products" colour="black" style="Solid" }}
-                View All Products
-            {{ /partial:components/common/button }}
         </div>
+
+        <!-- Success Message -->
+        <div x-show="showSuccessMessage" x-transition.opacity.duration.500ms
+             class="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+             x-init="setTimeout(() => showSuccessMessage = false, 5000)">
+            Product added to cart successfully!
+        </div>
+
+        <!-- Already in Cart Message -->
+        {{ if {cart:added product="{page:id}"} }}
+            <div class="flex gap-6 items-start flex-col md:items-center md:flex-row md:justify-between p-6 bg-gray-light text-primary rounded-lg">
+                <span class="font-bold">This product is in your cart.</span>
+                {{ partial:components/common/button link="/cart" colour="primary" style="Solid" }}
+                    Go to Cart
+                {{ /partial:components/common/button }}
+            </div>
+        {{ /if }}
 
         <div class="grid grid-cols-2 gap-x-24 mt-12">
             <div class="space-y-4">
@@ -16,34 +38,71 @@
             </div>
 
             <div class="flex flex-col gap-8">
-                <h2>{{ title }}</h2>
+                <h1 class="text-3xl font-bold text-primary">{{ title }}</h1>
 
-                <div class="space-y-1">
-                    {{ partial:components/text/money class="text-xl font-bold" }}
-                        {{ price }}
-                    {{ /partial:components/text/money }}
-                </div>
-
-                <div class="space-y-1">
+                <div class="space-y-4">
                     <strong>Details</strong>
 
                     <div class="bard text-base">
                         {{ content }}
                     </div>
 
-                    {{ cart:add class="flex flex-col items-start gap-4 mt-12" }}
+                    {{ cart:add class="flex flex-col items-start gap-4 mt-8" @submit="handleAddToCart()" }}
                         <input type="hidden" name="product" value="{{ page:id }}">
-                        <label>
-                            Quantity
-                            <input type="number" name="quantity" min="1" value="1" required class="">
-                        </label>
-                        <button class="bg-primary px-6 py-3 lg:px-8 lg:py-3 text-base text-white inline-flex items-center gap-4 font-medium text-center whitespace-nowrap transition-colors rounded-outer cursor-pointer">
-                            Add to cart
+
+                        <!-- Variant Selector -->
+                        {{ if product_variants }}
+                            <div class="w-full">
+                                <label class="block text-sm font-medium mb-2">Size</label>
+                                <div class="flex flex-wrap gap-2">
+                                    {{ product_variants:options }}
+                                        <label class="relative">
+                                            <input type="radio"
+                                                   name="variant"
+                                                   value="{{ key }}"
+                                                   x-model="selectedVariant"
+                                                   @change="updatePriceFromString('{{ price }}')"
+                                                   {{ if first }}checked{{ /if }}
+                                                   required
+                                                   class="sr-only peer">
+                                            <div class="whitespace-nowrap px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:border-primary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white transition-all">
+                                                {{ variant }}
+                                            </div>
+                                        </label>
+                                    {{ /product_variants:options }}
+                                </div>
+                            </div>
+                        {{ /if }}
+
+                         <!-- Price Display (updates based on variant) -->
+                        <div class="space-y-1">
+                            {{ if product_variants }}
+                                <div x-show="selectedPrice" class="text-xl font-bold" x-text="'$' + (selectedPrice / 100).toFixed(2)"></div>
+                            {{ else }}
+                                <div class="text-xl font-bold">{{ price }}</div>
+                            {{ /if }}
+                        </div>
+
+                        <!-- Quantity Selector -->
+                        <div class="w-full">
+                            <label class="block text-sm font-medium mb-2">
+                                Quantity
+                            </label>
+                            <input type="number"
+                                   name="quantity"
+                                   min="1"
+                                   value="1"
+                                   required
+                                   class="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+
+                        <button type="submit"
+                                class="bg-primary px-6 py-3 lg:px-8 lg:py-3 text-base text-white inline-flex items-center gap-4 font-medium text-center whitespace-nowrap transition-colors rounded-outer cursor-pointer hover:bg-opacity-90">
+                            <span x-text="isSubmitting ? 'Adding...' : 'Add to Cart'"></span>
                         </button>
                     {{ /cart:add }}
                 </div>
             </div>
-
         </div>
     {{ /partial:components/block }}
 

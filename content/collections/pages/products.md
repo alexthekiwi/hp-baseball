@@ -9,7 +9,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757385348
+updated_at: 1757715873
 page_builder:
   -
     id: mfbxur6w
@@ -31,4 +31,5 @@ page_builder:
     padding_bottom: base
     type: body_content
     enabled: true
+parent: dbd70a65-fb0a-48e6-aaaa-abc8e0054e11
 ---
