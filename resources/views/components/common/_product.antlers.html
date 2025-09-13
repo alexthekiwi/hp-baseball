@@ -14,7 +14,7 @@
             {{ if settings:shop_enabled }}
                 {{ if product_variants }}
                     <div class="flex items-baseline gap-1">
-                        <span class="text-sm text-gray-600">from</span>
+                        {{# <span class="text-sm text-gray-600">from</span> #}}
                         {{ product_variants:options sort="price:asc" limit="1" }}
                             {{ partial:components/text/money }}{{ price }}{{ /partial:components/text/money }}
                         {{ /product_variants:options }}

@@ -14,62 +14,62 @@ product_variants:
     -
       key: JS
       variant: JS
-      price: 4000
+      price: 14000
       sku: PB-JS
     -
       key: JM
       variant: JM
-      price: 4000
+      price: 14000
       sku: PB-JM
     -
       key: JL
       variant: JL
-      price: 4000
+      price: 14000
       sku: PB-JL
     -
       key: XS
       variant: XS
-      price: 4000
+      price: 14000
       sku: PB-XS
     -
       key: S
       variant: S
-      price: 4000
+      price: 14000
       sku: PB-S
     -
       key: M
       variant: M
-      price: 4000
+      price: 14000
       sku: PB-M
     -
       key: L
       variant: L
-      price: 4000
+      price: 14000
       sku: PB-L
     -
       key: XL
       variant: XL
-      price: 4000
+      price: 14000
       sku: PB-XL
     -
       key: 2XL
       variant: 2XL
-      price: 4000
+      price: 14000
       sku: PB-2XL
     -
       key: 3XL
       variant: 3XL
-      price: 4000
+      price: 14000
       sku: PB-3XL
     -
       key: 4XL
       variant: 4XL
-      price: 4000
+      price: 14000
       sku: PB-4XL
     -
       key: 5XL
       variant: 5XL
-      price: 4000
+      price: 14000
       sku: PB-5XL
 ---
 The ultimate training bundle for serious players. This bundle includes:

@@ -15,62 +15,62 @@ product_variants:
     -
       key: JS
       variant: JS
-      price: 4000
+      price: 6500
       sku: DHT-JS
     -
       key: JM
       variant: JM
-      price: 4000
+      price: 6500
       sku: DHT-JM
     -
       key: JL
       variant: JL
-      price: 4000
+      price: 6500
       sku: DHT-JL
     -
       key: XS
       variant: XS
-      price: 4000
+      price: 6500
       sku: DHT-XS
     -
       key: S
       variant: S
-      price: 4000
+      price: 6500
       sku: DHT-S
     -
       key: M
       variant: M
-      price: 4000
+      price: 6500
       sku: DHT-M
     -
       key: L
       variant: L
-      price: 4000
+      price: 6500
       sku: DHT-L
     -
       key: XL
       variant: XL
-      price: 4000
+      price: 6500
       sku: DHT-XL
     -
       key: 2XL
       variant: 2XL
-      price: 4000
+      price: 6500
       sku: DHT-2XL
     -
       key: 3XL
       variant: 3XL
-      price: 4000
+      price: 6500
       sku: DHT-3XL
     -
       key: 4XL
       variant: 4XL
-      price: 4000
+      price: 6500
       sku: DHT-4XL
     -
       key: 5XL
       variant: 5XL
-      price: 4000
+      price: 6500
       sku: DHT-5XL
 ---
 The Diamond Hooded short sleeve Tee is a warm-up and training product.
