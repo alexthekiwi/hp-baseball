@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757206761
+updated_at: 1757733363
 page_builder:
   -
     id: mayjquz6
@@ -148,11 +148,6 @@ page_builder:
               -
                 type: bold
             text: 'Vice-President + Treasurer'
-          -
-            type: hardBreak
-          -
-            type: text
-            text: 'Email: TODO'
       -
         type: heading
         attrs:
@@ -170,10 +165,6 @@ page_builder:
               -
                 type: bold
             text: Secretary
-          -
-            type: hardBreak
-          -
-            type: text
-            text: 'Email: TODO'
 hide_breadcrumbs: false
+parent: dbd70a65-fb0a-48e6-aaaa-abc8e0054e11
 ---
