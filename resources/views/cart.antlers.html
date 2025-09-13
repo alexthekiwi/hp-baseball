@@ -58,7 +58,7 @@
                                         <div class="hidden lg:flex items-center gap-8 mt-4">
                                             {{ cart:update_line_item :line_item="id" class="flex items-center gap-3" }}
                                                 {{ if variant }}
-                                                    <input type="hidden" name="variant" value="{{ variant }}">
+                                                    <input type="hidden" name="variant" value="{{ variant:key }}">
                                                 {{ /if }}
                                                 <label class="text-sm text-gray-600">Qty:</label>
                                                 <input
@@ -104,7 +104,7 @@
                                 <div class="flex flex-col sm:flex-row gap-3 pt-3 mt-3 border-t border-gray-100 lg:hidden">
                                     {{ cart:update_line_item :line_item="id" class="flex items-center gap-2" }}
                                         {{ if variant }}
-                                            <input type="hidden" name="variant" value="{{ variant }}">
+                                            <input type="hidden" name="variant" value="{{ variant:key }}">
                                         {{ /if }}
                                         <label class="text-sm text-gray-600 whitespace-nowrap">Qty:</label>
                                         <input type="number" name="quantity" value="{{ quantity }}" min="1"
