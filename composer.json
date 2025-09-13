@@ -17,7 +17,9 @@
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6",
         "spatie/laravel-schedule-monitor": "^3.8",
-        "statamic/cms": "^6.0"
+        "statamic/cms": "^6.0",
+        "symfony/http-client": "^7.3",
+        "symfony/postmark-mailer": "^7.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
