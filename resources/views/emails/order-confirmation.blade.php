@@ -43,9 +43,10 @@ $downloadUrl = URL::signedRoute('statamic.cargo.download', [
 **Shipping Address:** {{ $order->shippingAddress() }}
 @endif --}}
 
+**Customer:** {{ $order->customer()->name }} ({{ $order->customer()->email }})
+
 **Billing Address:** {{ $order->billingAddress() }}
 
-**Customer:** {{ $order->customer()->name }} ({{ $order->customer()->email }})
 </x-mail::panel>
 
 Thank you for your order!<br>
