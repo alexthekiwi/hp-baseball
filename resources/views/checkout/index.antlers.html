@@ -1,4 +1,3 @@
-{{ nocache }}
 {{ if ! {cart:exists} || {cart:count} === 0 }}
     {{ redirect to="/cart" }}
 {{ /if }}
@@ -16,11 +15,10 @@
     </div>
 </template>
 
-{{ section:sidebar }}
-    {{ partial:checkout/components/cart_summary }}
-{{ /section:sidebar }}
+    {{ section:sidebar }}
+        {{ partial:checkout/components/cart_summary }}
+    {{ /section:sidebar }}
 
 {{ prepend:footer_scripts }}
     {{ partial:checkout/js/checkout }}
 {{ /prepend:footer_scripts }}
-{{ /nocache }}
