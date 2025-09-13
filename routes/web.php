@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\XmlSitemapController;
 use App\Mail\OrderConfirmation;
 use App\Mail\OrderNotification;
 use DuncanMcClean\Cargo\Facades\Order;
@@ -15,6 +16,8 @@ Route::statamic('checkout', 'checkout.index', ['title' => 'Checkout', 'layout' =
 Route::statamic('checkout/confirmation', 'checkout.confirmation', ['title' => 'Order Confirmation', 'layout' => 'checkout.layout'])
     ->name('checkout.confirmation')
     ->middleware('signed');
+
+Route::get('/sitemap.xml', [XmlSitemapController::class, 'index'])->name('sitemap.xml');
 
 if (app()->environment('local')) {
     Route::get('/order-confirmation', function () {
