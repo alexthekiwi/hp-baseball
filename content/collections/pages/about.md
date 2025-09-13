@@ -8,8 +8,8 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757209213
-nav_title: 'Club Info'
+updated_at: 1757731330
+nav_title: About
 hide_breadcrumbs: false
 page_builder:
   -
@@ -157,4 +157,5 @@ page_builder:
     padding_bottom: base
     type: gallery
     enabled: true
+parent: dbd70a65-fb0a-48e6-aaaa-abc8e0054e11
 ---

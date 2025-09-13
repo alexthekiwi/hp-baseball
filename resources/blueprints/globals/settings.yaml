@@ -15,3 +15,8 @@ tabs:
               display: 'Application Name'
               type: text
               placeholder: 'ACME Co.'
+          -
+            handle: shop_enabled
+            field:
+              type: toggle
+              display: 'Shop Enabled'

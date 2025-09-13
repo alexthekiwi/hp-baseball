@@ -39,27 +39,48 @@
                     {{ /nav }}
             </div>
 
-            {{# Articles Collection #}}
-            <div class="mb-8">
-                <h2 class="text-2xl font-bold text-primary mb-4">Articles</h2>
-                <ul class="flex flex-col gap-4 items-start">
-                    {{ collection:articles
-                       status:is="published"
-                       seo_noindex:isnt="true"
-                       sort="date:desc"
-                    }}
-                        <li class="flex items-start">
-                            <div>
-                                <a href="{{ url }}" class="hover:text-primary transition-colors">
-                                    {{ title }}
-                                </a>
-                                <span class="text-sm text-gray-500 ml-2">
-                                    {{ date format="M j, Y" }}
-                                </span>
-                            </div>
-                        </li>
-                    {{ /collection:articles }}
-                </ul>
+            <div class="flex flex-col gap-12">
+                {{# Articles Collection #}}
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-primary mb-4">Articles</h2>
+                    <ul class="flex flex-col gap-4 items-start">
+                        {{ collection:articles
+                           status:is="published"
+                           seo_noindex:isnt="true"
+                           sort="date:desc"
+                        }}
+                            <li class="flex items-start">
+                                <div>
+                                    <a href="{{ url }}" class="hover:text-primary transition-colors">
+                                        {{ title }}
+                                    </a>
+                                    <span class="text-sm text-gray-500 ml-2">
+                                        {{ date format="M j, Y" }}
+                                    </span>
+                                </div>
+                            </li>
+                        {{ /collection:articles }}
+                    </ul>
+                </div>
+
+                {{# Products Collection #}}
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-primary mb-4">Products</h2>
+                    <ul class="flex flex-col gap-4 items-start">
+                        {{ collection:products
+                           status:is="published"
+                           sort="order"
+                        }}
+                            <li class="flex items-start">
+                                <div>
+                                    <a href="{{ url }}" class="hover:text-primary transition-colors">
+                                        {{ title }}
+                                    </a>
+                                </div>
+                            </li>
+                        {{ /collection:products }}
+                    </ul>
+                </div>
             </div>
         </div>
     {{ /partial:components/block }}

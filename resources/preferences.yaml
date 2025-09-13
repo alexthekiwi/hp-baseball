@@ -1,0 +1,9 @@
+cargo:
+  orders:
+    columns:
+      - order_number
+      - date
+      - customer
+      - grand_total
+      - status
+      - line_items

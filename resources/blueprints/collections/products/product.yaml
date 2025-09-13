@@ -33,10 +33,16 @@ tabs:
               display: Content
               localizable: true
           -
-            handle: price
+            handle: product_variants
             field:
-              type: float
-              display: Price
+              option_fields:
+                -
+                  handle: sku
+                  field:
+                    type: text
+                    display: SKU
+              type: product_variants
+              display: 'Product Variants'
   sidebar:
     display: Sidebar
     sections:
@@ -48,3 +54,21 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
+          -
+            handle: categories
+            field:
+              type: terms
+              taxonomies:
+                - categories
+              display: Categories
+              mode: select
+          -
+            handle: tax_class
+            field:
+              type: tax_classes
+              display: 'Tax Class'
+              instructions: 'Determines how this product is taxed.'
+              listable: hidden
+              max_items: 1
+              create: true
+              validate: required

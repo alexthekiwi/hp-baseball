@@ -2,7 +2,7 @@
 id: c68ea1d3-2ef0-45d2-8af7-d40ee356c0af
 blueprint: page
 title: Register
-nav_title: 'Registration and Club Fees'
+nav_title: 'Registration & Fees'
 hide_breadcrumbs: false
 seo_noindex: false
 seo_nofollow: false
@@ -10,7 +10,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757211893
+updated_at: 1757731317
 page_builder:
   -
     id: mf7kt9pc
@@ -33,8 +33,6 @@ page_builder:
     description:
       -
         type: paragraph
-        attrs:
-          textAlign: left
         content:
           -
             type: text
@@ -175,4 +173,5 @@ page_builder:
     block: dcce952d-9ee0-4880-ba77-6e1ee1c66365
     type: fixed_block
     enabled: true
+parent: dbd70a65-fb0a-48e6-aaaa-abc8e0054e11
 ---

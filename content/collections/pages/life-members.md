@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757210715
+updated_at: 1757733210
 page_builder:
   -
     id: mf91v69x
@@ -20,14 +20,14 @@ page_builder:
     table:
       -
         cells:
+          - 'Anne Patton (Founding President)'
           - 'Glenn Campbell'
           - 'Hilton Chan'
           - 'Bernice Dingwall'
-          - 'John Fellet'
       -
         cells:
-          - 'Judith & Lars Hansen (original President)'
-          - 'Ann Patton'
+          - 'John Fellet'
+          - 'Judith & Lars Hansen'
           - 'John Stephney'
           - 'Keith Wilson'
       -
@@ -51,9 +51,9 @@ page_builder:
       -
         cells:
           - 'Robert & Robyn Johnstone'
-          - ''
-          - ''
-          - ''
+          - null
+          - null
+          - null
     header_row: false
     bold_first_column: false
     background_colour: White
@@ -63,4 +63,5 @@ page_builder:
     type: table
     enabled: true
 hide_breadcrumbs: false
+parent: 29fbbed6-3cb2-45aa-aaa6-eadc610e9c24
 ---
