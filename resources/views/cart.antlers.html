@@ -11,10 +11,14 @@
     }}
         {{ if {cart:is_empty} }}
             <div class="flex flex-col items-start gap-6">
-                <p class="font-bold text-xl">Your cart is empty</p>
-                {{ partial:components/common/button link="/products" colour="primary" style="Solid" }}
-                    Go to Shop
-                {{ /partial:components/common/button }}
+                {{ if settings:shop_enabled }}
+                    <p class="font-bold text-xl">Your cart is empty</p>
+                    {{ partial:components/common/button link="/products" colour="primary" style="Solid" }}
+                        Go to Shop
+                    {{ /partial:components/common/button }}
+                {{ else }}
+                    <p class="font-bold text-primary">The shop has currently closed for the season.<br/>Please check back another time.</p>
+                {{ /if }}
             </div>
         {{ else }}
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
