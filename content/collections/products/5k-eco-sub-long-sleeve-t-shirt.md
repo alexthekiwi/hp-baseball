@@ -2,9 +2,9 @@
 id: d1126d91-4cfc-410e-879e-c3fad3227a2d
 blueprint: product
 title: '5K Eco Sub Long Sleeve T-shirt'
-image: 5k-eco-sub-long-sleeve-t-shirt-front.png
+image: 5k-eco-sub-long-sleeve-t-shirt-front-1757736260.png
 supplementary_images:
-  - 5k-eco-sub-long-sleeve-t-shirt-back.png
+  - 5k-eco-sub-long-sleeve-t-shirt-back-1757736255.png
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
 updated_at: 1757714045

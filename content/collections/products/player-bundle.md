@@ -2,7 +2,7 @@
 id: 932ca6c6-adb3-420f-9632-b9116815ccce
 blueprint: product
 title: 'Player Bundle'
-image: player-bundle.png
+image: player-bundle-1757736323.png
 supplementary_images: []
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b

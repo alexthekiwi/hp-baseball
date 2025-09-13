@@ -2,9 +2,9 @@
 id: 03b37319-176a-4496-8290-b5881d081c6a
 blueprint: product
 title: 'Diamond Hooded T-Shirt'
-image: diamond-hooded-t-shirt-front.png
+image: diamond-hooded-t-shirt-front-1757736286.png
 supplementary_images:
-  - diamond-hooded-t-shirt-back.png
+  - diamond-hooded-t-shirt-back-1757736281.png
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
 updated_at: 1757714045

@@ -2,9 +2,9 @@
 id: b52c3f2a-dbd6-40a3-a377-e7d72b75e7e8
 blueprint: product
 title: 'Diamond Mesh raglan sleeve T-Shirt'
-image: diamond-mesh-raglan-sleeve-t-shirt-front.png
+image: diamond-mesh-raglan-sleeve-t-shirt-front-1757736296.png
 supplementary_images:
-  - diamond-mesh-raglan-sleeve-t-shirt-back.png
+  - diamond-mesh-raglan-sleeve-t-shirt-back-1757736291.png
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
 updated_at: 1757714045

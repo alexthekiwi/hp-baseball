@@ -2,7 +2,7 @@
 id: 484c0e6d-01f3-4e0b-92c2-c2e755ba9271
 blueprint: product
 title: 'Beach Bundle'
-image: beach-bundle.png
+image: beach-bundle-1757736265.png
 supplementary_images: []
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b

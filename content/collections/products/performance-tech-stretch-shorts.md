@@ -2,9 +2,9 @@
 id: 03c56bc5-c721-40a4-a390-c4e1a7938229
 blueprint: product
 title: 'Performance Tech Stretch Shorts'
-image: performance-tech-stretch-shorts-front.png
+image: performance-tech-stretch-shorts-front-1757736317.png
 supplementary_images:
-  - performance-tech-stretch-shorts-back.png
+  - performance-tech-stretch-shorts-back-1757736312.png
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
 updated_at: 1757714045

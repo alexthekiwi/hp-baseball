@@ -2,9 +2,9 @@
 id: 759d89c7-7c73-489b-87c6-c381c6ced7ec
 blueprint: product
 title: 'Elite Basketball Jersey'
-image: elite-basketball-jersey-front.png
+image: elite-basketball-jersey-front-1757736307.png
 supplementary_images:
-  - elite-basketball-jersey-back.png
+  - elite-basketball-jersey-back-1757736301.png
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
 updated_at: 1757714045

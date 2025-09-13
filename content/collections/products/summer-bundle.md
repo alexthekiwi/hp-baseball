@@ -2,7 +2,7 @@
 id: 6ec3e756-cdfa-4ebb-93db-97875da047e1
 blueprint: product
 title: 'Summer Bundle'
-image: summer-bundle.png
+image: summer-bundle-1757736330.png
 supplementary_images: []
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b

@@ -2,9 +2,9 @@
 id: 8576cd56-479f-4f2e-96f2-f129573daa89
 blueprint: product
 title: 'Cage Jacket'
-image: cage-jacket-front.png
+image: cage-jacket-front-1757736277.png
 supplementary_images:
-  - cage-jacket-back.png
+  - cage-jacket-back-1757736272.png
 tax_class: general
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
 updated_at: 1757714045
