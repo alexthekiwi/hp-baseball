@@ -61,7 +61,8 @@ return [
         'class' => null,
 
         'urls' => [
-            //
+            '/cart',
+            '/checkout*',
         ],
 
     ],
