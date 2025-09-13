@@ -363,6 +363,40 @@
                             </div>
                         </div>
 
+                        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Enable/Disable Shop</h3>
+                            <div class="prose max-w-none">
+                                <p>Control whether customers can add items to their cart and make purchases on the site.</p>
+
+                                <h4 class="font-semibold">How to Enable or Disable the Shop:</h4>
+                                <ol>
+                                    <li>Go to {{ partial:docs/link url="/admin/globals/settings" text="Globals → Settings" }}</li>
+                                    <li>Find the "Shop Enabled" toggle switch</li>
+                                    <li>Toggle it:
+                                        <ul>
+                                            <li><strong>ON:</strong> Shop is active - customers can add items to cart and checkout</li>
+                                            <li><strong>OFF:</strong> Shop is disabled - displays a friendly message to customers</li>
+                                        </ul>
+                                    </li>
+                                    <li>Click "Save" to apply the changes</li>
+                                </ol>
+
+                                {{ partial:docs/screenshot path="docs/enable-shop.png" class="my-4" }}
+
+                                <div class="p-4 bg-yellow-50 rounded mt-4">
+                                    <p class="text-sm text-yellow-800"><strong>Important:</strong> When the shop is disabled, customers will see a friendly message explaining that the shop is temporarily unavailable. Any items already in their cart will be preserved for when the shop is re-enabled.</p>
+                                </div>
+
+                                <h4 class="font-semibold mt-4">When to Disable the Shop:</h4>
+                                <ul>
+                                    <li>During maintenance or updates to product pricing</li>
+                                    <li>When inventory is being updated or restocked</li>
+                                    <li>During off-season periods</li>
+                                    <li>When payment processing needs to be temporarily suspended</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="bg-white rounded-lg shadow-sm p-6">
                             <h3 class="text-xl font-semibold mb-4">Updating the Navigation</h3>
                             <div class="prose max-w-none">
