@@ -1,3 +1,4 @@
+{{ nocache }}
 {{ orders :id:is="get:order_id" }}
     {{#
         We need to pass the summary total here manually, since there's no "cart" object in the Alpine.js data.
@@ -66,3 +67,4 @@
         {{ partial:checkout/components/order_summary }}
     {{ /section:sidebar }}
 {{ /orders }}
+{{ /nocache }}

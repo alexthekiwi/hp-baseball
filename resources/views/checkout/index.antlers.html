@@ -1,3 +1,4 @@
+{{ nocache }}
 {{ if ! {cart:exists} || {cart:count} === 0 }}
     {{ redirect to="/cart" }}
 {{ /if }}
@@ -22,3 +23,4 @@
 {{ prepend:footer_scripts }}
     {{ partial:checkout/js/checkout }}
 {{ /prepend:footer_scripts }}
+{{ /nocache }}

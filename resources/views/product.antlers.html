@@ -1,3 +1,4 @@
+{{ nocache }}
 {{ partial:main :hero_bg_type="'Colour'" :hero_bg_colour="'white'" }}
     {{ if product_variants }}
     <div x-data="productPage()"
@@ -120,3 +121,4 @@
         {{ /partial:components/block }}
     </div>
 {{ /partial:main }}
+{{ /nocache }}
