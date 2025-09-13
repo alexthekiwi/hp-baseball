@@ -21,7 +21,7 @@
         }}
 
             <!-- Success Message -->
-            <div x-show="showSuccessMessage" x-transition.opacity.duration.500ms
+            <div x-cloak x-show="showSuccessMessage" x-transition.opacity.duration.500ms
                  class="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
                  x-init="setTimeout(() => showSuccessMessage = false, 5000)">
                 Product added to cart successfully!
