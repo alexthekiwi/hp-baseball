@@ -2,15 +2,14 @@
     Displays the "Billing Address" step in the Checkout process.
 #}}
 
-{{ partial:checkout/components/step title="Billing Address" }}
-    <div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-        <p class="text-sm text-blue-800"><strong>Local Pickup Only</strong> - Products will be available for collection at the club.</p>
+{{ partial:checkout/components/step title="Billing Details" }}
+    <div class="mb-4 p-4 bg-white border border-primary rounded-lg">
+        <p class="text-sm"><strong>Local Pickup Only</strong> - Products will be available for collection at the club. You will be notified by email when your order is ready for collection.</p>
     </div>
-    
+
     {{ partial:checkout/components/address type="billing" }}
 
     {{ slot:footer }}
         {{ partial:checkout/components/button label="Continue →" type="submit" }}
     {{ /slot:footer }}
 {{ /partial:checkout/components/step }}
-

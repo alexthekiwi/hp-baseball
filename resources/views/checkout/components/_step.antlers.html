@@ -10,11 +10,11 @@
 <div id="step-{{ key }}">
     <template x-if="currentStep !== '{{ key }}'">
         <div class="border-b border-gray-200 pb-4 flex items-center justify-between">
-            <h3 class="w-full cursor-auto text-left text-lg font-semibold text-gray-500">{{ title | trans }}</h3>
+            <h3 class="w-full cursor-auto text-left text-lg font-bold text-gray">{{ title | trans }}</h3>
 
             <button
                 x-show="completedSteps.includes('{{ key }}')"
-                class="text-sm text-secondary font-semibold"
+                class="text-sm text-primary font-bold"
                 :disabled="busy"
                 @click="goToStep('{{ key }}')"
             >
@@ -26,7 +26,7 @@
     <template x-if="currentStep === '{{ key }}'">
         {{ if formless }}
             <div x-data="{{ x-data }}" class="flex flex-col mb-4">
-                <h2 class="text-lg font-semibold text-gray-900 mb-4">{{ title | trans }}</h2>
+                <h2 class="text-lg font-bold text-black mb-4">{{ title | trans }}</h2>
 
                 <div class="mb-6">
                     {{ slot }}
@@ -38,7 +38,7 @@
             </div>
         {{ else }}
             {{ cart:update :x-data="x-data" class="flex flex-col mb-4" @submit.prevent="handleFormSubmitEvent" }}
-                <h2 class="text-lg font-semibold text-gray-900 mb-4">{{ title | trans }}</h2>
+                <h2 class="text-lg font-bold text-black mb-4">{{ title | trans }}</h2>
 
                 <div class="mb-6">
                     {{ slot }}

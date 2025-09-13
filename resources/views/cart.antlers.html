@@ -13,7 +13,7 @@
             <div class="flex flex-col items-start gap-6">
                 <p class="font-bold text-xl">Your cart is empty</p>
                 {{ partial:components/common/button link="/products" colour="primary" style="Solid" }}
-                    Continue Shopping
+                    Go to Shop
                 {{ /partial:components/common/button }}
             </div>
         {{ else }}
@@ -46,26 +46,31 @@
 
                                         {{ if variant }}
                                             <p class="text-sm text-gray-600 mb-2">
-                                                {{ variant:name }}
+                                                Size: {{ variant:name }}
                                             </p>
                                         {{ /if }}
 
                                         <!-- Controls on Desktop -->
-                                        <div class="hidden lg:flex items-center gap-4 mt-4">
-                                            {{ cart:update_line_item :line_item="id" class="flex items-center gap-2" }}
+                                        <div class="hidden lg:flex items-center gap-8 mt-4">
+                                            {{ cart:update_line_item :line_item="id" class="flex items-center gap-3" }}
                                                 {{ if variant }}
                                                     <input type="hidden" name="variant" value="{{ variant }}">
                                                 {{ /if }}
                                                 <label class="text-sm text-gray-600">Qty:</label>
-                                                <input type="number" name="quantity" value="{{ quantity }}" min="1"
-                                                       class="w-16 px-2 py-1 border border-gray-300 rounded text-center">
-                                                <button type="submit" class="text-sm text-primary hover:text-primary-dark transition-colors">
+                                                <input
+                                                    type="number"
+                                                    name="quantity"
+                                                    value="{{ quantity }}"
+                                                    min="1"
+                                                    class="w-16 border !px-3 !py-2 border-gray-300 rounded text-center text-sm"
+                                                >
+                                                <button type="submit" class="border border-current text-gray px-3 py-2 rounded text-sm hover:cursor-pointer hover:bg-gray hover:text-white transition-colors">
                                                     Update
                                                 </button>
                                             {{ /cart:update_line_item }}
 
                                             {{ cart:remove :line_item="id" class="ml-4" }}
-                                                <button type="submit" class="text-sm text-red-600 hover:text-red-700 transition-colors">
+                                                <button type="submit" class="border border-current text-primary px-3 py-2 rounded text-sm hover:cursor-pointer hover:bg-primary hover:text-white transition-colors">
                                                     Remove
                                                 </button>
                                             {{ /cart:remove }}

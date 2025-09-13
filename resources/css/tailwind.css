@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@plugin '@tailwindcss/forms';
 
 @custom-variant scrolled (&.scrolled);
 @custom-variant header-scrolled (&:where(header.scrolled *));
@@ -13,6 +14,7 @@
 @theme {
     /* Colours */
     --color-primary: #ce0e2d;
+    --color-brand: var(--color-primary);
     --color-primary-dark: #a00b24;
     --color-primary-light: #fef3f2;
     --color-primary-contrast: #fff;

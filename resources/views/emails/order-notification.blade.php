@@ -1,7 +1,11 @@
 <x-mail::message>
 # Order #{{ $order->orderNumber }} has been confirmed
 
-Your order has been confirmed and is now being processed. We will notify you when it is ready for collection.
+A new online order has been made. Please notify the customer when this order is ready for collection.
+
+<x-mail::button url="{{  url('/admin/orders/' . $order->id) . '/edit' }}" color="primary">
+View Order Online
+</x-mail::button>
 
 <x-mail::table>
 | Item Description   |               |
@@ -47,7 +51,4 @@ $downloadUrl = URL::signedRoute('statamic.cargo.download', [
 
 **Customer:** {{ $order->customer()->name }} ({{ $order->customer()->email }})
 </x-mail::panel>
-
-Thank you for your order!<br>
-<strong>Howick Pakuranga Baseball Club</strong>
 </x-mail::message>

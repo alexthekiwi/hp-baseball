@@ -115,4 +115,8 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'to' => [
+        'admin' => env('MAIL_TO_ADMIN', 'info@hpbaseball.co.nz'),
+    ],
+
 ];
