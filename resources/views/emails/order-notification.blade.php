@@ -18,7 +18,7 @@ $downloadUrl = URL::signedRoute('statamic.cargo.download', [
     'lineItem' => $lineItem->id(),
 ]);
 @endphp
-| {{ $lineItem->quantity }}x {{ $lineItem->product()->title }} @if($hasDownloads) <br><br> [Download]({{ $downloadUrl }}) @endif | {{ $lineItem->sub_total }} |
+| {{ $lineItem->quantity }}x {{ $lineItem->product()->title }} - {{  $lineItem->variant()?->name }} | {{ $lineItem->sub_total }} |
 @endforeach
 </x-mail::table>
 
