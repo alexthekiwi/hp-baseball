@@ -1,6 +1,6 @@
 name: 'HP Baseball Admin'
 super: true
-stripe_customer_id: cus_T2lHKZJwwjWmsy
+stripe_customer_id: cus_T39hbY1JnfOsq1
 id: f727c14d-33d9-4ccd-9de0-fdbe1661319b
 password_hash: $2y$12$q2CDO8baY4YDhBxm2.5m9OluIpFy3MeztFhVih38FBeu7QTalNi22
 preferences:

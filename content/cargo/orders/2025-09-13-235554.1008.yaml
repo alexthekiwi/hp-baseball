@@ -1,0 +1,35 @@
+updated_at: 1757807742
+fingerprint: b17b1ea6ebb470a6da34ee8e235295cc11abb72e
+stripe_payment_intent: pi_3S73HzHzAOPrKmKl03gtVAZ7
+billing_line_1: '27a Sale Street'
+billing_line_2: 'Cockle Bay'
+billing_city: Auckland
+billing_postcode: '2014'
+billing_country: NZL
+payment_gateway: stripe
+id: 8c823776-0bdc-4854-969a-90ca7ab6bbf9
+cart: a33699de-f6eb-466d-827f-0dd4aa69ca81
+status: payment_received
+customer:
+  first_name: Alex
+  last_name: Clark
+  email: hello@alexclark.co.nz
+line_items:
+  -
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 848
+    id: 324445e6-bae9-4532-b9aa-21c42a4365fd
+    product: 03b37319-176a-4496-8290-b5881d081c6a
+    variant: M
+    quantity: 1
+    unit_price: 6500
+    sub_total: 6500
+    tax_total: 848
+    total: 6500
+grand_total: 6500
+sub_total: 6500
+tax_total: 848
