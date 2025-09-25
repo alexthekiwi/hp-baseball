@@ -1,5 +1,6 @@
 ---
 id: 5e7fbca9-358a-429d-a33e-975e9fb22693
+published: false
 blueprint: sponsor
 title: 'Baseball New Zealand'
 logo: sponsors/Baseball-NZ.png

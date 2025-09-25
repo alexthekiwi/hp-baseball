@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757211992
+updated_at: 1758779132
 page_builder:
   -
     id: makdwkj7
@@ -92,6 +92,21 @@ page_builder:
         target_blank: false
     text_colour: white
     title_tag: P
+  -
+    id: mf7prba9
+    type: sponsors
+    enabled: true
+    block_title: 'Cheers to our amazing sponsors'
+    show_block_title_options: false
+    block_title_tag: h2
+    block_title_colour: primary
+    block_title_center: true
+    block_title_keyline: true
+    mode: auto
+    background_colour: white
+    text_colour: default
+    padding_top: base
+    padding_bottom: none
   -
     id: makkkb1x
     background_colour: White
@@ -195,7 +210,7 @@ page_builder:
         type: button_styled
         enabled: true
         target_blank: false
-    background_colour: White
+    background_colour: white
     padding_top: none
     padding_bottom: base
     type: banner
@@ -228,20 +243,5 @@ page_builder:
         type: button_simple
         enabled: true
         target_blank: false
-  -
-    id: mf7prba9
-    type: sponsors
-    enabled: true
-    block_title: 'Cheers to our amazing sponsors'
-    show_block_title_options: false
-    block_title_tag: h2
-    block_title_colour: primary
-    block_title_center: true
-    block_title_keyline: true
-    mode: auto
-    background_colour: white
-    text_colour: default
-    padding_top: base
-    padding_bottom: base
 hide_breadcrumbs: true
 ---
