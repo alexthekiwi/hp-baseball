@@ -1,3 +1,12 @@
 tabs:
   main:
-    fields: {  }
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: order_notes
+            field:
+              type: textarea
+              display: 'Order Notes'
+title: Order
