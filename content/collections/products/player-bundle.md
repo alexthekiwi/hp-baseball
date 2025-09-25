@@ -9,68 +9,37 @@ updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
 updated_at: 1757714045
 categories:
   - apparel
+is_bundle: true
+bundle_items:
+  -
+    name: 'Cage Jacket'
+    description: 'Quarter zip jacket for warming up and training'
+  -
+    name: 'Diamond Mesh T-Shirt'
+    description: 'Loose-cut shirt with custom Diamond fabric'
+  -
+    name: 'Performance Tech Shorts'
+    description: 'Tech stretch fabric with 4-way stretch'
+available_sizes:
+  - JS
+  - JM
+  - JL
+  - XS
+  - S
+  - M
+  - L
+  - XL
+  - 2XL
+  - 3XL
+  - 4XL
+  - 5XL
 product_variants:
   options:
     -
-      key: JS
-      variant: JS
+      key: custom
+      variant: 'Custom Bundle'
       price: 14000
-      sku: PB-JS
-    -
-      key: JM
-      variant: JM
-      price: 14000
-      sku: PB-JM
-    -
-      key: JL
-      variant: JL
-      price: 14000
-      sku: PB-JL
-    -
-      key: XS
-      variant: XS
-      price: 14000
-      sku: PB-XS
-    -
-      key: S
-      variant: S
-      price: 14000
-      sku: PB-S
-    -
-      key: M
-      variant: M
-      price: 14000
-      sku: PB-M
-    -
-      key: L
-      variant: L
-      price: 14000
-      sku: PB-L
-    -
-      key: XL
-      variant: XL
-      price: 14000
-      sku: PB-XL
-    -
-      key: 2XL
-      variant: 2XL
-      price: 14000
-      sku: PB-2XL
-    -
-      key: 3XL
-      variant: 3XL
-      price: 14000
-      sku: PB-3XL
-    -
-      key: 4XL
-      variant: 4XL
-      price: 14000
-      sku: PB-4XL
-    -
-      key: 5XL
-      variant: 5XL
-      price: 14000
-      sku: PB-5XL
+      sku: PB-CUSTOM
 ---
 The ultimate training bundle for serious players. This bundle includes:
 

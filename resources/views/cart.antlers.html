@@ -50,9 +50,33 @@
                                         </h3>
 
                                         {{ if variant }}
-                                            <p class="text-sm text-gray-600 mb-2">
-                                                Size: {{ variant:name }}
-                                            </p>
+                                            {{ if variant:name == "Custom Bundle" && product:is_bundle }}
+                                                <div class="text-sm text-gray-600 mb-2" x-data="{
+                                                    getConfig() {
+                                                        const configs = JSON.parse(localStorage.getItem('bundleConfigurations') || '[]');
+                                                        const recent = configs.find(c => c.productTitle === '{{ product:title }}');
+                                                        return recent ? recent.items : null;
+                                                    }
+                                                }" x-init="config = getConfig()">
+                                                    <p class="font-semibold mb-1">Bundle Configuration:</p>
+                                                    <template x-if="config">
+                                                        <div>
+                                                            <template x-for="(size, item) in config" :key="item">
+                                                                <p class="text-gray-600 ml-2">
+                                                                    <span x-text="item"></span>: <span class="font-medium" x-text="size"></span>
+                                                                </p>
+                                                            </template>
+                                                        </div>
+                                                    </template>
+                                                    <template x-if="!config">
+                                                        <p class="text-xs mt-1 text-gray-500">Configuration will be confirmed at checkout</p>
+                                                    </template>
+                                                </div>
+                                            {{ else }}
+                                                <p class="text-sm text-gray-600 mb-2">
+                                                    Size: {{ variant:name }}
+                                                </p>
+                                            {{ /if }}
                                         {{ /if }}
 
                                         <!-- Controls on Desktop -->

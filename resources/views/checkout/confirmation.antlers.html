@@ -1,5 +1,13 @@
 {{ nocache }}
 {{ orders :id:is="get:order_id" }}
+    <script>
+        // Clear bundle configurations from localStorage after successful checkout
+        (function() {
+            if (localStorage.getItem('bundleConfigurations')) {
+                localStorage.removeItem('bundleConfigurations');
+            }
+        })();
+    </script>
     {{#
         We need to pass the summary total here manually, since there's no "cart" object in the Alpine.js data.
         This total is displayed in the cart summary section on mobile.

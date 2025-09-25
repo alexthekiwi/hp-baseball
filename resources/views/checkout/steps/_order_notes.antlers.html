@@ -3,7 +3,32 @@
 #}}
 
 {{ partial:checkout/components/step title="Order Notes" }}
-    <div class="flex flex-col space-y-4">
+    <div class="flex flex-col space-y-4" x-data="{
+        bundleNotes: '',
+        init() {
+            // Get bundle configurations from localStorage
+            const configs = JSON.parse(localStorage.getItem('bundleConfigurations') || '[]');
+            
+            if (configs.length > 0) {
+                const notes = configs.map(config => {
+                    const items = Object.entries(config.items)
+                        .map(([item, size]) => `  - ${item}: ${size}`)
+                        .join('\n');
+                    return `${config.productTitle}:\n${items}`;
+                }).join('\n\n');
+                
+                this.bundleNotes = `BUNDLE SIZE CONFIGURATIONS:\n\n${notes}\n\n`;
+                
+                // Set the value directly
+                this.$nextTick(() => {
+                    const textarea = document.getElementById('order_notes');
+                    if (textarea && !textarea.value) {
+                        textarea.value = this.bundleNotes;
+                    }
+                });
+            }
+        }
+    }">
         <p class="text-sm text-gray-600">{{ "Add any special instructions for your order (optional)" | trans }}</p>
         
         <div>
@@ -12,7 +37,7 @@
                 <textarea
                     id="order_notes"
                     name="order_notes"
-                    rows="4"
+                    rows="6"
                     placeholder="{{ 'e.g. for a bundle if you need a different size for a specific item, please provide details here.' | trans }}"
                     class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
                 ></textarea>

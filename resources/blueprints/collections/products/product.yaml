@@ -43,6 +43,54 @@ tabs:
                     display: SKU
               type: product_variants
               display: 'Product Variants'
+              if:
+                is_bundle: 'equals false'
+          -
+            handle: is_bundle
+            field:
+              type: toggle
+              display: 'Is Bundle Product'
+              instructions: 'Enable this for products that contain multiple items with individual size selection'
+              default: false
+          -
+            handle: bundle_items
+            field:
+              type: grid
+              display: 'Bundle Items'
+              instructions: 'Define the items included in this bundle'
+              if:
+                is_bundle: 'equals true'
+              add_row: 'Add Item'
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: 'Item Name'
+                    validate: required
+                    width: 50
+                -
+                  handle: description
+                  field:
+                    type: text
+                    display: 'Item Description'
+                    width: 50
+          -
+            handle: available_sizes
+            field:
+              type: list
+              display: 'Available Sizes'
+              instructions: 'List all available sizes for bundle items'
+              if:
+                is_bundle: 'equals true'
+          -
+            handle: price
+            field:
+              type: money
+              display: 'Bundle Price'
+              instructions: 'Fixed price for the entire bundle'
+              if:
+                is_bundle: 'equals true'
   sidebar:
     display: Sidebar
     sections:

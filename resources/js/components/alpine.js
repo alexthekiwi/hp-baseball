@@ -64,27 +64,23 @@ Alpine.data('productPage', () => ({
     selectedVariant: null,
     selectedPrice: null,
     variants: {},
+    isBundle: false,
+    bundleSizes: {},
 
     init() {
         const el = this.$el;
         
-        // Check if we have variant data
-        const firstVariant = el.dataset.firstVariant;
-        const firstPrice = el.dataset.firstPrice;
+        // Check if this is a bundle product
+        this.isBundle = el.dataset.isBundle === 'true';
         
-        if (firstVariant) {
-            // Has variants - set initial values
-            this.selectedVariant = firstVariant;
-            // Extract numeric part from price string like "NZ$39.99" -> 3999
-            const priceStr = firstPrice;
-            if (priceStr && priceStr.includes('$')) {
-                const numericPrice = parseFloat(priceStr.replace(/[^0-9.]/g, '')) * 100;
-                this.selectedPrice = numericPrice;
-            } else if (priceStr) {
-                this.selectedPrice = parseInt(priceStr);
-            }
-        } else {
-            // No variants, get single price
+        if (this.isBundle) {
+            // Initialize bundle sizes object
+            const bundleItems = JSON.parse(el.dataset.bundleItems || '[]');
+            bundleItems.forEach(item => {
+                this.bundleSizes[item.name] = '';
+            });
+            
+            // Set price for bundles
             const priceData = el.dataset.price;
             if (priceData && priceData.includes('$')) {
                 const numericPrice = parseFloat(priceData.replace(/[^0-9.]/g, '')) * 100;
@@ -92,12 +88,34 @@ Alpine.data('productPage', () => ({
             } else if (priceData) {
                 this.selectedPrice = parseInt(priceData);
             }
+        } else {
+            // Check if we have variant data
+            const firstVariant = el.dataset.firstVariant;
+            const firstPrice = el.dataset.firstPrice;
+            
+            if (firstVariant) {
+                // Has variants - set initial values
+                this.selectedVariant = firstVariant;
+                // Extract numeric part from price string like "NZ$39.99" -> 3999
+                const priceStr = firstPrice;
+                if (priceStr && priceStr.includes('$')) {
+                    const numericPrice = parseFloat(priceStr.replace(/[^0-9.]/g, '')) * 100;
+                    this.selectedPrice = numericPrice;
+                } else if (priceStr) {
+                    this.selectedPrice = parseInt(priceStr);
+                }
+            } else {
+                // No variants, get single price
+                const priceData = el.dataset.price;
+                if (priceData && priceData.includes('$')) {
+                    const numericPrice = parseFloat(priceData.replace(/[^0-9.]/g, '')) * 100;
+                    this.selectedPrice = numericPrice;
+                } else if (priceData) {
+                    this.selectedPrice = parseInt(priceData);
+                }
+            }
         }
         
-        console.log('Init complete:', { 
-            selectedVariant: this.selectedVariant, 
-            selectedPrice: this.selectedPrice 
-        });
     },
 
     updatePrice(price) {
@@ -117,15 +135,64 @@ Alpine.data('productPage', () => ({
     getSelectedSku() {
         return this.variants[this.selectedVariant]?.sku || '';
     },
+    
+    canAddToCart() {
+        if (this.isBundle) {
+            // Check if all bundle items have sizes selected
+            return Object.values(this.bundleSizes).every(size => size !== '');
+        }
+        return true;
+    },
+    
+    getBundleConfiguration() {
+        if (!this.isBundle) return '';
+        return JSON.stringify(this.bundleSizes);
+    },
+    
+    getBundleConfigText() {
+        if (!this.isBundle) return '';
+        return Object.entries(this.bundleSizes)
+            .map(([item, size]) => `${item}: ${size}`)
+            .join(', ');
+    },
 
-    handleAddToCart() {
+    handleAddToCart(event) {
+        event.preventDefault();
+        
+        if (this.isBundle && !this.canAddToCart()) {
+            alert('Please select a size for each item in the bundle');
+            return false;
+        }
+        
+        // Store bundle configuration in localStorage for checkout
+        if (this.isBundle) {
+            const bundleConfig = {
+                productTitle: document.querySelector('h1')?.textContent?.trim() || 'Bundle',
+                items: this.bundleSizes,
+                timestamp: Date.now()
+            };
+            
+            // Get existing configs or create new array
+            let configs = JSON.parse(localStorage.getItem('bundleConfigurations') || '[]');
+            configs.push(bundleConfig);
+            
+            // Keep only last 10 configs
+            if (configs.length > 10) {
+                configs = configs.slice(-10);
+            }
+            
+            localStorage.setItem('bundleConfigurations', JSON.stringify(configs));
+        }
+        
         this.isSubmitting = true;
         
-        // Let the form submit naturally, but show success message after
+        // Submit the form manually after saving to localStorage
+        const form = event.target;
         setTimeout(() => {
-            this.showSuccessMessage = true;
-            this.isSubmitting = false;
-        }, 500);
+            form.submit();
+        }, 100);
+        
+        return false;
     }
 }));
 

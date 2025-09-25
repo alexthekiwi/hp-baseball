@@ -1,6 +1,11 @@
 {{ nocache }}
 {{ partial:main :hero_bg_type="'Colour'" :hero_bg_colour="'white'" }}
-    {{ if product_variants }}
+    {{ if is_bundle }}
+    <div x-data="productPage()"
+          data-is-bundle="true"
+          data-bundle-items='{{ bundle_items | to_json }}'
+          data-price="{{ price ?? 0 }}">
+    {{ elseif product_variants }}
     <div x-data="productPage()"
           data-first-variant="{{ product_variants:options limit='1' }}{{ key }}{{ /product_variants:options }}"
           data-first-price="{{ product_variants:options limit='1' }}{{ price }}{{ /product_variants:options }}">
@@ -54,11 +59,52 @@
 
                     {{ if settings:shop_enabled }}
                         <!-- Add to Cart Form -->
-                        {{ cart:add class="space-y-6" @submit="handleAddToCart()" }}
+                        {{ cart:add class="space-y-6" @submit.prevent="handleAddToCart($event)" }}
                         <input type="hidden" name="product" value="{{ page:id }}">
 
-                        <!-- Variant Selector -->
-                        {{ if product_variants }}
+                        <!-- Bundle Size Selectors -->
+                        {{ if is_bundle }}
+                            <!-- Hidden variant input for bundles -->
+                            <input type="hidden" name="variant" value="custom">
+                            
+                            <div class="space-y-6">
+                                <h3 class="font-semibold">Select size for each item:</h3>
+                                {{ bundle_items scope="item" }}
+                                    <div class="p-4 border border-gray-200 rounded-lg">
+                                        <h4 class="font-medium mb-2">{{ item:name }}</h4>
+                                        <p class="text-sm text-gray-600 mb-3">{{ item:description }}</p>
+                                        <div class="grid grid-cols-3 md:grid-cols-4 gap-2">
+                                            {{ available_sizes }}
+                                                <label class="relative">
+                                                    <input
+                                                        type="radio"
+                                                        name="bundle_size_{{ item:name | slugify }}"
+                                                        value="{{ value }}"
+                                                        x-model="bundleSizes['{{ item:name }}']"
+                                                        required
+                                                        class="sr-only peer"
+                                                    >
+                                                    <div class="text-center px-3 py-2 text-sm border border-gray-300 rounded-lg cursor-pointer hover:border-primary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white transition-all">
+                                                        {{ value }}
+                                                    </div>
+                                                </label>
+                                            {{ /available_sizes }}
+                                        </div>
+                                    </div>
+                                {{ /bundle_items }}
+                                
+                                <!-- Store bundle configuration for display -->
+                                <div class="mt-4 p-3 bg-gray-50 rounded text-sm" x-show="canAddToCart()">
+                                    <p class="font-semibold mb-1">Your Selection:</p>
+                                    <template x-for="(size, item) in bundleSizes" :key="item">
+                                        <p class="text-gray-600">
+                                            <span x-text="item"></span>: <span class="font-medium" x-text="size"></span>
+                                        </p>
+                                    </template>
+                                </div>
+                            </div>
+                        <!-- Regular Variant Selector -->
+                        {{ elseif product_variants }}
                             <div>
                                 <label class="block text-sm font-medium mb-3">Size</label>
                                 <div class="grid grid-cols-3 md:grid-cols-4 gap-2">
@@ -85,7 +131,9 @@
 
                         <!-- Price Display -->
                         <div class="text-2xl font-bold text-primary">
-                            {{ if product_variants }}
+                            {{ if is_bundle }}
+                                {{ price }}
+                            {{ elseif product_variants }}
                                 <div x-show="selectedPrice" x-text="'$' + (selectedPrice / 100).toFixed(2)"></div>
                             {{ else }}
                                 {{ price }}
@@ -108,7 +156,7 @@
                         <!-- Add to Cart Button -->
                         <button
                             type="submit"
-                            :disabled="isSubmitting"
+                            :disabled="isSubmitting || (isBundle && !canAddToCart())"
                             class="bg-primary px-8 py-3 text-white font-medium rounded-lg transition-colors hover:bg-primary-dark disabled:opacity-50">
                             <span x-text="isSubmitting ? 'Adding...' : 'Add to Cart'"></span>
                         </button>
