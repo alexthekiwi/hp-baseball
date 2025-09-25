@@ -18,6 +18,15 @@
     {{ stack:header_scripts }}
     {{ vite directory="checkout-styles" hot="checkout" src="resources/css/checkout.css" }}
     {{ vite src="resources/js/app.js" }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTNCVT2RDY"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-WTNCVT2RDY');
+    </script>
 </head>
 <body class="font-sans antialiased">
     <div class="relative md:min-h-screen">
