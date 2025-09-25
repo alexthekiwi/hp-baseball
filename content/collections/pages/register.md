@@ -10,7 +10,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757731317
+updated_at: 1758776847
 page_builder:
   -
     id: mf7kt9pc
@@ -20,6 +20,16 @@ page_builder:
     align: start
     type: hero
     enabled: true
+    buttons:
+      -
+        id: mfyyb4f8
+        text: 'Register Now'
+        link: 'https://membership.mygameday.app/regoform.cgi?aID=29537&pKey=c58c5260ae38f186a96fb4e3e3131958&cID=283791&formID=118995'
+        target_blank: true
+        style: Outlined
+        colour: primary
+        type: button_styled
+        enabled: true
     overlay_opacity: 0
     height: 0
   -
