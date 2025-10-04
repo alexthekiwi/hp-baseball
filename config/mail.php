@@ -116,7 +116,7 @@ return [
     ],
 
     'to' => [
-        'admin' => env('MAIL_TO_ADMIN', 'info@hpbaseball.co.nz'),
+        'admin' => env('MAIL_TO_ADMIN', 'admin@hpbaseball.co.nz'),
     ],
 
 ];
