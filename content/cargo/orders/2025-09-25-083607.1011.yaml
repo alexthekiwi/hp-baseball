@@ -1,0 +1,54 @@
+updated_at: 1758789356
+fingerprint: 3e45b72ae868d77f927eff5e1bb22b7f75b23617
+stripe_payment_intent: pi_3SBAeTFrv4jfDPU80OCjSU8d
+billing_line_1: 'wergeoirn oiertnoi'
+billing_line_2: eroinetin
+billing_city: 349oiteroin
+billing_postcode: '2003'
+billing_country: NZL
+order_notes: "BUNDLE SIZE CONFIGURATIONS:\r\n\r\nPlayer Bundle:\r\n  - Cage Jacket: 2XL\r\n  - Diamond Mesh T-Shirt: JL\r\n  - Performance Tech Shorts: JM"
+payment_gateway: stripe
+id: a5c744ca-7adf-4225-9e88-3d28a72bbede
+cart: a16623fe-7c4f-4dfc-8e26-908aac34c263
+status: payment_received
+customer:
+  first_name: wergeoirn
+  last_name: oiertnoi
+  email: hello@alexclark.co.nz
+line_items:
+  -
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 848
+    id: 4d4a35a6-15ca-4801-9925-d043043b85e2
+    product: 03b37319-176a-4496-8290-b5881d081c6a
+    variant: 3XL
+    quantity: 1
+    unit_price: 6500
+    sub_total: 6500
+    tax_total: 848
+    total: 6500
+  -
+    bundle_size_cage-jacket: 2XL
+    bundle_size_diamond-mesh-t-shirt: JL
+    bundle_size_performance-tech-shorts: JM
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 1826
+    id: d9880923-7ba3-46e9-9447-8b83609ecc5a
+    product: 932ca6c6-adb3-420f-9632-b9116815ccce
+    variant: custom
+    quantity: 1
+    unit_price: 14000
+    sub_total: 14000
+    tax_total: 1826
+    total: 14000
+grand_total: 20500
+sub_total: 20500
+tax_total: 2674

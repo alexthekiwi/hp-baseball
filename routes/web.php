@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrdersExportController;
 use App\Http\Controllers\XmlSitemapController;
 use App\Mail\OrderConfirmation;
 use App\Mail\OrderNotification;
@@ -9,6 +10,10 @@ use Illuminate\Support\Facades\Route;
 Route::statamic('help', 'docs/index', [
     'title' => 'Example',
 ])->middleware(['auth']);
+
+Route::post('/orders-export', [OrdersExportController::class, 'store'])
+    ->middleware(['auth'])
+    ->name('orders-export.store');
 
 Route::redirect('/login', '/admin', 302)->name('login');
 

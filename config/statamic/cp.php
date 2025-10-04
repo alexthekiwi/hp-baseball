@@ -43,6 +43,10 @@ return [
             'width' => 100,
         ],
         [
+            'type' => 'order_export',
+            'width' => 100,
+        ],
+        [
             'type' => 'collection',
             'collection' => 'pages',
             'limit' => 10,
