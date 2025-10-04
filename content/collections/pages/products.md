@@ -9,8 +9,19 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757718892
+updated_at: 1759008120
 page_builder:
+  -
+    id: mg2rtjoz
+    title: 'The shop will be open until 21 October 2025 to ensure delivery by Christmas.'
+    heading: P
+    alignment: Center
+    background_colour: white
+    text_colour: primary
+    padding_top: none
+    padding_bottom: none
+    type: headline
+    enabled: true
   -
     id: mfhgfpbk
     background_colour: White

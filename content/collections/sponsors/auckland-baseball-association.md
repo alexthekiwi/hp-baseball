@@ -1,5 +1,6 @@
 ---
 id: 1c475717-6281-47d6-9939-168e987b9736
+published: false
 blueprint: sponsor
 title: 'Auckland Baseball Association'
 logo: sponsors/ABA.png

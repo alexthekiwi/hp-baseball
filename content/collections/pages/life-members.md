@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757733210
+updated_at: 1758789761
 page_builder:
   -
     id: mf91v69x
@@ -51,9 +51,9 @@ page_builder:
       -
         cells:
           - 'Robert & Robyn Johnstone'
-          - null
-          - null
-          - null
+          - 'Mike Bongiovanni'
+          - 'Mark Cooper'
+          - 'Paul Wansbone'
     header_row: false
     bold_first_column: false
     background_colour: White

@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1758779132
+updated_at: 1758880620
 page_builder:
   -
     id: makdwkj7
@@ -28,26 +28,26 @@ page_builder:
         target_blank: false
       -
         id: mf7qp749
-        text: 'Baseball Grades'
+        text: 'Age Grades'
         link: 'entry::80119a42-e994-4f61-8bcb-ef1c92e9a867'
-        style: Outlined
-        colour: white
+        style: Solid
+        colour: gray
         type: button_styled
         enabled: true
         target_blank: false
-    overlay_opacity: 4
-    overlay_colour: black
     subtitle: 'Home of the Hawks'
     align: start
     image: placeholder.jpg
     show_overlay: true
     height: 5
+    overlay_opacity: 0
+    overlay_colour: black
   -
     id: maki6jh5
     title: 'Welcome to the Hawks'
     background_colour: primary
-    padding_top: base
-    padding_bottom: none
+    padding_top: md
+    padding_bottom: sm
     type: headline
     enabled: true
     heading: P
@@ -59,7 +59,7 @@ page_builder:
     content: "From T-Ball for our youngest players to competitive senior grades and social adult leagues, there's a place for everyone at the HP Hawks. Explore our teams to find the perfect fit for you or your child."
     background_colour: primary
     padding_top: md
-    padding_bottom: base
+    padding_bottom: md
     type: intro
     enabled: true
     buttons:
@@ -96,7 +96,7 @@ page_builder:
     id: mf7prba9
     type: sponsors
     enabled: true
-    block_title: 'Cheers to our amazing sponsors'
+    block_title: 'Meet our amazing sponsors'
     show_block_title_options: false
     block_title_tag: h2
     block_title_colour: primary
@@ -105,13 +105,13 @@ page_builder:
     mode: auto
     background_colour: white
     text_colour: default
-    padding_top: base
-    padding_bottom: none
+    padding_top: md
+    padding_bottom: md
   -
     id: makkkb1x
     background_colour: White
-    padding_top: base
-    padding_bottom: base
+    padding_top: md
+    padding_bottom: md
     type: carousel
     enabled: true
     items:
@@ -180,12 +180,12 @@ page_builder:
     title: 'Why Join the HP Hawks?'
     title_tag: h2
     title_colour: default
-    block_title: 'Why Join the HP Hawks?'
+    block_title: 'Why Join the Hawks?'
     block_title_tag: h2
     block_title_colour: primary
     block_title_center: true
-    block_title_keyline: false
-    show_block_title_options: false
+    block_title_keyline: true
+    show_block_title_options: true
   -
     id: malzdrw3
     image: 496803509_1258661649600618_1496955645492388248_n.jpg
@@ -211,13 +211,13 @@ page_builder:
         enabled: true
         target_blank: false
     background_colour: white
-    padding_top: none
-    padding_bottom: base
+    padding_top: md
+    padding_bottom: md
     type: banner
     enabled: true
     text_colour: default
     title_colour: default
-    content_align: left
+    content_align: center
   -
     id: mf7oz5s8
     title: 'Latest news'
@@ -225,8 +225,8 @@ page_builder:
     limit: 3
     background_colour: primary-light
     text_colour: default
-    padding_top: base
-    padding_bottom: base
+    padding_top: md
+    padding_bottom: md
     type: featured_articles
     enabled: true
     block_title: 'Latest news from the ballpark'

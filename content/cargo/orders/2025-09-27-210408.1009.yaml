@@ -1,0 +1,36 @@
+updated_at: 1759007026
+fingerprint: db3f91f52e5a98864b8939dd274347a0659f7b8e
+stripe_payment_intent: pi_3SC5GLHYR6h6dseu0nwQomyy
+billing_line_1: 'Disco Mitchell'
+billing_line_2: '112 Udys Road, Pakurannga'
+billing_city: Auckland
+billing_postcode: '2010'
+billing_country: NZL
+payment_gateway: stripe
+amount_refunded: 4500
+id: 972cefa0-5769-4227-bf48-23308143b34b
+cart: 9cb77118-252f-4e41-9c0e-75048684710a
+status: cancelled
+customer:
+  first_name: Disco
+  last_name: Mitchell
+  email: disco@hpbaseball.co.nz
+line_items:
+  -
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 587
+    id: 3cb458c1-0a09-495f-a9c6-bfe68657e545
+    product: 03c56bc5-c721-40a4-a390-c4e1a7938229
+    variant: L
+    quantity: 1
+    unit_price: 4500
+    sub_total: 4500
+    tax_total: 587
+    total: 4500
+grand_total: 4500
+sub_total: 4500
+tax_total: 587

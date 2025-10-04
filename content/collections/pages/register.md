@@ -10,7 +10,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1758776847
+updated_at: 1758882865
 page_builder:
   -
     id: mf7kt9pc
@@ -61,20 +61,56 @@ page_builder:
         cells:
           - KiwiBall
           - '7 years and under'
-          - $100
+          - $100.30
           - '1 September 2018 and 31 August 2021'
       -
         cells:
           - 10U
           - '8 - 10 years'
-          - $135
+          - $135.30
           - '1 September 2015 and 31 August 2018'
       -
         cells:
           - 12U
           - '11 - 12 years'
-          - $165
+          - $165.30
           - '1 September 2013 and 31 August 2015'
+      -
+        cells:
+          - 13U
+          - '13 years'
+          - $165.60
+          - '1 September 2012 and 31 August 2013'
+      -
+        cells:
+          - 14U
+          - '14 years'
+          - $190.60
+          - '1 September 2011 and 31 August 2012'
+      -
+        cells:
+          - 16U
+          - '15 - 16 years'
+          - $220.60
+          - '1 September 200 and 31 August 2011'
+      -
+        cells:
+          - 19U
+          - '17 - 19 years'
+          - $251.55
+          - '1 September 2006 and 31 August 2009'
+      -
+        cells:
+          - 'Senior Premier'
+          - '17 years +'
+          - $331.05
+          - 'Born on or before 31 August 2009'
+      -
+        cells:
+          - 'Senior Divisional (social)'
+          - '16 years +'
+          - $276.85
+          - 'Born on or before 31 August 2010'
     content:
       -
         type: paragraph
@@ -145,7 +181,7 @@ page_builder:
         content:
           -
             type: text
-            text: "If you have any issues with the registration process, or if you have any questions. Please reach out for assistance.\_"
+            text: 'If you have any issues with the registration process, or if you have any questions, please email '
           -
             type: text
             marks:
@@ -159,6 +195,9 @@ page_builder:
               -
                 type: underline
             text: marketing@hpbaseball.co.nz
+          -
+            type: text
+            text: " out for assistance.\_"
       -
         type: paragraph
         content:
@@ -172,7 +211,7 @@ page_builder:
     type: table
     enabled: true
     header_row: true
-    bold_first_column: false
+    bold_first_column: true
   -
     id: mf8y2dah
     block: 7a216911-3c67-44ac-bca1-97aef3bb40e8
