@@ -9,7 +9,7 @@ billing_country: NZL
 payment_gateway: stripe
 id: 8c823776-0bdc-4854-969a-90ca7ab6bbf9
 cart: a33699de-f6eb-466d-827f-0dd4aa69ca81
-status: payment_received
+status: cancelled
 customer:
   first_name: Alex
   last_name: Clark

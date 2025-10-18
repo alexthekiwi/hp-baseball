@@ -1,0 +1,49 @@
+updated_at: 1760781483
+fingerprint: fb20a24457ae42cd631539b0cc6aa15b5e98367a
+stripe_payment_intent: pi_3SJWs6HYR6h6dseu1J7z1wQ4
+billing_line_1: 'Reece Gasson'
+billing_city: Auckland
+billing_postcode: '2585'
+billing_country: NZL
+payment_gateway: stripe
+id: ac177891-55b9-4af0-b15f-2a4f45388d65
+cart: 10c6c08c-8ccd-4b66-b7ab-97af1727df28
+status: payment_received
+customer:
+  first_name: Reece
+  last_name: Gasson
+  email: elitedrainage@gmail.com
+line_items:
+  -
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 848
+    id: 4c5b315e-fa7d-4c0f-b58b-1b24204ffc82
+    product: 03b37319-176a-4496-8290-b5881d081c6a
+    variant: JM
+    quantity: 1
+    unit_price: 6500
+    sub_total: 6500
+    tax_total: 848
+    total: 6500
+  -
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 848
+    id: cf6a3db4-2c62-436f-8fbf-e07cca754437
+    product: 03b37319-176a-4496-8290-b5881d081c6a
+    variant: 3XL
+    quantity: 1
+    unit_price: 6500
+    sub_total: 6500
+    tax_total: 848
+    total: 6500
+grand_total: 13000
+sub_total: 13000
+tax_total: 1696

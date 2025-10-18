@@ -1,0 +1,35 @@
+updated_at: 1760773497
+fingerprint: 2498bafa7a815e6aa9ac3c01d43e8458514b7eec
+stripe_payment_intent: pi_3SJUo2HYR6h6dseu05IM0g15
+billing_line_1: '1/32 Headcorn Place'
+billing_line_2: Botany
+billing_city: Auckland
+billing_postcode: '2010'
+billing_country: NZL
+payment_gateway: stripe
+id: 622eea3a-e6a4-4c57-b7a9-6c8d8bf61578
+cart: 95a34be6-d625-42b5-ae34-0f33b122d369
+status: payment_received
+customer:
+  first_name: Andrew
+  last_name: Marck
+  email: andrewmarck@hotmail.com
+line_items:
+  -
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 913
+    id: 4f1b76d9-54da-4d4d-89bd-bb0dfefe4a75
+    product: 8576cd56-479f-4f2e-96f2-f129573daa89
+    variant: 2XL
+    quantity: 1
+    unit_price: 7000
+    sub_total: 7000
+    tax_total: 913
+    total: 7000
+grand_total: 7000
+sub_total: 7000
+tax_total: 913

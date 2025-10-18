@@ -1,0 +1,39 @@
+updated_at: 1760815951
+fingerprint: 4c4816a8ae930f1124ced9b813292a442bf7a28e
+stripe_payment_intent: pi_3SJfqIHYR6h6dseu0tKJ6Tg5
+billing_line_1: '16 Jay Court'
+billing_line_2: 'Botany Downs'
+billing_city: Auckland
+billing_postcode: '2010'
+billing_country: NZL
+order_notes: "BUNDLE SIZE CONFIGURATIONS:\r\n\r\nPlayer Bundle:\r\n  - Cage Jacket: L\r\n  - Diamond Mesh T-Shirt: M\r\n  - Performance Tech Shorts: M"
+payment_gateway: stripe
+id: 33928932-b710-4498-9b9f-22fed5a3da40
+cart: bd44145d-d209-4db5-a706-dca4810d2e68
+status: payment_received
+customer:
+  first_name: Reed
+  last_name: Moonie
+  email: maxnjaspa2@gmail.com
+line_items:
+  -
+    bundle_size_cage-jacket: L
+    bundle_size_diamond-mesh-t-shirt: M
+    bundle_size_performance-tech-shorts: M
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 1826
+    id: 9ece9176-5044-4416-917d-9352beb05c96
+    product: 932ca6c6-adb3-420f-9632-b9116815ccce
+    variant: custom
+    quantity: 1
+    unit_price: 14000
+    sub_total: 14000
+    tax_total: 1826
+    total: 14000
+grand_total: 14000
+sub_total: 14000
+tax_total: 1826

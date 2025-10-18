@@ -10,7 +10,7 @@ order_notes: "BUNDLE SIZE CONFIGURATIONS:\r\n\r\nPlayer Bundle:\r\n  - Cage Jack
 payment_gateway: stripe
 id: a5c744ca-7adf-4225-9e88-3d28a72bbede
 cart: a16623fe-7c4f-4dfc-8e26-908aac34c263
-status: payment_received
+status: cancelled
 customer:
   first_name: wergeoirn
   last_name: oiertnoi

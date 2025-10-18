@@ -1,0 +1,39 @@
+updated_at: 1760773466
+fingerprint: d54d77152539046253704903db11cc7ba22a3e51
+stripe_payment_intent: pi_3SJUnTHYR6h6dseu0sCd2mkP
+billing_line_1: '82 Carlton Crescent'
+billing_line_2: Maraetau
+billing_city: Auckland
+billing_postcode: '2014'
+billing_country: NZL
+order_notes: "BUNDLE SIZE CONFIGURATIONS:\r\n\r\nPlayer Bundle:\r\n  - Cage Jacket: L\r\n  - Diamond Mesh T-Shirt: L\r\n  - Performance Tech Shorts: L"
+payment_gateway: stripe
+id: ce0cd768-87be-413c-acf8-4e42e0a9b1fe
+cart: 6523df88-9ab4-4489-9603-354d40e45b0c
+status: payment_received
+customer:
+  first_name: Connor
+  last_name: Pedersen
+  email: markped2735@gmail.com
+line_items:
+  -
+    bundle_size_cage-jacket: L
+    bundle_size_diamond-mesh-t-shirt: L
+    bundle_size_performance-tech-shorts: L
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 1826
+    id: 0c1ede1b-dcf2-4559-8858-a201934350f8
+    product: 932ca6c6-adb3-420f-9632-b9116815ccce
+    variant: custom
+    quantity: 1
+    unit_price: 14000
+    sub_total: 14000
+    tax_total: 1826
+    total: 14000
+grand_total: 14000
+sub_total: 14000
+tax_total: 1826
