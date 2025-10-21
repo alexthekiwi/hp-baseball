@@ -56,6 +56,7 @@ class ExportOrdersCommand extends Command
             'last_name',
             'email',
             'billing_address',
+            'total',
             'status',
             // Order item level fields
             'item',
@@ -82,6 +83,8 @@ class ExportOrdersCommand extends Command
                     $order['billing_postcode'] ?? null,
                 ])->filter()->join(', ');
 
+                $amountPaid = $order->grand_total;
+
                 $rows[] = [
                     $order->orderNumber,
                     $order->date->format('Y-m-d H:i:s'),
@@ -89,6 +92,7 @@ class ExportOrdersCommand extends Command
                     $order->customer['last_name'] ?? null,
                     $order->customer['email'] ?? null,
                     $billingAddress,
+                    $amountPaid,
                     $order->status,
                     $product->title ?? '',
                     $variant->name ?? '',
