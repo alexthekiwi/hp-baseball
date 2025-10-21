@@ -56,6 +56,7 @@ class ExportOrdersCommand extends Command
             'last_name',
             'email',
             'billing_address',
+            'status',
             // Order item level fields
             'item',
             'variant',
@@ -88,6 +89,7 @@ class ExportOrdersCommand extends Command
                     $order->customer['last_name'] ?? null,
                     $order->customer['email'] ?? null,
                     $billingAddress,
+                    $order->status,
                     $product->title ?? '',
                     $variant->name ?? '',
                     $variant->sku ?? '',
