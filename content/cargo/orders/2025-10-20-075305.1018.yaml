@@ -1,0 +1,34 @@
+updated_at: 1760946739
+fingerprint: 9f4a2ef1ce874ddda023d74d0ad23703694f3285
+stripe_payment_intent: pi_3SKDshHYR6h6dseu1WkKDVUo
+billing_line_1: 'Scott Campbell'
+billing_city: Auckland
+billing_postcode: '1060'
+billing_country: NZL
+payment_gateway: stripe
+id: f0682bae-fa4d-40a4-b25c-ffdbdf957a10
+cart: b253a2ae-dad6-4b17-85de-66a3e543bbf9
+status: payment_received
+customer:
+  first_name: Scott
+  last_name: Campbell
+  email: scott.campbell@outlook.co.nz
+line_items:
+  -
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 913
+    id: c2ff43ca-52b0-4930-b329-2dc889a17725
+    product: 8576cd56-479f-4f2e-96f2-f129573daa89
+    variant: XL
+    quantity: 1
+    unit_price: 7000
+    sub_total: 7000
+    tax_total: 913
+    total: 7000
+grand_total: 7000
+sub_total: 7000
+tax_total: 913

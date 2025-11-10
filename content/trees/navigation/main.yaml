@@ -46,6 +46,48 @@ tree:
   -
     id: b4fd2265-493c-4e16-9722-e298f1499662
     entry: d0d1621b-8826-4a64-acee-25edcd7db8e2
+    title: Draws
+    children:
+      -
+        id: 1b84f365-2656-42c1-8c55-ee0716031da7
+        title: 12U
+        url: 'https://websites.mygameday.app/comp_info.cgi?a=FIXTURE&compID=655593&c=0-13142-0-655594-0'
+      -
+        id: 7bf3ac4b-3902-4a4c-9a9f-abed242d0f67
+        title: 13U
+        url: 'https://websites.mygameday.app/comp_info.cgi?c=0-13142-0-655589-0&a=FIXTURE'
+      -
+        id: d0269564-eb93-4cde-ae75-2981a75c9b32
+        title: 14U
+        url: 'https://websites.mygameday.app/comp_info.cgi?c=0-13142-0-655585-0&a=FIXTURE'
+      -
+        id: 3f91ff3c-daf9-48c4-a277-6e2f3e056d17
+        title: 16U
+        url: 'https://websites.mygameday.app/comp_info.cgi?c=0-13142-0-655602-0&a=FIXTURE'
+      -
+        id: 1e186c37-ee6e-4781-9e25-993de39a8e81
+        title: 19U
+        url: 'https://websites.mygameday.app/comp_info.cgi?c=0-13142-0-655594-0&a=FIXTURE'
+      -
+        id: 368f852b-2ae6-43e9-8916-02359144b3d1
+        title: Reserves
+        url: 'https://websites.mygameday.app/comp_info.cgi?a=FIXTURE&compID=655590&c=0-13142-0-0-0'
+      -
+        id: 2c2df34e-68cc-4d00-92b5-1d874a0dcd90
+        title: Prems
+        url: 'https://websites.mygameday.app/comp_info.cgi?c=0-13142-0-655595-0&a=FIXTURE'
+      -
+        id: 363999a1-7698-408e-978c-932e7120f798
+        title: 'Div 1'
+        url: 'https://websites.mygameday.app/comp_info.cgi?c=0-13142-0-655591-0&a=FIXTURE'
+      -
+        id: 0c5f0961-c0bf-43ae-ba89-573001a4734f
+        title: 'Div 3'
+        url: 'https://websites.mygameday.app/comp_info.cgi?c=0-13142-0-655586-0&a=FIXTURE'
+  -
+    id: bceb58cd-2ac1-4ff9-9cc7-b3fc43b68645
+    title: Scoreboard
+    url: /scoreboard
   -
     id: cf560d5c-7914-4732-9ffe-71617af4ecf6
     entry: cc2fcc8f-1273-4a14-ae0e-8a431c8f9fe9

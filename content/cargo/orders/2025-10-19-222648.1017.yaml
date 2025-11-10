@@ -1,0 +1,34 @@
+updated_at: 1760912729
+fingerprint: 7ce87c68c11b5f71a5f7d01c1a67684d3a139d2e
+stripe_payment_intent: pi_3SK52DHYR6h6dseu0z3FhBCa
+billing_line_1: 'simon williams'
+billing_city: auckland
+billing_postcode: '2014'
+billing_country: NZL
+payment_gateway: stripe
+id: 2f6f7ced-9b6f-4e8b-b677-10083d3e0dfc
+cart: 788744fd-6b48-4ac2-8098-90a545cc9b9b
+status: payment_received
+customer:
+  first_name: simon
+  last_name: williams
+  email: simonwilliams271180@gmail.com
+line_items:
+  -
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 913
+    id: 957c4606-4263-41cd-9d29-a728f89bce96
+    product: 8576cd56-479f-4f2e-96f2-f129573daa89
+    variant: L
+    quantity: 1
+    unit_price: 7000
+    sub_total: 7000
+    tax_total: 913
+    total: 7000
+grand_total: 7000
+sub_total: 7000
+tax_total: 913

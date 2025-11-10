@@ -1,0 +1,38 @@
+updated_at: 1760952420
+fingerprint: 5d982ae5592235e5c7dbc18100efb6d7ec48a47a
+stripe_payment_intent: pi_3SKFLoHYR6h6dseu0hJ0wsFZ
+billing_line_1: '33 Thistle'
+billing_city: Beachlands
+billing_postcode: '2018'
+billing_country: NZL
+order_notes: "BUNDLE SIZE CONFIGURATIONS:\r\n\r\nPlayer Bundle:\r\n  - Cage Jacket: L\r\n  - Diamond Mesh T-Shirt: L\r\n  - Performance Tech Shorts: L"
+payment_gateway: stripe
+id: b4cd6c3c-a895-4bbb-a086-4b8d16db2ca3
+cart: 94d66502-93c4-4780-b37b-21d4c517235f
+status: payment_received
+customer:
+  first_name: Kayden
+  last_name: Wood
+  email: gareth.aliesha@gmail.com
+line_items:
+  -
+    bundle_size_cage-jacket: L
+    bundle_size_diamond-mesh-t-shirt: L
+    bundle_size_performance-tech-shorts: L
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 1826
+    id: ae0f1543-8848-4fb0-af79-67677fc89f73
+    product: 932ca6c6-adb3-420f-9632-b9116815ccce
+    variant: custom
+    quantity: 1
+    unit_price: 14000
+    sub_total: 14000
+    tax_total: 1826
+    total: 14000
+grand_total: 14000
+sub_total: 14000
+tax_total: 1826

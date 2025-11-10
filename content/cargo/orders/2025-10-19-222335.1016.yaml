@@ -1,0 +1,38 @@
+updated_at: 1760912550
+fingerprint: cef8f0820346b0c952b8138612d858c5aeb22e09
+stripe_payment_intent: pi_3SK4ERHYR6h6dseu0AQxrwYS
+billing_line_1: 'simon williams'
+billing_city: auckland
+billing_postcode: '2014'
+billing_country: NZL
+order_notes: "BUNDLE SIZE CONFIGURATIONS:\r\n\r\nPlayer Bundle:\r\n  - Cage Jacket: 3XL\r\n  - Diamond Mesh T-Shirt: M\r\n  - Performance Tech Shorts: 3XL\r\n\r\nPlayer Bundle:\r\n  - Cage Jacket: 3XL\r\n  - Diamond Mesh T-Shirt: M\r\n  - Performance Tech Shorts: 3XL"
+payment_gateway: stripe
+id: bcfe503b-e8f7-44aa-9a9a-749c2b6fe681
+cart: df520d31-dcb1-4ed9-a64a-232cc2268150
+status: payment_received
+customer:
+  first_name: simon
+  last_name: williams
+  email: simonwilliams271180@gmail.com
+line_items:
+  -
+    bundle_size_cage-jacket: 3XL
+    bundle_size_diamond-mesh-t-shirt: M
+    bundle_size_performance-tech-shorts: 3XL
+    tax_breakdown:
+      -
+        rate: 15
+        description: General
+        zone: 'New Zealand'
+        amount: 1826
+    id: d487d53c-8c60-49b1-b7ee-988a4af4b4ec
+    product: 932ca6c6-adb3-420f-9632-b9116815ccce
+    variant: custom
+    quantity: 1
+    unit_price: 14000
+    sub_total: 14000
+    tax_total: 1826
+    total: 14000
+grand_total: 14000
+sub_total: 14000
+tax_total: 1826

@@ -9,7 +9,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1759781141
+updated_at: 1761074079
 page_builder:
   -
     id: mg2rtjoz
@@ -17,6 +17,17 @@ page_builder:
     heading: P
     alignment: Center
     background_colour: white
+    text_colour: primary
+    padding_top: none
+    padding_bottom: none
+    type: headline
+    enabled: false
+  -
+    id: mh0917eb
+    title: 'The shop is currently closed. Check back soon or contact the club.'
+    heading: H1
+    alignment: Center
+    background_colour: White
     text_colour: primary
     padding_top: none
     padding_bottom: none

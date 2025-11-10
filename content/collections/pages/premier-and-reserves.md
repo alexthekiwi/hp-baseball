@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1757212562
+updated_at: 1762241608
 hide_breadcrumbs: false
 page_builder:
   -
@@ -63,15 +63,6 @@ page_builder:
                 content:
                   -
                     type: text
-                    text: 'Counties – Karaka Sports Complex'
-          -
-            type: listItem
-            content:
-              -
-                type: paragraph
-                content:
-                  -
-                    type: text
                     text: 'Lloyd Elsmore Park – No 1 diamond'
           -
             type: listItem
@@ -117,7 +108,7 @@ page_builder:
                 content:
                   -
                     type: text
-                    text: 'Hamilton Raiders – Resthills Park, Glenview, Hamilton'
+                    text: 'Hamilton Raiders – Mahoe Park, Melville, Hamilton'
       -
         type: heading
         attrs:
@@ -188,4 +179,5 @@ page_builder:
     padding_bottom: base
     type: body_content
     enabled: true
+parent: 80119a42-e994-4f61-8bcb-ef1c92e9a867
 ---
