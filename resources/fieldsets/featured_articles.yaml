@@ -35,3 +35,15 @@ fields:
         mode: 'equals Recent'
   -
     import: block_settings
+  -
+    handle: calendar_iframe_url
+    field:
+      type: code
+      display: 'Calendar Iframe URL'
+      width: 50
+  -
+    handle: facebook_iframe_url
+    field:
+      type: code
+      display: 'Facebook Iframe URL'
+      width: 50

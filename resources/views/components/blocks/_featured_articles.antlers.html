@@ -9,12 +9,16 @@
         {{ /articles }}
     {{ /partial:components/common/grid }}
 
-    <div class="grid mt-8 md:grid-cols-2 gap-12">
-        <div class="aspect-square w-full overflow-hidden rounded-md">
-            <iframe loading="lazy" src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23D50000&amp;ctz=Pacific%2FAuckland&amp;showTitle=1&amp;showDate=1&amp;showTabs=0&amp;mode=AGENDA&amp;showNav=0&amp;src=Y19iMWl1ZjNpOGJwNWljMGVxM2N1cTcwc2VjNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23616161" class="w-full h-full border border-gray-600 min-w-0" frameborder="0" scrolling="no"></iframe>
-        </div>
-        <div class="aspect-square w-full bg-gray-light flex items-center justify-center rounded-md overflow-hidden">
-            <iframe loading="lazy" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v14.0/plugins/page.php?adapt_container_width=true&amp;app_id=849632328416506&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df573d76dadc0a9d98%26domain%3Dwww.hpbaseball.co.nz%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.hpbaseball.co.nz%252Ffed3455d07974c79c%26relation%3Dparent.parent&amp;container_width=381&amp;height=500&amp;hide_cover=false&amp;hide_cta=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhpbaseballnz%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=false&amp;show_posts=true&amp;small_header=true&amp;width=500" style="border: none; visibility: visible; width: 100%; max-width: 381px; height: 100%; max-height: 500px;"></iframe>
-        </div>
+    <div class="mt-8 {{ if calendar_iframe_url and facebook_iframe_url }} grid md:grid-cols-2 {{ else }} flex items-center max-w-xl w-full mx-auto {{ /if }} gap-12">
+        {{ if calendar_iframe_url }}
+            <div class="aspect-square w-full overflow-hidden rounded-md">
+                <iframe loading="lazy" src="{{ calendar_iframe_url }}" class="w-full h-full border border-gray-600 min-w-0" frameborder="0" scrolling="no"></iframe>
+            </div>
+        {{ /if }}
+        {{ if facebook_iframe_url }}
+            <div class="aspect-square w-full bg-gray-light flex items-center justify-center rounded-md overflow-hidden">
+                <iframe loading="lazy" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="{{ facebook_iframe_url }}" style="border: none; visibility: visible; width: 100%; max-width: 381px; height: 100%; max-height: 500px;"></iframe>
+            </div>
+        {{ /if }}
     </div>
 {{ /partial:components/block }}

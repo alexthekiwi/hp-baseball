@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: f727c14d-33d9-4ccd-9de0-fdbe1661319b
-updated_at: 1758880620
+updated_at: 1762754994
 page_builder:
   -
     id: makdwkj7
@@ -243,5 +243,11 @@ page_builder:
         type: button_simple
         enabled: true
         target_blank: false
+    calendar_iframe_url:
+      code: null
+      mode: htmlmixed
+    facebook_iframe_url:
+      code: 'https://www.facebook.com/v14.0/plugins/page.php?adapt_container_width=true&amp;app_id=849632328416506&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df573d76dadc0a9d98%26domain%3Dwww.hpbaseball.co.nz%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.hpbaseball.co.nz%252Ffed3455d07974c79c%26relation%3Dparent.parent&amp;container_width=381&amp;height=500&amp;hide_cover=false&amp;hide_cta=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhpbaseballnz%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=false&amp;show_posts=true&amp;small_header=true&amp;width=500'
+      mode: htmlmixed
 hide_breadcrumbs: true
 ---
